@@ -4,7 +4,7 @@
 
 Please do not include credentials, tokens, private MCP configurations, customer data, internal URLs, or other sensitive information in a public GitHub issue.
 
-For a vulnerability in this tool, open a minimal public issue only if it can be described safely without sensitive data. Otherwise use the private contact channel that will be published with the project before external launch.
+For a vulnerability in this tool, use GitHub's **Report a vulnerability** flow under the repository Security tab so the report stays private. If the issue is non-sensitive and does not expose exploit details, secrets, private configurations, or customer data, a minimal public issue is also acceptable.
 
 ## Production MCP findings
 
