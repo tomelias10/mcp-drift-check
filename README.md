@@ -1,5 +1,7 @@
 # MCP Drift Check
 
+[![CI](https://github.com/tomelias10/mcp-drift-check/actions/workflows/ci.yml/badge.svg)](https://github.com/tomelias10/mcp-drift-check/actions/workflows/ci.yml) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
 ### You approved the MCP configuration. Did you approve the code it will run next month?
 
 MCP Drift Check is a small, passive security CLI that identifies MCP configurations whose package dependencies can resolve to different code over time. It never launches an MCP server, never downloads a package, and never sends your configuration anywhere.
@@ -15,11 +17,7 @@ This tool finds that condition. It does **not** claim that an unpinned dependenc
 ## 30-second check
 
 ```bash
-git clone https://github.com/tomelias10/mcp-drift-check.git
-cd mcp-drift-check
-python3 -m venv .venv
-source .venv/bin/activate
-pip install .
+python3 -m pip install git+https://github.com/tomelias10/mcp-drift-check.git
 mcp-drift-check scan-all
 ```
 
