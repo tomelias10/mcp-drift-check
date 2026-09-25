@@ -13,14 +13,14 @@
 With `uv` installed, run directly from GitHub without installing the package globally:
 
 ```bash
-uvx --from git+https://github.com/tomelias10/mcp-drift-check mcp-drift-check scan-all
+uvx --from git+https://github.com/tomelias10/mcp-drift-check mcp-drift-check scan-workspace
 ```
 
 Or install with pip:
 
 ```bash
 python3 -m pip install git+https://github.com/tomelias10/mcp-drift-check.git
-mcp-drift-check scan-all
+mcp-drift-check scan-workspace
 ```
 
 Scan one file:
@@ -115,7 +115,7 @@ The first release focuses on package mutability in npm/npx-style MCP launch comm
 - local or unknown executables → `REVIEW`
 - `-y` / `--yes` is reported as context; it is not treated as a vulnerability by itself
 
-Known-location discovery covers common Claude Desktop, Claude Code, Cursor, VS Code, GitHub Copilot, Windsurf and generic MCP config paths where present, including repo-scoped `.mcp.json`, `.github/mcp.json`, `.cursor/mcp.json`, `.vscode/mcp.json`, and `.windsurf/mcp.json`.
+Known-location discovery covers common Claude Desktop, Claude Code, Cursor, VS Code, GitHub Copilot, Windsurf and generic MCP config paths where present, including repo-scoped `.mcp.json`, `.github/mcp.json`, `.cursor/mcp.json`, `.vscode/mcp.json`, and `.windsurf/mcp.json`. Use `scan-workspace` for repo-only scope (the GitHub Action default) and `scan-all` only when you intentionally want user-level plus workspace configs.
 
 ## Example
 
@@ -156,7 +156,7 @@ We are validating the underlying dataset and methodology before publishing any a
 
 ## For security teams
 
-Use JSON output for inventory or CI workflows:
+For a machine-wide inventory that intentionally includes both user-level and current-workspace MCP configs, use:
 
 ```bash
 mcp-drift-check scan-all --json > mcp-drift-findings.json

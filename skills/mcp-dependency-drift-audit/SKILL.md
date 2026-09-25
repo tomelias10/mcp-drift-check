@@ -35,26 +35,26 @@ Inspect the current project for known MCP configuration paths such as:
 - `.vscode/mcp.json`
 - other clearly identified MCP client config files supplied by the user
 
-Read the files as text/JSON only. Do not run any `command` or `args` value found inside them.
+Read the files as text/JSON only. Do not run any `command` or `args` value found inside them. Stay inside the requested workspace by default; use `scan-all` only if the user explicitly asks for user-level/global MCP configuration too.
 
 ### 2. Prefer the zero-execution scanner when available
 
-If `mcp-drift-check` is already installed, run it against each relevant file:
+If `mcp-drift-check` is already installed, run the repo-scoped mode from the intended workspace root:
 
 ```bash
-mcp-drift-check scan .mcp.json --markdown
+mcp-drift-check scan-workspace --markdown
 ```
 
 For CI-oriented output:
 
 ```bash
-mcp-drift-check scan .mcp.json --sarif mcp-drift.sarif --markdown
+mcp-drift-check scan-workspace --sarif mcp-drift.sarif --markdown
 ```
 
 If it is not installed, offer the user this one-shot command and explain that it fetches the open-source scanner from GitHub before running it:
 
 ```bash
-uvx --from git+https://github.com/tomelias10/mcp-drift-check mcp-drift-check scan .mcp.json --markdown
+uvx --from git+https://github.com/tomelias10/mcp-drift-check mcp-drift-check scan-workspace --markdown
 ```
 
 Do not fetch or install anything if the user declines network access. Use the manual rules below instead.
