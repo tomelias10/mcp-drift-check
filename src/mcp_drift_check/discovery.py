@@ -1,4 +1,5 @@
-from __future__ import annotations
+import os
+from collections.abc import Mapping
 from pathlib import Path
 
 _WORKSPACE_CANDIDATES = (
@@ -26,9 +27,14 @@ def workspace_config_paths(cwd: Path | None = None):
     return _existing_unique((client, cwd / rel) for client, rel in _WORKSPACE_CANDIDATES)
 
 
-def known_config_paths(home: Path | None = None, cwd: Path | None = None):
+def known_config_paths(
+    home: Path | None = None,
+    cwd: Path | None = None,
+    environ: Mapping[str, str] | None = None,
+):
     home = home or Path.home()
     cwd = cwd or Path.cwd()
+    env = os.environ if environ is None else environ
     candidates = [
         ("Claude Desktop", home / "Library/Application Support/Claude/claude_desktop_config.json"),
         ("Claude Code", home / ".claude.json"),
@@ -39,5 +45,11 @@ def known_config_paths(home: Path | None = None, cwd: Path | None = None):
         ("Windsurf", home / "Library/Application Support/Windsurf/User/mcp.json"),
         ("Generic", home / ".mcp.json"),
     ]
+    copilot_home = env.get("COPILOT_HOME")
+    if copilot_home:
+        candidates.append(("GitHub Copilot CLI", Path(copilot_home) / "mcp-config.json"))
+    else:
+        candidates.append(("GitHub Copilot CLI", home / ".copilot/mcp-config.json"))
+
     candidates.extend((client, cwd / rel) for client, rel in _WORKSPACE_CANDIDATES)
     return _existing_unique(candidates)
