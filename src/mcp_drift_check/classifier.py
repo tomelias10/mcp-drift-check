@@ -40,4 +40,4 @@ def classify_non_package(command: str):
     expanded = str(Path(command).expanduser())
     if command.startswith(('/', './', '../', '~')) or '/' in command:
         return "REVIEW", "Local or path-based executable; package drift rules do not apply directly.", "Verify the executable path, ownership, and update process."
-    return "REVIEW", "Command is not an npm/npx package invocation and was not executed.", "Review how this command is installed and updated."
+    return "REVIEW", "Command is not a supported package-runner invocation and was not executed.", "Review how this command is installed and updated."

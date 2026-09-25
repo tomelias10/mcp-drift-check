@@ -70,6 +70,35 @@ class ParserTests(unittest.TestCase):
             self.assertEqual(f.classification, "REVIEW")
             self.assertIn("malformed shell quoting", f.reason)
 
+
+    def test_bunx_latest_is_high(self):
+        with TemporaryDirectory() as d:
+            p=Path(d)/"mcp.json"
+            p.write_text('{"mcpServers":{"x":{"command":"bunx","args":["@playwright/mcp@latest"]}}}')
+            f=parse_config(p)[0]
+            self.assertEqual((f.package, f.declared_version, f.classification), ("@playwright/mcp", "latest", "HIGH"))
+
+    def test_bun_x_exact_is_safe(self):
+        with TemporaryDirectory() as d:
+            p=Path(d)/"mcp.json"
+            p.write_text('{"mcpServers":{"x":{"command":"bun","args":["x","pkg@1.2.3"]}}}')
+            f=parse_config(p)[0]
+            self.assertEqual((f.package, f.declared_version, f.classification), ("pkg", "1.2.3", "SAFE"))
+
+    def test_pnpm_dlx_bare_is_high(self):
+        with TemporaryDirectory() as d:
+            p=Path(d)/"mcp.json"
+            p.write_text('{"mcpServers":{"x":{"command":"pnpm","args":["dlx","@scope/pkg"]}}}')
+            f=parse_config(p)[0]
+            self.assertEqual((f.package, f.declared_version, f.classification), ("@scope/pkg", None, "HIGH"))
+
+    def test_yarn_dlx_range_is_medium(self):
+        with TemporaryDirectory() as d:
+            p=Path(d)/"mcp.json"
+            p.write_text('{"mcpServers":{"x":{"command":"yarn","args":["dlx","pkg@^2.0.0"]}}}')
+            f=parse_config(p)[0]
+            self.assertEqual((f.package, f.declared_version, f.classification), ("pkg", "^2.0.0", "MEDIUM"))
+
     def test_npm_exec_with_separator(self):
         with TemporaryDirectory() as d:
             p=Path(d)/"mcp.json"
