@@ -37,7 +37,7 @@ runs:
           mcp-drift-check scan "${{ inputs.path }}" --sarif "$sarif" --markdown > "$markdown"
           code=$?
         else
-          mcp-drift-check scan-all --sarif "$sarif" --markdown > "$markdown"
+          mcp-drift-check scan-workspace --sarif "$sarif" --markdown > "$markdown"
           code=$?
         fi
         cat "$markdown" >> "$GITHUB_STEP_SUMMARY"

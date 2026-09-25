@@ -1,7 +1,7 @@
 import argparse
 import sys
 from pathlib import Path
-from .discovery import known_config_paths
+from .discovery import known_config_paths, workspace_config_paths
 from .parser import parse_config
 from .output import render_json, render_markdown, render_sarif, render_text
 
@@ -16,7 +16,9 @@ def build_parser():
     scan=sub.add_parser("scan", help="Scan one MCP JSON configuration")
     scan.add_argument("path")
     _add_output_flags(scan)
-    allp=sub.add_parser("scan-all", help="Scan known MCP config locations without crawling the filesystem")
+    workspace=sub.add_parser("scan-workspace", help="Scan only known MCP config locations in the current workspace")
+    _add_output_flags(workspace)
+    allp=sub.add_parser("scan-all", help="Scan known user and workspace MCP config locations without crawling the filesystem")
     _add_output_flags(allp)
     return p
 
@@ -38,7 +40,7 @@ def main(argv=None):
     if args.cmd == "scan":
         findings=parse_config(args.path)
     else:
-        configs=known_config_paths()
+        configs=workspace_config_paths() if args.cmd == "scan-workspace" else known_config_paths()
         if not configs:
             if args.sarif:
                 Path(args.sarif).write_text(render_sarif([]), encoding="utf-8")

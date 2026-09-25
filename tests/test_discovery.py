@@ -1,7 +1,7 @@
 import unittest
 from pathlib import Path
 from tempfile import TemporaryDirectory
-from mcp_drift_check.discovery import known_config_paths
+from mcp_drift_check.discovery import known_config_paths, workspace_config_paths
 
 class DiscoveryTests(unittest.TestCase):
     def test_known_files_only(self):
@@ -23,5 +23,17 @@ class DiscoveryTests(unittest.TestCase):
             self.assertIn(str(cwd/".vscode/mcp.json"), paths)
             self.assertIn(str(cwd/".windsurf/mcp.json"), paths)
             self.assertEqual(len(got), 6)
+
+    def test_workspace_only_excludes_home_configs(self):
+        with TemporaryDirectory() as h, TemporaryDirectory() as c:
+            home=Path(h); cwd=Path(c)
+            (home/".cursor").mkdir()
+            (home/".cursor/mcp.json").write_text("{}")
+            (cwd/".cursor").mkdir()
+            (cwd/".cursor/mcp.json").write_text("{}")
+            got=workspace_config_paths(cwd)
+            paths={str(p) for _,p in got}
+            self.assertEqual(paths, {str(cwd/".cursor/mcp.json")})
+            self.assertNotIn(str(home/".cursor/mcp.json"), paths)
 
 if __name__ == "__main__": unittest.main()
