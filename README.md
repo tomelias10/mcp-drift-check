@@ -30,6 +30,15 @@ mcp-drift-check scan path/to/config.json --json
 
 `scan-all` checks a small list of known MCP configuration locations. It does not crawl your filesystem.
 
+
+## Public example of the review gap
+
+This is not only a hypothetical packaging pattern. Microsoft has a public issue for GitHub Copilot for Azure titled **“Consider pinning Azure MCP”** where the project notes that its `.mcp.json` references the `@latest` Azure MCP package and discusses the tradeoff between automatic updates and mismatches between the reviewed/configured tools and the package version that actually resolves.
+
+- Microsoft issue: https://github.com/microsoft/GitHub-Copilot-for-Azure/issues/3045
+
+That issue is an example of the configuration-review problem this tool detects. It is **not** evidence that Azure MCP is malicious or compromised, and Microsoft does not endorse this project.
+
 ## What it checks
 
 The first release focuses on package mutability in npm/npx-style MCP launch commands:
