@@ -1,5 +1,5 @@
 name: MCP Drift Check
-description: Zero-execution MCP configuration security preflight for mutable npm/npx dependencies
+description: Zero-execution MCP configuration security preflight for mutable package-runner dependencies
 author: Tom Elias
 branding:
   icon: shield

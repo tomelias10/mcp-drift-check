@@ -4,7 +4,7 @@
 
 ### Your MCP config did not change. The code it resolves to might have.
 
-**MCP Drift Check is a zero-execution security preflight for MCP package references.** It finds `@latest`, bare npm/npx packages, and version ranges that can silently resolve to different code later.
+**MCP Drift Check is a zero-execution security preflight for MCP package references.** It finds `@latest`, bare package references, and version ranges in common JavaScript package runners that can silently resolve to different code later.
 
 **No MCP server execution · No package downloads · No API token · No signup · No telemetry**
 
@@ -94,7 +94,7 @@ HIGH   github-mcp
 
 ## Why this exists
 
-Many MCP clients can launch servers through package runners such as `npx`. A configuration can remain unchanged while package resolution changes later. That creates a review gap: code running today may not be the same package version that was reviewed previously.
+Many MCP clients can launch servers through package runners such as `npx`, `bunx`, `pnpm dlx`, and `yarn dlx`. A configuration can remain unchanged while package resolution changes later. That creates a review gap: code running today may not be the same package version that was reviewed previously.
 
 This tool finds that condition. It does **not** claim that an unpinned dependency is malicious or compromised.
 
@@ -108,7 +108,7 @@ That issue is an example of the configuration-review problem this tool detects. 
 
 ## What it checks
 
-The first release focuses on package mutability in npm/npx-style MCP launch commands:
+Current package-runner coverage includes `npx`, `npm exec` / `npm x`, `bunx` / `bun x`, `pnpm dlx`, and `yarn dlx`:
 
 - exact versions such as `package@1.2.3` → `SAFE`
 - bare packages such as `package` → `HIGH`

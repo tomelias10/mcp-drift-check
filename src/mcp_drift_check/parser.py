@@ -96,22 +96,45 @@ def _command_parts(server):
         return [], "Command or args contain malformed shell quoting and could not be parsed safely."
     return head + [str(x) for x in args], None
 
-def _extract_npm_spec(parts):
+def _first_positional(values):
+    return next((x for x in values if x and not x.startswith("-")), None)
+
+
+def _extract_package_spec(parts):
+    """Return (package spec, auto-confirm context) for supported JS package runners.
+
+    This is text parsing only. No package manager or discovered command is executed.
+    """
     if not parts:
         return None, False
     exe = Path(parts[0]).name.lower()
     rest = parts[1:]
-    auto_yes = any(x in ("-y", "--yes") for x in rest)
+
     if exe in ("npx", "npx.cmd"):
-        candidates = [x for x in rest if not x.startswith('-')]
-        return (candidates[0] if candidates else None), auto_yes
+        auto_yes = any(x in ("-y", "--yes") for x in rest)
+        return _first_positional(rest), auto_yes
+
     if exe in ("npm", "npm.cmd") and rest and rest[0] in ("exec", "x"):
         tail = rest[1:]
-        if '--' in tail:
-            tail = tail[tail.index('--')+1:]
-        candidates = [x for x in tail if not x.startswith('-')]
-        return (candidates[0] if candidates else None), auto_yes
-    return None, auto_yes
+        auto_yes = any(x in ("-y", "--yes") for x in tail)
+        if "--" in tail:
+            tail = tail[tail.index("--") + 1:]
+        return _first_positional(tail), auto_yes
+
+    if exe in ("bunx", "bunx.exe"):
+        return _first_positional(rest), False
+    if exe in ("bun", "bun.exe") and rest and rest[0] in ("x", "bunx"):
+        return _first_positional(rest[1:]), False
+
+    if exe in ("pnpm", "pnpm.cmd", "yarn", "yarn.cmd") and rest and rest[0] == "dlx":
+        return _first_positional(rest[1:]), False
+
+    return None, False
+
+
+# Backward-compatible private alias used by the 2026-09-25 npm/npx census script.
+def _extract_npm_spec(parts):
+    return _extract_package_spec(parts)
 
 def parse_config(path: str | Path, client: str = "manual"):
     p = Path(path).expanduser()
@@ -129,7 +152,7 @@ def parse_config(path: str | Path, client: str = "manual"):
             seen.add(key)
             parts, parse_error=_command_parts(server)
             rendered=shlex.join(_redact_parts(parts)) if parts else ""
-            spec, auto_yes=_extract_npm_spec(parts)
+            spec, auto_yes=_extract_package_spec(parts)
             if parse_error:
                 package=version=None
                 level, reason, rec = "REVIEW", parse_error, "Review the command syntax manually; no command was executed."
