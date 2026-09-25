@@ -1,3 +1,4 @@
+import json
 import unittest
 from pathlib import Path
 from tempfile import TemporaryDirectory
@@ -41,6 +42,33 @@ class ParserTests(unittest.TestCase):
             p=Path(d)/"mcp.json"
             p.write_text('{"mcpServers":{"x":{"command":"./server"}}}')
             self.assertEqual(parse_config(p)[0].classification, "REVIEW")
+
+
+    def test_sensitive_command_args_are_redacted(self):
+        with TemporaryDirectory() as d:
+            p=Path(d)/"mcp.json"
+            p.write_text('{"mcpServers":{"x":{"command":"npx","args":["package@1.2.3","--api-key","super-secret-value","--token=another-secret"]}}}')
+            f=parse_config(p)[0]
+            self.assertEqual(f.classification, "SAFE")
+            self.assertNotIn("super-secret-value", f.command)
+            self.assertNotIn("another-secret", f.command)
+            self.assertIn("[REDACTED]", f.command)
+
+    def test_sensitive_env_style_arg_is_redacted(self):
+        with TemporaryDirectory() as d:
+            p=Path(d)/"mcp.json"
+            p.write_text('{"mcpServers":{"x":{"command":"env","args":["API_KEY=very-secret","./server"]}}}')
+            f=parse_config(p)[0]
+            self.assertNotIn("very-secret", f.command)
+            self.assertIn("API_KEY=[REDACTED]", f.command)
+
+    def test_malformed_shell_quoting_is_review(self):
+        with TemporaryDirectory() as d:
+            p=Path(d)/"mcp.json"
+            p.write_text(json.dumps({"mcpServers": {"x": {"command": 'npx \"unterminated'}}}))
+            f=parse_config(p)[0]
+            self.assertEqual(f.classification, "REVIEW")
+            self.assertIn("malformed shell quoting", f.reason)
 
     def test_npm_exec_with_separator(self):
         with TemporaryDirectory() as d:

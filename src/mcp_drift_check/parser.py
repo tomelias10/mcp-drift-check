@@ -1,5 +1,6 @@
 from __future__ import annotations
 import json
+import re
 import shlex
 from pathlib import Path
 from .classifier import classify_package, classify_non_package
@@ -16,20 +17,84 @@ def _walk_mcp_servers(obj):
         for value in obj:
             yield from _walk_mcp_servers(value)
 
+_SENSITIVE_NAMES = {
+    "token", "accesstoken", "authtoken", "apikey", "secret", "password",
+    "passwd", "credential", "privatekey", "clientsecret",
+}
+_SENSITIVE_FLAGS = {
+    "--token", "--access-token", "--access_token", "--auth-token", "--auth_token",
+    "--api-key", "--api_key", "--apikey", "--secret", "--password", "--passwd",
+    "--credential", "--private-key", "--private_key", "--client-secret", "--client_secret",
+}
+
+def _normalize_name(value: str):
+    return re.sub(r"[^a-z0-9]", "", value.lower())
+
+def _is_sensitive_name(value: str):
+    return _normalize_name(value) in _SENSITIVE_NAMES
+
+def _redact_arg(value: str):
+    lower = value.lower()
+    if "authorization:" in lower:
+        prefix = value[: lower.index("authorization:")] + value[lower.index("authorization:"):].split(":", 1)[0]
+        return prefix + ": [REDACTED]"
+    if "=" in value:
+        key, rest = value.split("=", 1)
+        if _is_sensitive_name(key.lstrip("-")):
+            return f"{key}=[REDACTED]"
+    value = re.sub(
+        r"(?i)(https?://[^:/\s]+:)[^@\s]+@",
+        r"\1[REDACTED]@",
+        value,
+    )
+    value = re.sub(
+        r"(?i)([?&](?:token|access_token|auth_token|api[_-]?key|secret|password|client_secret)=)[^&\s]+",
+        r"\1[REDACTED]",
+        value,
+    )
+    return value
+
+def _redact_parts(parts):
+    out=[]
+    redact_next=False
+    for raw in parts:
+        value=str(raw)
+        if redact_next:
+            out.append("[REDACTED]")
+            redact_next=False
+            continue
+        lower=value.lower()
+        if lower in _SENSITIVE_FLAGS:
+            out.append(value)
+            redact_next=True
+            continue
+        matched=False
+        for flag in _SENSITIVE_FLAGS:
+            if lower.startswith(flag + "="):
+                out.append(value.split("=", 1)[0] + "=[REDACTED]")
+                matched=True
+                break
+        if not matched:
+            out.append(_redact_arg(value))
+    return out
+
 def _command_parts(server):
     command = server.get("command") if isinstance(server, dict) else None
     args = server.get("args", []) if isinstance(server, dict) else []
     if isinstance(command, list):
-        return [str(x) for x in command]
+        return [str(x) for x in command], None
     if not isinstance(command, str) or not command.strip():
-        return []
-    if isinstance(args, str):
-        args = shlex.split(args)
-    if not isinstance(args, list):
-        args = []
-    # Preserve a command string with embedded arguments while avoiding execution.
-    head = shlex.split(command)
-    return head + [str(x) for x in args]
+        return [], None
+    try:
+        if isinstance(args, str):
+            args = shlex.split(args)
+        if not isinstance(args, list):
+            args = []
+        # Parse only as text. Nothing discovered here is ever executed.
+        head = shlex.split(command)
+    except ValueError:
+        return [], "Command or args contain malformed shell quoting and could not be parsed safely."
+    return head + [str(x) for x in args], None
 
 def _extract_npm_spec(parts):
     if not parts:
@@ -62,10 +127,13 @@ def parse_config(path: str | Path, client: str = "manual"):
             if key in seen:
                 continue
             seen.add(key)
-            parts=_command_parts(server)
-            rendered=shlex.join(parts) if parts else ""
+            parts, parse_error=_command_parts(server)
+            rendered=shlex.join(_redact_parts(parts)) if parts else ""
             spec, auto_yes=_extract_npm_spec(parts)
-            if spec:
+            if parse_error:
+                package=version=None
+                level, reason, rec = "REVIEW", parse_error, "Review the command syntax manually; no command was executed."
+            elif spec:
                 package, version, level, reason, rec = classify_package(spec, auto_yes)
             elif parts:
                 package=version=None

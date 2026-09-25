@@ -105,7 +105,7 @@ A review can help determine:
 
 ## Privacy and safety
 
-MCP Drift Check is static and local by design. It does not execute configured server commands, contact package registries, download dependencies, collect telemetry, or transmit findings.
+MCP Drift Check is static and local by design. It does not execute configured server commands, contact package registries, download dependencies, collect telemetry, or transmit findings. Common credential-bearing command arguments (for example `--api-key`, `--token`, `API_KEY=...`, and Authorization headers) are redacted from text and JSON reports. Avoid placing secrets directly in command arguments when possible.
 
 ## Development
 
