@@ -46,6 +46,13 @@ runs:
           echo ""
           echo "### Share / inspect in browser"
           echo "[Open the zero-execution public preflight for this repository](https://site-creator-vinext-starter.surfaceproof.workers.dev/mcp-scan?repo=${GITHUB_REPOSITORY})"
+          echo ""
+          echo "[![MCP Drift Check](https://site-creator-vinext-starter.surfaceproof.workers.dev/api/mcp-badge?repo=${GITHUB_REPOSITORY})](https://site-creator-vinext-starter.surfaceproof.workers.dev/mcp-scan?repo=${GITHUB_REPOSITORY})"
+          echo ""
+          echo "Copy this scoped drift badge into your README:"
+          echo '```markdown'
+          echo "[![MCP Drift Check](https://site-creator-vinext-starter.surfaceproof.workers.dev/api/mcp-badge?repo=${GITHUB_REPOSITORY})](https://site-creator-vinext-starter.surfaceproof.workers.dev/mcp-scan?repo=${GITHUB_REPOSITORY})"
+          echo '```'
         } >> "$GITHUB_STEP_SUMMARY"
         cat "$markdown"
         if [ -s "$annotations" ]; then

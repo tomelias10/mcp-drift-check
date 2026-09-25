@@ -14,6 +14,16 @@
 
 **No install:** [scan a public GitHub repository in the browser](https://site-creator-vinext-starter.surfaceproof.workers.dev/mcp-scan). The browser preflight checks only public MCP config paths and never executes repository code or MCP servers.
 
+### Share a live repo result
+
+After scanning a public repository, copy the generated README badge from the result page. The badge reports only MCP dependency-drift findings — it is **not** a general security score.
+
+```markdown
+[![MCP Drift Check](https://site-creator-vinext-starter.surfaceproof.workers.dev/api/mcp-badge?repo=OWNER%2FREPO)](https://site-creator-vinext-starter.surfaceproof.workers.dev/mcp-scan?repo=OWNER%2FREPO)
+```
+
+The badge updates from bounded public MCP config paths and links back to a shareable zero-execution scan.
+
 With `uv` installed, run directly from GitHub without installing the package globally:
 
 ```bash
