@@ -1,0 +1,53 @@
+name: MCP Drift Check
+description: Zero-execution MCP configuration security preflight for mutable npm/npx dependencies
+author: Tom Elias
+branding:
+  icon: shield
+  color: blue
+inputs:
+  path:
+    description: Optional MCP config path. Leave empty to scan known repo locations.
+    required: false
+    default: ''
+  fail-on-high:
+    description: Fail the job when HIGH findings are present.
+    required: false
+    default: 'true'
+outputs:
+  sarif-file:
+    description: Path to generated SARIF 2.1.0 report.
+    value: ${{ steps.scan.outputs.sarif-file }}
+  exit-code:
+    description: Scanner exit code before action policy is applied.
+    value: ${{ steps.scan.outputs.exit-code }}
+runs:
+  using: composite
+  steps:
+    - name: Install MCP Drift Check
+      shell: bash
+      run: python -m pip install "${{ github.action_path }}"
+    - name: Scan MCP configuration
+      id: scan
+      shell: bash
+      run: |
+        set +e
+        sarif="$RUNNER_TEMP/mcp-drift-check.sarif"
+        markdown="$RUNNER_TEMP/mcp-drift-check.md"
+        if [ -n "${{ inputs.path }}" ]; then
+          mcp-drift-check scan "${{ inputs.path }}" --sarif "$sarif" --markdown > "$markdown"
+          code=$?
+        else
+          mcp-drift-check scan-all --sarif "$sarif" --markdown > "$markdown"
+          code=$?
+        fi
+        cat "$markdown" >> "$GITHUB_STEP_SUMMARY"
+        cat "$markdown"
+        echo "sarif-file=$sarif" >> "$GITHUB_OUTPUT"
+        echo "exit-code=$code" >> "$GITHUB_OUTPUT"
+        exit 0
+    - name: Enforce HIGH finding policy
+      if: inputs.fail-on-high == 'true' && steps.scan.outputs.exit-code == '1'
+      shell: bash
+      run: |
+        echo "MCP Drift Check found HIGH severity mutable package references." >&2
+        exit 1
