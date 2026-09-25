@@ -51,7 +51,7 @@ jobs:
       - uses: tomelias10/mcp-drift-check@v0
 ```
 
-That produces a Markdown report in the GitHub Actions job summary and fails the check when a `HIGH` mutable package reference is found.
+That scans **workspace MCP config locations only** by default, produces a Markdown report in the GitHub Actions job summary, adds visible GitHub PR annotations for non-safe findings, and fails the check when a `HIGH` mutable package reference is found.
 
 Want findings in GitHub Code Scanning too? The action also emits SARIF:
 

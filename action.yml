@@ -33,15 +33,19 @@ runs:
         set +e
         sarif="$RUNNER_TEMP/mcp-drift-check.sarif"
         markdown="$RUNNER_TEMP/mcp-drift-check.md"
+        annotations="$RUNNER_TEMP/mcp-drift-check-annotations.txt"
         if [ -n "${{ inputs.path }}" ]; then
-          mcp-drift-check scan "${{ inputs.path }}" --sarif "$sarif" --markdown > "$markdown"
+          mcp-drift-check scan "${{ inputs.path }}" --sarif "$sarif" --github-annotations "$annotations" --markdown > "$markdown"
           code=$?
         else
-          mcp-drift-check scan-workspace --sarif "$sarif" --markdown > "$markdown"
+          mcp-drift-check scan-workspace --sarif "$sarif" --github-annotations "$annotations" --markdown > "$markdown"
           code=$?
         fi
         cat "$markdown" >> "$GITHUB_STEP_SUMMARY"
         cat "$markdown"
+        if [ -s "$annotations" ]; then
+          cat "$annotations"
+        fi
         echo "sarif-file=$sarif" >> "$GITHUB_OUTPUT"
         echo "exit-code=$code" >> "$GITHUB_OUTPUT"
         exit 0
