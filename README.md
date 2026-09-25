@@ -8,6 +8,22 @@ MCP Drift Check is a small, passive security CLI that identifies MCP configurati
 
 > **Check your environment.** If you find something concerning in production, do not post secrets or private configs in a public issue. Request a private security review: **https://site-creator-vinext-starter.surfaceproof.workers.dev/security-triage?utm_source=github&utm_medium=repo&utm_campaign=mcp_drift_check**
 
+## Production MCP security review
+
+The CLI is free. If your team is running MCP or AI-agent tooling in production and wants a private assessment, SurfaceProof offers a focused paid review.
+
+Typical deliverables:
+
+- inventory of approved MCP/agent integrations and mutable dependency references
+- privilege and data-access context for the integrations that matter most
+- exact remediation and version-pinning guidance
+- a CI policy/check to keep mutable references from silently reappearing
+- a concise engineering/security report with prioritized next actions
+
+Start here: **https://site-creator-vinext-starter.surfaceproof.workers.dev/security-triage?utm_source=github&utm_medium=repo&utm_campaign=mcp_drift_check**
+
+Scope and price are agreed before work begins. No production testing is performed without explicit authorization.
+
 ## Why this exists
 
 Many MCP clients can launch servers through package runners such as `npx`. A configuration can remain unchanged while package resolution changes later. That creates a review gap: code running today may not be the same package version that was reviewed previously.
