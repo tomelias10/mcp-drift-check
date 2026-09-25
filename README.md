@@ -81,7 +81,7 @@ It identifies a **change and review risk** that a security team may want to inve
 
 ## Public examples
 
-We documented five concrete public repositories where MCP configs contained mutable npm/npx package references. This is a **targeted examples set, not a prevalence study**. See [`research/public-mcp-dependency-drift-examples.md`](research/public-mcp-dependency-drift-examples.md).
+We documented seven concrete public repositories where MCP configs contained mutable npm/npx package references. This is a **targeted examples set, not a prevalence study**. See the [public research page](https://site-creator-vinext-starter.surfaceproof.workers.dev/research/mcp-dependency-drift) or [`research/public-mcp-dependency-drift-examples.md`](research/public-mcp-dependency-drift-examples.md).
 
 ## Why we built this
 
