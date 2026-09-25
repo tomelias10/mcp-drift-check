@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mcp-drift-check"
+version = "0.1.0"
+description = "Passive MCP dependency drift checker"
+readme = "README.md"
+requires-python = ">=3.9"
+license = {text = "MIT"}
+authors = [{name = "Tom Elias"}]
+keywords = ["mcp", "security", "ai-security", "supply-chain"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: MIT License",
+  "Topic :: Security",
+]
+
+[project.scripts]
+mcp-drift-check = "mcp_drift_check.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]

@@ -1,0 +1,6 @@
+{
+  "mcpServers": {
+    "pinned": {"command": "npx", "args": ["-y", "@example/server@1.2.3"]},
+    "local": {"command": "./bin/local-mcp", "args": []}
+  }
+}

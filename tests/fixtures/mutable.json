@@ -1,0 +1,1 @@
+{"mcpServers":{"bare":{"command":"npx","args":["-y","pkg"]},"latest":{"command":"npx","args":["pkg2@latest"]},"range":{"command":"npm","args":["exec","pkg3@~1.2.0"]}}}

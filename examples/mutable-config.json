@@ -1,0 +1,7 @@
+{
+  "mcpServers": {
+    "bare": {"command": "npx", "args": ["-y", "example-mcp"]},
+    "latest": {"command": "npx", "args": ["example-two@latest"]},
+    "range": {"command": "npm", "args": ["exec", "@scope/server@^2.1.0"]}
+  }
+}
