@@ -115,7 +115,7 @@ The first release focuses on package mutability in npm/npx-style MCP launch comm
 - local or unknown executables → `REVIEW`
 - `-y` / `--yes` is reported as context; it is not treated as a vulnerability by itself
 
-Known-location discovery currently covers common Claude Desktop, Claude Code, Cursor, VS Code, Windsurf and generic MCP config paths where present.
+Known-location discovery covers common Claude Desktop, Claude Code, Cursor, VS Code, GitHub Copilot, Windsurf and generic MCP config paths where present, including repo-scoped `.mcp.json`, `.github/mcp.json`, `.cursor/mcp.json`, `.vscode/mcp.json`, and `.windsurf/mcp.json`.
 
 ## Example
 

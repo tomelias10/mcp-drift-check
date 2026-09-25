@@ -10,10 +10,18 @@ class DiscoveryTests(unittest.TestCase):
             (home/".cursor").mkdir()
             (home/".cursor/mcp.json").write_text("{}")
             (cwd/".mcp.json").write_text("{}")
+            for rel in (".github/mcp.json", ".cursor/mcp.json", ".vscode/mcp.json", ".windsurf/mcp.json"):
+                target=cwd/rel
+                target.parent.mkdir(parents=True, exist_ok=True)
+                target.write_text("{}")
             got=known_config_paths(home, cwd)
             paths={str(p) for _,p in got}
             self.assertIn(str(home/".cursor/mcp.json"), paths)
             self.assertIn(str(cwd/".mcp.json"), paths)
-            self.assertEqual(len(got), 2)
+            self.assertIn(str(cwd/".github/mcp.json"), paths)
+            self.assertIn(str(cwd/".cursor/mcp.json"), paths)
+            self.assertIn(str(cwd/".vscode/mcp.json"), paths)
+            self.assertIn(str(cwd/".windsurf/mcp.json"), paths)
+            self.assertEqual(len(got), 6)
 
 if __name__ == "__main__": unittest.main()
