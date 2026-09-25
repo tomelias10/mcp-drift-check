@@ -4,7 +4,7 @@
 
 MCP Drift Check is a small, passive security CLI that identifies MCP configurations whose package dependencies can resolve to different code over time. It never launches an MCP server, never downloads a package, and never sends your configuration anywhere.
 
-> **Check your environment.** If you find something concerning in production, do not post secrets or private configs in a public issue. Request a private security review: **https://surfaceproof-security.tome1.chatgpt.site/security-triage?utm_source=github&utm_medium=repo&utm_campaign=mcp_drift_check**
+> **Check your environment.** If you find something concerning in production, do not post secrets or private configs in a public issue. Request a private security review: **https://site-creator-vinext-starter.surfaceproof.workers.dev/security-triage?utm_source=github&utm_medium=repo&utm_campaign=mcp_drift_check**
 
 ## Why this exists
 
@@ -94,7 +94,7 @@ Found this pattern in a production AI environment?
 
 Do **not** post sensitive configuration, credentials, access tokens, customer information, internal URLs or proprietary data in a public GitHub issue.
 
-Request a private security review: **https://surfaceproof-security.tome1.chatgpt.site/security-triage?utm_source=github&utm_medium=repo&utm_campaign=mcp_drift_check**
+Request a private security review: **https://site-creator-vinext-starter.surfaceproof.workers.dev/security-triage?utm_source=github&utm_medium=repo&utm_campaign=mcp_drift_check**
 
 A review can help determine:
 

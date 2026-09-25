@@ -11,7 +11,7 @@ def render_text(findings):
         if f.command: lines.append(f"       command: {f.command}")
         if f.package: lines.append(f"       package: {f.package}" + (f" @{f.declared_version}" if f.declared_version else ""))
         lines += [f"       reason: {f.reason}", f"       recommendation: {f.recommendation}", ""]
-    lines += ["No MCP servers were executed.", "No credentials or secrets were collected.", "All analysis was performed locally.", "", "Found something concerning in a production environment?", "Request private security triage: https://surfaceproof-security.tome1.chatgpt.site/security-triage?utm_source=github&utm_medium=repo&utm_campaign=mcp_drift_check"]
+    lines += ["No MCP servers were executed.", "No credentials or secrets were collected.", "All analysis was performed locally.", "", "Found something concerning in a production environment?", "Request private security triage: https://site-creator-vinext-starter.surfaceproof.workers.dev/security-triage?utm_source=github&utm_medium=repo&utm_campaign=mcp_drift_check"]
     return "\n".join(lines)
 
 def render_json(findings):
