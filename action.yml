@@ -42,6 +42,11 @@ runs:
           code=$?
         fi
         cat "$markdown" >> "$GITHUB_STEP_SUMMARY"
+        {
+          echo ""
+          echo "### Share / inspect in browser"
+          echo "[Open the zero-execution public preflight for this repository](https://site-creator-vinext-starter.surfaceproof.workers.dev/mcp-scan?repo=${GITHUB_REPOSITORY})"
+        } >> "$GITHUB_STEP_SUMMARY"
         cat "$markdown"
         if [ -s "$annotations" ]; then
           cat "$annotations"

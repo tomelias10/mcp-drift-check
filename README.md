@@ -12,6 +12,8 @@
 
 ## Run it now
 
+**No install:** [scan a public GitHub repository in the browser](https://site-creator-vinext-starter.surfaceproof.workers.dev/mcp-scan). The browser preflight checks only public MCP config paths and never executes repository code or MCP servers.
+
 With `uv` installed, run directly from GitHub without installing the package globally:
 
 ```bash
