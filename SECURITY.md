@@ -8,7 +8,7 @@ For a vulnerability in this tool, open a minimal public issue only if it can be 
 
 ## Production MCP findings
 
-This repository is not a place to disclose secrets or production configuration. If this tool identifies a concerning pattern in a real environment, use **https://site-creator-vinext-starter.surfaceproof.workers.dev/security-triage?utm_source=github&utm_medium=repo&utm_campaign=mcp_drift_check** for private triage once that URL is configured.
+This repository is not a place to disclose secrets or production configuration. If this tool identifies a concerning pattern in a real environment, use **https://site-creator-vinext-starter.surfaceproof.workers.dev/security-triage?utm_source=github&utm_medium=repo&utm_campaign=mcp_drift_check** for private triage.
 
 ## Scope of the tool
 
