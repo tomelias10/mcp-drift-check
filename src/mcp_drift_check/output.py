@@ -71,7 +71,7 @@ def render_github_annotations(findings):
         # are still reported as generic annotations without exposing runner paths.
         properties=[]
         path=Path(raw_path)
-        if not path.is_absolute() and not raw_path.startswith("~"):
+        if not path.is_absolute() and not raw_path.startswith(("/", "\\", "~")):
             properties.append(f"file={_github_escape(raw_path, property_value=True)}")
         properties.append(f"title={title}")
         lines.append(f"::{level} {','.join(properties)}::{message}")
