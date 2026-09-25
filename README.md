@@ -29,6 +29,14 @@ Scan one file:
 mcp-drift-check scan .mcp.json
 ```
 
+## Use it as an agent skill
+
+The repository also ships a portable Agent Skill for Claude Code, Codex, Cursor, and other skill-aware coding agents:
+
+[`skills/mcp-dependency-drift-audit/SKILL.md`](skills/mcp-dependency-drift-audit/SKILL.md)
+
+The skill preserves the same safety boundary: read MCP configuration statically, never execute discovered server commands, and never turn dependency mutability into an unsupported compromise claim.
+
 ## Add it to any GitHub repo
 
 ```yaml
