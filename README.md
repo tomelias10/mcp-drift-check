@@ -40,7 +40,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: tomelias10/mcp-drift-check@main
+      - uses: tomelias10/mcp-drift-check@v0
 ```
 
 That produces a Markdown report in the GitHub Actions job summary and fails the check when a `HIGH` mutable package reference is found.
@@ -55,7 +55,7 @@ permissions:
 steps:
   - uses: actions/checkout@v4
   - id: mcp
-    uses: tomelias10/mcp-drift-check@main
+    uses: tomelias10/mcp-drift-check@v0
     with:
       fail-on-high: 'false'
   - uses: github/codeql-action/upload-sarif@v3
