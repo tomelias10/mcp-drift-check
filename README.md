@@ -79,6 +79,10 @@ HIGH  github-mcp
 
 It identifies a **change and review risk** that a security team may want to investigate.
 
+## Public examples
+
+We documented five concrete public repositories where MCP configs contained mutable npm/npx package references. This is a **targeted examples set, not a prevalence study**. See [`research/public-mcp-dependency-drift-examples.md`](research/public-mcp-dependency-drift-examples.md).
+
 ## Why we built this
 
 While researching public MCP configurations, we observed repeated patterns where package references were mutable after the configuration was written.
