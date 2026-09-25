@@ -17,7 +17,7 @@ The scanner reads configuration text only. It did **not** start an MCP server, e
 | commercetools UI Kit | [`.mcp.json`](https://github.com/commercetools/ui-kit/blob/62ca335b629de087f574af71869d68cbd3bd004c/.mcp.json) | `@upstash/context7-mcp@latest`, `@playwright/mcp@latest`, bare `@modelcontextprotocol/server-sequential-thinking` | [Issue #3307](https://github.com/commercetools/ui-kit/issues/3307) |
 | IBM MCP catalog | [`mcp.json`](https://github.com/IBM/mcp/blob/c78e894c0848b9f1b1be6c2b5811121bbc9d2180/mcp.json) | bare `di-mcp-server`, bare `@datastax/astra-db-mcp`, `@ibm/ibmi-mcp-server@latest` | [Issue #66](https://github.com/IBM/mcp/issues/66) |
 | CZI Single Cell Data Portal | [`.mcp.json`](https://github.com/chanzuckerberg/single-cell-data-portal/blob/f41b2a4b1a0916a12767b52f567532b30a808418/.mcp.json) | six mutable refs including bare `@modelcontextprotocol/*`, bare `@playwright/mcp`, bare `@czi-sds/mcp`, `@zeroheight/mcp-server@latest` | [Issue #7801](https://github.com/chanzuckerberg/single-cell-data-portal/issues/7801) |
-| ZK | [`.mcp.json`](https://github.com/zkoss/zk/blob/9ecf689dab0d3b7281b5c47fb0923b4d16cfadba/.mcp.json) | `mcp-remote@latest` | No issue opened in this pass |
+| ZK | [`.mcp.json`](https://github.com/zkoss/zk/blob/9ecf689dab0d3b7281b5c47fb0923b4d16cfadba/.mcp.json) | `mcp-remote@latest` | [Issue #3628](https://github.com/zkoss/zk/issues/3628) |
 
 ## Why the pattern matters
 
