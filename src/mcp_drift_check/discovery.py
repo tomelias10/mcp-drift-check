@@ -11,10 +11,10 @@ _WORKSPACE_CANDIDATES = (
 
 
 def _existing_unique(candidates):
-    out=[]; seen=set()
+    out = []; seen = set()
     for client, path in candidates:
-        try: key=str(path.resolve())
-        except OSError: key=str(path)
+        try: key = str(path.resolve())
+        except OSError: key = str(path)
         if key not in seen and path.is_file():
             out.append((client, path))
             seen.add(key)
@@ -33,6 +33,7 @@ def known_config_paths(home: Path | None = None, cwd: Path | None = None):
         ("Claude Desktop", home / "Library/Application Support/Claude/claude_desktop_config.json"),
         ("Claude Code", home / ".claude.json"),
         ("Cursor", home / ".cursor/mcp.json"),
+        ("GitHub Copilot", home / ".config/github-copilot/mcp.json"),
         ("VS Code", home / "Library/Application Support/Code/User/mcp.json"),
         ("VS Code", home / ".vscode/mcp.json"),
         ("Windsurf", home / ".codeium/windsurf/mcp_config.json"),
