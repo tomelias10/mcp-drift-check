@@ -3,12 +3,13 @@ import sys
 from pathlib import Path
 from .discovery import known_config_paths, workspace_config_paths
 from .parser import parse_config
-from .output import render_json, render_markdown, render_sarif, render_text
+from .output import render_github_annotations, render_json, render_markdown, render_sarif, render_text
 
 def _add_output_flags(parser):
     parser.add_argument("--json", action="store_true", dest="as_json", help="Print JSON findings")
     parser.add_argument("--markdown", action="store_true", dest="as_markdown", help="Print a compact Markdown report")
     parser.add_argument("--sarif", metavar="PATH", help="Also write SARIF 2.1.0 for GitHub Code Scanning")
+    parser.add_argument("--github-annotations", metavar="PATH", help="Also write GitHub Actions annotations for non-SAFE findings")
 
 def build_parser():
     p=argparse.ArgumentParser(prog="mcp-drift-check", description="Zero-execution MCP configuration security preflight. Never executes MCP servers.")
@@ -27,6 +28,10 @@ def _emit(findings, args):
         out=Path(args.sarif)
         out.parent.mkdir(parents=True, exist_ok=True)
         out.write_text(render_sarif(findings), encoding="utf-8")
+    if args.github_annotations:
+        out=Path(args.github_annotations)
+        out.parent.mkdir(parents=True, exist_ok=True)
+        out.write_text(render_github_annotations(findings), encoding="utf-8")
     if args.as_json:
         print(render_json(findings))
     elif args.as_markdown:
@@ -44,6 +49,8 @@ def main(argv=None):
         if not configs:
             if args.sarif:
                 Path(args.sarif).write_text(render_sarif([]), encoding="utf-8")
+            if args.github_annotations:
+                Path(args.github_annotations).write_text("", encoding="utf-8")
             if args.as_json:
                 print("[]")
             elif args.as_markdown:
@@ -52,7 +59,13 @@ def main(argv=None):
                 print("No known MCP configuration files found. Nothing was executed.")
             return 0
         for client, path in configs:
-            findings.extend(parse_config(path, client))
+            scan_path=path
+            if args.cmd == "scan-workspace":
+                try:
+                    scan_path=path.relative_to(Path.cwd())
+                except ValueError:
+                    pass
+            findings.extend(parse_config(scan_path, client))
     _emit(findings, args)
     return 1 if any(f.classification == "HIGH" for f in findings) else 0
 

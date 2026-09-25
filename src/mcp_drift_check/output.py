@@ -48,6 +48,35 @@ def render_markdown(findings):
     lines += ["[MCP Drift Check](https://github.com/tomelias10/mcp-drift-check) · zero-execution MCP configuration preflight"]
     return "\n".join(lines)
 
+
+
+def _github_escape(value: str, *, property_value: bool = False) -> str:
+    value = str(value).replace("%", "%25").replace("\r", "%0D").replace("\n", "%0A")
+    if property_value:
+        value = value.replace(":", "%3A").replace(",", "%2C")
+    return value
+
+def render_github_annotations(findings):
+    """Render GitHub Actions workflow-command annotations for non-SAFE findings."""
+    level_map={"HIGH":"error","MEDIUM":"warning","REVIEW":"notice"}
+    lines=[]
+    for f in sorted(findings, key=lambda x: ORDER.get(x.classification,9)):
+        if f.classification == "SAFE":
+            continue
+        level=level_map.get(f.classification,"notice")
+        title=_github_escape(f"MCP Drift Check ({f.classification})", property_value=True)
+        message=_github_escape(f"{f.server_name}: {f.reason} Recommendation: {f.recommendation}")
+        raw_path=str(f.config_path)
+        # Only attach a file property for workspace-relative paths. Home/absolute paths
+        # are still reported as generic annotations without exposing runner paths.
+        properties=[]
+        path=Path(raw_path)
+        if not path.is_absolute() and not raw_path.startswith("~"):
+            properties.append(f"file={_github_escape(raw_path, property_value=True)}")
+        properties.append(f"title={title}")
+        lines.append(f"::{level} {','.join(properties)}::{message}")
+    return "\n".join(lines)
+
 def _sarif_rule(classification):
     if classification == "HIGH":
         return "MCP001", "Mutable MCP package reference", "error"

@@ -29,3 +29,14 @@ jobs:
           fail-on-high: 'false'
       - name: Verify HIGH exit signal
         run: test "${{ steps.mutable.outputs.exit-code }}" = "1"
+      - name: Prepare workspace auto-discovery fixture
+        run: cp examples/mutable-config.json .mcp.json
+      - name: Auto-discovery uses workspace only
+        id: workspace
+        uses: ./
+        with:
+          fail-on-high: 'false'
+      - name: Verify workspace HIGH exit signal
+        run: |
+          test "${{ steps.workspace.outputs.exit-code }}" = "1"
+          rm .mcp.json
