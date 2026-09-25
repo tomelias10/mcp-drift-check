@@ -1,0 +1,31 @@
+name: Action Test
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  action-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Safe config through local action
+        id: safe
+        uses: ./
+        with:
+          path: examples/safe-config.json
+          fail-on-high: 'false'
+      - name: Verify safe SARIF exists
+        run: test -s "${{ steps.safe.outputs.sarif-file }}"
+      - name: Mutable config through local action
+        id: mutable
+        uses: ./
+        with:
+          path: examples/mutable-config.json
+          fail-on-high: 'false'
+      - name: Verify HIGH exit signal
+        run: test "${{ steps.mutable.outputs.exit-code }}" = "1"

@@ -1,51 +1,92 @@
 # MCP Drift Check
 
-[![CI](https://github.com/tomelias10/mcp-drift-check/actions/workflows/ci.yml/badge.svg)](https://github.com/tomelias10/mcp-drift-check/actions/workflows/ci.yml) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![CI](https://github.com/tomelias10/mcp-drift-check/actions/workflows/ci.yml/badge.svg)](https://github.com/tomelias10/mcp-drift-check/actions/workflows/ci.yml) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE) [![Python 3.9+](https://img.shields.io/badge/python-3.9%2B-blue.svg)](pyproject.toml)
 
-### You approved the MCP configuration. Did you approve the code it will run next month?
+### Your MCP config did not change. The code it resolves to might have.
 
-MCP Drift Check is a small, passive security CLI that identifies MCP configurations whose package dependencies can resolve to different code over time. It never launches an MCP server, never downloads a package, and never sends your configuration anywhere.
+**MCP Drift Check is a zero-execution security preflight for MCP package references.** It finds `@latest`, bare npm/npx packages, and version ranges that can silently resolve to different code later.
 
-> **Check your environment.** If you find something concerning in production, do not post secrets or private configs in a public issue. Request a private security review: **https://site-creator-vinext-starter.surfaceproof.workers.dev/security-triage?utm_source=github&utm_medium=repo&utm_campaign=mcp_drift_check**
+**No MCP server execution · No package downloads · No API token · No signup · No telemetry**
 
-## Production MCP security review
+## Run it now
 
-The CLI is free. If your team is running MCP or AI-agent tooling in production and wants a private assessment, SurfaceProof offers a focused paid review.
+With `uv` installed, run directly from GitHub without installing the package globally:
 
-Typical deliverables:
+```bash
+uvx --from git+https://github.com/tomelias10/mcp-drift-check mcp-drift-check scan-all
+```
 
-- inventory of approved MCP/agent integrations and mutable dependency references
-- privilege and data-access context for the integrations that matter most
-- exact remediation and version-pinning guidance
-- a CI policy/check to keep mutable references from silently reappearing
-- a concise engineering/security report with prioritized next actions
-
-Start here: **https://site-creator-vinext-starter.surfaceproof.workers.dev/security-triage?utm_source=github&utm_medium=repo&utm_campaign=mcp_drift_check**
-
-Scope and price are agreed before work begins. No production testing is performed without explicit authorization.
-
-## Why this exists
-
-Many MCP clients can launch servers through package runners such as `npx`. A configuration can remain unchanged while package resolution changes later. That creates a review gap: code running today may not be the same package version that was reviewed previously.
-
-This tool finds that condition. It does **not** claim that an unpinned dependency is malicious or compromised.
-
-## 30-second check
+Or install with pip:
 
 ```bash
 python3 -m pip install git+https://github.com/tomelias10/mcp-drift-check.git
 mcp-drift-check scan-all
 ```
 
-Scan one file instead:
+Scan one file:
 
 ```bash
-mcp-drift-check scan path/to/config.json
-mcp-drift-check scan path/to/config.json --json
+mcp-drift-check scan .mcp.json
 ```
 
-`scan-all` checks a small list of known MCP configuration locations. It does not crawl your filesystem.
+## Add it to any GitHub repo
 
+```yaml
+name: MCP dependency drift
+on: [push, pull_request]
+
+jobs:
+  mcp-drift:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: tomelias10/mcp-drift-check@main
+```
+
+That produces a Markdown report in the GitHub Actions job summary and fails the check when a `HIGH` mutable package reference is found.
+
+Want findings in GitHub Code Scanning too? The action also emits SARIF:
+
+```yaml
+permissions:
+  contents: read
+  security-events: write
+
+steps:
+  - uses: actions/checkout@v4
+  - id: mcp
+    uses: tomelias10/mcp-drift-check@main
+    with:
+      fail-on-high: 'false'
+  - uses: github/codeql-action/upload-sarif@v3
+    with:
+      sarif_file: ${{ steps.mcp.outputs.sarif-file }}
+  - if: steps.mcp.outputs.exit-code == '1'
+    run: exit 1
+```
+
+## What it looks like
+
+```text
+MCP Drift Check
+================================================
+MCP server entries: 3
+
+HIGH   1 mutable package references
+MEDIUM 1 non-exact package selectors
+SAFE   1 exact-version package references
+
+HIGH   github-mcp
+       package: example-package
+       reason: Package version is not pinned; future resolution may select different package code.
+       recommendation: Pin example-package to a reviewed exact version.
+```
+
+## Why this exists
+
+Many MCP clients can launch servers through package runners such as `npx`. A configuration can remain unchanged while package resolution changes later. That creates a review gap: code running today may not be the same package version that was reviewed previously.
+
+This tool finds that condition. It does **not** claim that an unpinned dependency is malicious or compromised.
 
 ## Public example of the review gap
 
