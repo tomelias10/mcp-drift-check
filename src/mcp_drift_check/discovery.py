@@ -13,8 +13,11 @@ def known_config_paths(home: Path | None = None, cwd: Path | None = None):
         ("Windsurf", home / ".codeium/windsurf/mcp_config.json"),
         ("Windsurf", home / "Library/Application Support/Windsurf/User/mcp.json"),
         ("Generic", home / ".mcp.json"),
-        ("Generic", cwd / ".mcp.json"),
+        ("Generic workspace", cwd / ".mcp.json"),
+        ("GitHub Copilot workspace", cwd / ".github/mcp.json"),
+        ("Cursor workspace", cwd / ".cursor/mcp.json"),
         ("VS Code workspace", cwd / ".vscode/mcp.json"),
+        ("Windsurf workspace", cwd / ".windsurf/mcp.json"),
     ]
     out=[]; seen=set()
     for client, path in candidates:
