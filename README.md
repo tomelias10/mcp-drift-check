@@ -8,6 +8,8 @@
 
 **No MCP server execution · No package downloads · No API token · No signup · No telemetry**
 
+**Public evidence:** in a documented 2026-09-25 GitHub code-search sample, **232 of 259** parsed public `.mcp.json` files containing npm/npx package references had at least one `HIGH` mutable reference. This is a **retrieved search sample, not an ecosystem prevalence estimate**. [Method + dataset](research/public-mcp-drift-census-2026-09-25.md) · [Reproduction script](scripts/public_census.py)
+
 ## Run it now
 
 With `uv` installed, run directly from GitHub without installing the package globally:
@@ -148,11 +150,19 @@ It identifies a **change and review risk** that a security team may want to inve
 
 We documented seven concrete public repositories where MCP configs contained mutable npm/npx package references. This is a **targeted examples set, not a prevalence study**. See the [public research page](https://site-creator-vinext-starter.surfaceproof.workers.dev/research/mcp-dependency-drift) or [`research/public-mcp-dependency-drift-examples.md`](research/public-mcp-dependency-drift-examples.md).
 
+## Public GitHub code-search sample
+
+On 2026-09-25, the documented search method returned **296** de-duplicated hits whose exact basename was `.mcp.json`. We fetched and parsed **295** of them; **259** contained npm/npx package references, and **232** of those configs contained at least one `HIGH` mutable package reference. Across the sample, the classifier saw **392** npm/npx package references: 360 `HIGH`, 3 `MEDIUM`, and 29 `SAFE`.
+
+These numbers describe **only the retrieved GitHub code-search sample**. GitHub search ranking is not random and result limits cap the sample, so the counts must **not** be presented as the prevalence of mutable dependencies across the MCP ecosystem. They also do not imply that any package is malicious or compromised.
+
+- [Methodology and snapshot](research/public-mcp-drift-census-2026-09-25.md)
+- [Sanitized machine-readable dataset](research/public-mcp-drift-census-2026-09-25.json)
+- [Reproduction script](scripts/public_census.py)
+
 ## Why we built this
 
-While researching public MCP configurations, we observed repeated patterns where package references were mutable after the configuration was written.
-
-We are validating the underlying dataset and methodology before publishing any aggregate statistic. Until that review is complete, this repository intentionally makes no numerical prevalence claim.
+While researching public MCP configurations, we observed repeated patterns where package references were mutable after the configuration was written. The census above turns that observation into a reviewable dataset while preserving the boundary between **dependency mutability** and unsupported compromise claims.
 
 ## For security teams
 

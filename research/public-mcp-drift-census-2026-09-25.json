@@ -1,0 +1,4201 @@
+{
+  "summary": {
+    "observation_date": "2026-09-25",
+    "method": "GitHub code-search sample; exact basename .mcp.json; static MCP Drift Check classification; no MCP server execution",
+    "queries": [
+      "\"npx\" filename:.mcp.json",
+      "\"npm exec\" filename:.mcp.json"
+    ],
+    "per_query_limit": 500,
+    "limitations": [
+      "GitHub code search ranking is not a random sample and is capped by query/result limits.",
+      "Counts describe this retrieved sample only and MUST NOT be presented as ecosystem prevalence.",
+      "Only npm/npx package references are classified; other commands are outside this census.",
+      "No raw config contents, environment values, credentials, server names, or command arguments are stored."
+    ],
+    "search_hits_exact_config": 296,
+    "configs_fetched_and_parsed": 295,
+    "configs_with_npm_package_refs": 259,
+    "package_refs_classified": 392,
+    "package_ref_levels": {
+      "HIGH": 360,
+      "MEDIUM": 3,
+      "SAFE": 29,
+      "REVIEW": 0
+    },
+    "configs_containing_level": {
+      "HIGH": 232,
+      "MEDIUM": 1,
+      "SAFE": 27,
+      "REVIEW": 0
+    },
+    "fetch_or_parse_errors": 1
+  },
+  "records": [
+    {
+      "repo": "13jims13-eng/vtc-app",
+      "path": "vtc-calculateur-de-trajets/.mcp.json",
+      "url": "https://github.com/13jims13-eng/vtc-app/blob/a87176c6e949922b5a6fa3ef7df72289ad6d5833/vtc-calculateur-de-trajets/.mcp.json",
+      "findings": [
+        {
+          "package": "@shopify/dev-mcp",
+          "selector": "latest",
+          "level": "HIGH",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "1Herman1/Friday-claude",
+      "path": ".mcp.json",
+      "url": "https://github.com/1Herman1/Friday-claude/blob/e5beb2ad2df02a07d5604634ff7e032c6f842f37/.mcp.json",
+      "findings": [
+        {
+          "package": "tsx",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": false
+        }
+      ]
+    },
+    {
+      "repo": "8beeeaaat/touchdesigner-mcp",
+      "path": "plugins/touchdesigner/.mcp.json",
+      "url": "https://github.com/8beeeaaat/touchdesigner-mcp/blob/1ecf08acd887ff5e69950f0a4222b3acce2c9e9e/plugins/touchdesigner/.mcp.json",
+      "findings": [
+        {
+          "package": "touchdesigner-mcp-server",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "aaravjj2/TechBuddy",
+      "path": ".mcp.json",
+      "url": "https://github.com/aaravjj2/TechBuddy/blob/11c127e5d91ab7a089d981a558f364f04289842e/.mcp.json",
+      "findings": [
+        {
+          "package": "@anthropic-ai/mcp-playwright",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": false
+        },
+        {
+          "package": "@modelcontextprotocol/server-github",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": false
+        }
+      ]
+    },
+    {
+      "repo": "absolute-aungkomyint/athapyar-htote-web",
+      "path": ".mcp.json",
+      "url": "https://github.com/absolute-aungkomyint/athapyar-htote-web/blob/e88a948ecb404cc5de76984eb1b902b7f119dc29/.mcp.json",
+      "findings": [
+        {
+          "package": "@modelcontextprotocol/server-filesystem",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        },
+        {
+          "package": "@modelcontextprotocol/server-sqlite",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "adamayoung/TMDb",
+      "path": ".mcp.json",
+      "url": "https://github.com/adamayoung/TMDb/blob/851bba3fe88d1b53bd67fa8cc7c2615070341564/.mcp.json",
+      "findings": [
+        {
+          "package": "@adamayoung/mcp-server-tmdb",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "ademceper/merge",
+      "path": "server/.mcp.json",
+      "url": "https://github.com/ademceper/merge/blob/a1426a7828724ed286ee62f4bea4db517edc5aa1/server/.mcp.json",
+      "findings": [
+        {
+          "package": "@modelcontextprotocol/server-fetch",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        },
+        {
+          "package": "@modelcontextprotocol/server-filesystem",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        },
+        {
+          "package": "@modelcontextprotocol/server-github",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        },
+        {
+          "package": "@modelcontextprotocol/server-memory",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        },
+        {
+          "package": "@modelcontextprotocol/server-postgres",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        },
+        {
+          "package": "@modelcontextprotocol/server-sequential-thinking",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "ADRs4AI/human-ai-collaboration-template-A",
+      "path": ".mcp.json",
+      "url": "https://github.com/ADRs4AI/human-ai-collaboration-template-A/blob/c4e4ddc37ce34d996c003f6b3dbac9252b59320f/.mcp.json",
+      "findings": [
+        {
+          "package": "@playwright/mcp",
+          "selector": "latest",
+          "level": "HIGH",
+          "auto_yes": false
+        }
+      ]
+    },
+    {
+      "repo": "agustincf/Arcade1v1",
+      "path": ".mcp.json",
+      "url": "https://github.com/agustincf/Arcade1v1/blob/f2ebbbbeb1bbe2af8488a0e7853317c34da27e94/.mcp.json",
+      "findings": [
+        {
+          "package": "tsx",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "alessiobacin/llmProxy",
+      "path": ".mcp.json",
+      "url": "https://github.com/alessiobacin/llmProxy/blob/333eae29ae9583e2ac6de59206d31aac7a1d70f7/.mcp.json",
+      "findings": [
+        {
+          "package": "chrome-devtools-mcp",
+          "selector": "latest",
+          "level": "HIGH",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "AlexTo/py-agent-session-manager",
+      "path": ".mcp.json",
+      "url": "https://github.com/AlexTo/py-agent-session-manager/blob/862d1205813b6130d68150256048ada9ebcb1117/.mcp.json",
+      "findings": [
+        {
+          "package": "@aws/nx-plugin-mcp",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "AlexTo/test-ts-agent-session",
+      "path": ".mcp.json",
+      "url": "https://github.com/AlexTo/test-ts-agent-session/blob/3d8deb03da4f874836d111e71e1deef3acd253c1/.mcp.json",
+      "findings": [
+        {
+          "package": "@aws/nx-plugin-mcp",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "AlexTo/wattle-lms",
+      "path": ".mcp.json",
+      "url": "https://github.com/AlexTo/wattle-lms/blob/b8ed5837ebb43570eec0b79a00be2d7c4aed8fcb/.mcp.json",
+      "findings": [
+        {
+          "package": "@aws/nx-plugin-mcp",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "algaworks/curso-especialista-microsservicos-nivel-11",
+      "path": ".mcp.json",
+      "url": "https://github.com/algaworks/curso-especialista-microsservicos-nivel-11/blob/dc7838827e05cad290f6d8e546833a06fb0c3cc5/.mcp.json",
+      "findings": [
+        {
+          "package": "@opentofu/opentofu-mcp-server",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "AmadeusITGroup/otter",
+      "path": "tools/llm/plugins/otter/.mcp.json",
+      "url": "https://github.com/AmadeusITGroup/otter/blob/a2cda21431765a24755f1eaf75135773fe245355/tools/llm/plugins/otter/.mcp.json",
+      "findings": [
+        {
+          "package": "@angular/cli",
+          "selector": "^22.0.0",
+          "level": "MEDIUM",
+          "auto_yes": true
+        },
+        {
+          "package": "@o3r/mcp",
+          "selector": "^15.0.0",
+          "level": "MEDIUM",
+          "auto_yes": true
+        },
+        {
+          "package": "@playwright/mcp",
+          "selector": "~0.0.79",
+          "level": "MEDIUM",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "ankit307/datascrap-wemakedev",
+      "path": ".mcp.json",
+      "url": "https://github.com/ankit307/datascrap-wemakedev/blob/d694de8335c5f11cc41db2c106b5a4e45835bb1f/.mcp.json",
+      "findings": [
+        {
+          "package": "tsx",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": false
+        }
+      ]
+    },
+    {
+      "repo": "anytime-trial/anytime-markdown",
+      "path": ".mcp.json",
+      "url": "https://github.com/anytime-trial/anytime-markdown/blob/b6adc2ea80711708b9828080b3481430de885eb6/.mcp.json",
+      "findings": [
+        {
+          "package": "@playwright/mcp",
+          "selector": "latest",
+          "level": "HIGH",
+          "auto_yes": false
+        },
+        {
+          "package": "tsx",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": false
+        },
+        {
+          "package": "tsx",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": false
+        },
+        {
+          "package": "tsx",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": false
+        },
+        {
+          "package": "tsx",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": false
+        },
+        {
+          "package": "tsx",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": false
+        }
+      ]
+    },
+    {
+      "repo": "Archive228/loopkit",
+      "path": ".mcp.json",
+      "url": "https://github.com/Archive228/loopkit/blob/5ae033e63e698bc7cedacdea1483d8af677f52e1/.mcp.json",
+      "findings": [
+        {
+          "package": "@modelcontextprotocol/server-github",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        },
+        {
+          "package": "@upstash/context7-mcp",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "Ard2p/sk-bar-site",
+      "path": ".mcp.json",
+      "url": "https://github.com/Ard2p/sk-bar-site/blob/9bc86bf528891e87e42df7b73a46acfa93105add/.mcp.json",
+      "findings": [
+        {
+          "package": "@modelcontextprotocol/server-filesystem",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        },
+        {
+          "package": "@playwright/mcp",
+          "selector": "latest",
+          "level": "HIGH",
+          "auto_yes": true
+        },
+        {
+          "package": "chrome-devtools-mcp",
+          "selector": "latest",
+          "level": "HIGH",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "ashugaev/GooseInvestAlertBot",
+      "path": ".mcp.json",
+      "url": "https://github.com/ashugaev/GooseInvestAlertBot/blob/59b0b6d22c61afa9e2dd12e3f3afa504ee7903d1/.mcp.json",
+      "findings": [
+        {
+          "package": "@digitalocean/mcp",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "Automattic/wp-calypso",
+      "path": ".mcp.json",
+      "url": "https://github.com/Automattic/wp-calypso/blob/f88ffeba7b3c807c0360f742c1de969dc54e104b/.mcp.json",
+      "findings": [
+        {
+          "package": "playwright",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": false
+        }
+      ]
+    },
+    {
+      "repo": "awslabs/nx-plugin-for-aws",
+      "path": ".mcp.json",
+      "url": "https://github.com/awslabs/nx-plugin-for-aws/blob/552b70a92716ed59846773a759714beeeccedf57/.mcp.json",
+      "findings": [
+        {
+          "package": "@aws/nx-plugin-mcp",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "Azumizeus/PromptDeck",
+      "path": "skill/skills/lightprotocol-skills/.mcp.json",
+      "url": "https://github.com/Azumizeus/PromptDeck/blob/78a84a79e4eb2959da9791507604cf0dc49673ae/skill/skills/lightprotocol-skills/.mcp.json",
+      "findings": [
+        {
+          "package": "mcp-remote",
+          "selector": "latest",
+          "level": "HIGH",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "babually/bongo-template",
+      "path": ".mcp.json",
+      "url": "https://github.com/babually/bongo-template/blob/3c6aaa2aadeea0f3d31e428cfa69b36019b8585d/.mcp.json",
+      "findings": [
+        {
+          "package": "@upstash/context7-mcp",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "Bato21/KimunKo",
+      "path": ".mcp.json",
+      "url": "https://github.com/Bato21/KimunKo/blob/19eaca07ecb9e2b032d994e14d0735fb861a2357/.mcp.json",
+      "findings": [
+        {
+          "package": "chrome-devtools-mcp",
+          "selector": "latest",
+          "level": "HIGH",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "BenjaminBini/dotfiles",
+      "path": ".mcp.json",
+      "url": "https://github.com/BenjaminBini/dotfiles/blob/36178608df02581633a09678ce4a91208ef0ef4d/.mcp.json",
+      "findings": [
+        {
+          "package": "@playwright/mcp",
+          "selector": "latest",
+          "level": "HIGH",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "BiscuitNick/chess-puzzle",
+      "path": ".mcp.json",
+      "url": "https://github.com/BiscuitNick/chess-puzzle/blob/2e81b40a6d533d92f5ebd6768ae14eaa2b0a6f16/.mcp.json",
+      "findings": [
+        {
+          "package": "task-master-ai",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "bitfoundation/bit-templates-playground",
+      "path": ".mcp.json",
+      "url": "https://github.com/bitfoundation/bit-templates-playground/blob/8492131c64d98fd3592b37ab06180f3d4bbcb245/.mcp.json",
+      "findings": [
+        {
+          "package": "@playwright/mcp",
+          "selector": "latest",
+          "level": "HIGH",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "bitrise-io/bitrise-workflow-editor",
+      "path": ".mcp.json",
+      "url": "https://github.com/bitrise-io/bitrise-workflow-editor/blob/b2f39829cb48fd3317b87cae622d8f8d0ca9eed2/.mcp.json",
+      "findings": [
+        {
+          "package": "@chakra-ui/react-mcp",
+          "selector": "2.1.1",
+          "level": "SAFE",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "bluelibs/runner",
+      "path": "examples/fastify-mikroorm/.mcp.json",
+      "url": "https://github.com/bluelibs/runner/blob/b8c7dae5fdc1dfbfe5499dc2c9bf4105cb23a1d7/examples/fastify-mikroorm/.mcp.json",
+      "findings": [
+        {
+          "package": "@bluelibs/runner-dev",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": false
+        }
+      ]
+    },
+    {
+      "repo": "BoJack90/Ada",
+      "path": ".mcp.json",
+      "url": "https://github.com/BoJack90/Ada/blob/128614cec6412c202009364c2eeb7c3385120c55/.mcp.json",
+      "findings": [
+        {
+          "package": "@modelcontextprotocol/server-filesystem",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": false
+        }
+      ]
+    },
+    {
+      "repo": "BoJack90/Ada2.0",
+      "path": ".mcp.json",
+      "url": "https://github.com/BoJack90/Ada2.0/blob/a1092e3cd0d9c4fd8cb41cb2bdaf4d20b5b23db3/.mcp.json",
+      "findings": [
+        {
+          "package": "@modelcontextprotocol/server-filesystem",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": false
+        }
+      ]
+    },
+    {
+      "repo": "BonTrack/BonTrack",
+      "path": ".mcp.json",
+      "url": "https://github.com/BonTrack/BonTrack/blob/1a5b322fb3265c1c16fb26fab2c1d3a7e50f0d19/.mcp.json",
+      "findings": [
+        {
+          "package": "@playwright/mcp",
+          "selector": "latest",
+          "level": "HIGH",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "brandon-fryslie/oscilla-animator-v2",
+      "path": ".mcp.json",
+      "url": "https://github.com/brandon-fryslie/oscilla-animator-v2/blob/c1f6041d0e8c79d3073cb96be65ed42d4d2d197e/.mcp.json",
+      "findings": [
+        {
+          "package": "chrome-devtools-mcp",
+          "selector": "latest",
+          "level": "HIGH",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "brandstaetter/haushaltsauktion",
+      "path": ".planning/_templates/.mcp.json",
+      "url": "https://github.com/brandstaetter/haushaltsauktion/blob/a8a2b2944139b594761a4127a187a696545e2588/.planning/_templates/.mcp.json",
+      "findings": [
+        {
+          "package": "@modelcontextprotocol/server-filesystem",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        },
+        {
+          "package": "@modelcontextprotocol/server-github",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "brixtonpham/claude-config",
+      "path": ".mcp.json",
+      "url": "https://github.com/brixtonpham/claude-config/blob/05d468f7e232e5e37bd37a2de04ea6ff23fa90d6/.mcp.json",
+      "findings": [
+        {
+          "package": "@upstash/context7-mcp",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "BuilderIO/agent-native",
+      "path": "community-templates/win-loss-memo/.mcp.json",
+      "url": "https://github.com/BuilderIO/agent-native/blob/7e1176bacc50d15d8af7042de7a668a1a5026704/community-templates/win-loss-memo/.mcp.json",
+      "findings": [
+        {
+          "package": "shadcn",
+          "selector": "latest",
+          "level": "HIGH",
+          "auto_yes": false
+        }
+      ]
+    },
+    {
+      "repo": "candoumbe/MedEasy",
+      "path": ".mcp.json",
+      "url": "https://github.com/candoumbe/MedEasy/blob/4c158f2350de0a2d1519c0b0445cfc0a3a48c4c0/.mcp.json",
+      "findings": [
+        {
+          "package": "@bradygaster/squad-cli",
+          "selector": "0.13.1",
+          "level": "SAFE",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "candoumbe/Queries",
+      "path": ".mcp.json",
+      "url": "https://github.com/candoumbe/Queries/blob/f8cba94ac30e4da3391f36b10c34bd3cc9163494/.mcp.json",
+      "findings": [
+        {
+          "package": "@bradygaster/squad-cli",
+          "selector": "0.13.1",
+          "level": "SAFE",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "carmonalanzasalvaro/afn-web",
+      "path": ".mcp.json",
+      "url": "https://github.com/carmonalanzasalvaro/afn-web/blob/83bbb0961d30380283453ada613fab3e295a15ee/.mcp.json",
+      "findings": [
+        {
+          "package": "@playwright/mcp",
+          "selector": "latest",
+          "level": "HIGH",
+          "auto_yes": false
+        },
+        {
+          "package": "chrome-devtools-mcp",
+          "selector": "latest",
+          "level": "HIGH",
+          "auto_yes": false
+        }
+      ]
+    },
+    {
+      "repo": "cfogelklou/looPPT",
+      "path": ".mcp.json",
+      "url": "https://github.com/cfogelklou/looPPT/blob/15ae42b31f785e67a43b20987624065c91e73607/.mcp.json",
+      "findings": [
+        {
+          "package": "@playwright/mcp",
+          "selector": "latest",
+          "level": "HIGH",
+          "auto_yes": false
+        }
+      ]
+    },
+    {
+      "repo": "chanzuckerberg/single-cell-data-portal",
+      "path": ".mcp.json",
+      "url": "https://github.com/chanzuckerberg/single-cell-data-portal/blob/f41b2a4b1a0916a12767b52f567532b30a808418/.mcp.json",
+      "findings": [
+        {
+          "package": "@czi-sds/mcp",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        },
+        {
+          "package": "@modelcontextprotocol/server-filesystem",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        },
+        {
+          "package": "@modelcontextprotocol/server-github",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        },
+        {
+          "package": "@modelcontextprotocol/server-postgres",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        },
+        {
+          "package": "@playwright/mcp",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        },
+        {
+          "package": "@zeroheight/mcp-server",
+          "selector": "latest",
+          "level": "HIGH",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "chiefspace/Claude-Code-EAI-Beginner-to-Intermediate-Course",
+      "path": "cc-fundamentals-09-validation/.mcp.json",
+      "url": "https://github.com/chiefspace/Claude-Code-EAI-Beginner-to-Intermediate-Course/blob/60eb7bdc7243c69dd30648846f7b441864d4abc1/cc-fundamentals-09-validation/.mcp.json",
+      "findings": [
+        {
+          "package": "@playwright/mcp",
+          "selector": "latest",
+          "level": "HIGH",
+          "auto_yes": false
+        }
+      ]
+    },
+    {
+      "repo": "cirobarone78/openyak",
+      "path": "backend/app/data/plugins/finance/.mcp.json",
+      "url": "https://github.com/cirobarone78/openyak/blob/28962e6277f30d4faeeb57f2f86b79ac8195e2a5/backend/app/data/plugins/finance/.mcp.json",
+      "findings": [
+        {
+          "package": "@softeria/ms-365-mcp-server",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "cloudformingbusiness/Customer-Dashboard",
+      "path": ".mcp.json",
+      "url": "https://github.com/cloudformingbusiness/Customer-Dashboard/blob/a481b7e6421c8ec6cb97ecd5b7ca7c715c53a0ae/.mcp.json",
+      "findings": [
+        {
+          "package": "@anthropic-ai/mcp-server-firecrawl",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        },
+        {
+          "package": "@nicholasleelawson/perplexity-mcp",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        },
+        {
+          "package": "@playwright/mcp",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        },
+        {
+          "package": "@supabase/mcp-server",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        },
+        {
+          "package": "@upstash/context7-mcp",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        },
+        {
+          "package": "n8n-mcp",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "commercetools/merchant-center-application-kit",
+      "path": ".mcp.json",
+      "url": "https://github.com/commercetools/merchant-center-application-kit/blob/6b6fc4df2917f76a199102cd90c01cfbb9a2b845/.mcp.json",
+      "findings": [
+        {
+          "package": "@modelcontextprotocol/server-sequential-thinking",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        },
+        {
+          "package": "@playwright/mcp",
+          "selector": "latest",
+          "level": "HIGH",
+          "auto_yes": false
+        },
+        {
+          "package": "@upstash/context7-mcp",
+          "selector": "latest",
+          "level": "HIGH",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "commercetools/test-data",
+      "path": ".mcp.json",
+      "url": "https://github.com/commercetools/test-data/blob/de60e6527cfdaea044f6fc2400b9588a04600cf2/.mcp.json",
+      "findings": [
+        {
+          "package": "@modelcontextprotocol/server-sequential-thinking",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        },
+        {
+          "package": "@playwright/mcp",
+          "selector": "latest",
+          "level": "HIGH",
+          "auto_yes": false
+        },
+        {
+          "package": "@upstash/context7-mcp",
+          "selector": "latest",
+          "level": "HIGH",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "commercetools/ui-kit",
+      "path": ".mcp.json",
+      "url": "https://github.com/commercetools/ui-kit/blob/62ca335b629de087f574af71869d68cbd3bd004c/.mcp.json",
+      "findings": [
+        {
+          "package": "@modelcontextprotocol/server-sequential-thinking",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        },
+        {
+          "package": "@playwright/mcp",
+          "selector": "latest",
+          "level": "HIGH",
+          "auto_yes": false
+        },
+        {
+          "package": "@upstash/context7-mcp",
+          "selector": "latest",
+          "level": "HIGH",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "Connected-Mate/annotate-kit-ios",
+      "path": ".mcp.json",
+      "url": "https://github.com/Connected-Mate/annotate-kit-ios/blob/3213f8bd405c48079c249cecc1e7b77d7112bee2/.mcp.json",
+      "findings": [
+        {
+          "package": "@connected-mate/annotatekit-mcp",
+          "selector": "0.5.0",
+          "level": "SAFE",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "copyleftdev/smesh-rust",
+      "path": ".mcp.json",
+      "url": "https://github.com/copyleftdev/smesh-rust/blob/ff0a88ba75590957e2e108f99e90135cd4b6de80/.mcp.json",
+      "findings": [
+        {
+          "package": "@modelcontextprotocol/server-brave-search",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        },
+        {
+          "package": "@modelcontextprotocol/server-github",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "Counterwatch/overwolf-app-toolkit",
+      "path": "plugins/console/.mcp.json",
+      "url": "https://github.com/Counterwatch/overwolf-app-toolkit/blob/ac1158dc26dcc8d3956c979418ed7267af24c07b/plugins/console/.mcp.json",
+      "findings": [
+        {
+          "package": "overwolf-console-mcp",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "CrimsonGlory/wairz",
+      "path": ".planning/_templates/.mcp.json",
+      "url": "https://github.com/CrimsonGlory/wairz/blob/41f526d1cf90ced5a2fa68a94e0a4b74e0aa228e/.planning/_templates/.mcp.json",
+      "findings": [
+        {
+          "package": "@modelcontextprotocol/server-filesystem",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        },
+        {
+          "package": "@modelcontextprotocol/server-github",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "Crisiswastaken/vivere-v2",
+      "path": "vivere/.mcp.json",
+      "url": "https://github.com/Crisiswastaken/vivere-v2/blob/e997babfdef72e1c6613090ad376c2ae4b79557f/vivere/.mcp.json",
+      "findings": [
+        {
+          "package": "shadcn",
+          "selector": "latest",
+          "level": "HIGH",
+          "auto_yes": false
+        }
+      ]
+    },
+    {
+      "repo": "ctoforaday/special-circumstances",
+      "path": ".mcp.json",
+      "url": "https://github.com/ctoforaday/special-circumstances/blob/490a022968a0f1aec5449b5eaab117b3815b9e34/.mcp.json",
+      "findings": [
+        {
+          "package": "@sylphx/pdf-reader-mcp",
+          "selector": "3.0.14",
+          "level": "SAFE",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "cultureamp/backstage-cdk-assets-buildkite-plugin",
+      "path": ".mcp.json",
+      "url": "https://github.com/cultureamp/backstage-cdk-assets-buildkite-plugin/blob/387db8372a1b3428c0d38a8a5688cbfede3aa9e7/.mcp.json",
+      "findings": [
+        {
+          "package": "@upstash/context7-mcp",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "cultureamp/example-go-buildkite-plugin",
+      "path": ".mcp.json",
+      "url": "https://github.com/cultureamp/example-go-buildkite-plugin/blob/a026d545ec5d0083e67c243c1cc94ee03cf4dd99/.mcp.json",
+      "findings": [
+        {
+          "package": "@upstash/context7-mcp",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "cultureamp/step-templates-buildkite-plugin",
+      "path": ".mcp.json",
+      "url": "https://github.com/cultureamp/step-templates-buildkite-plugin/blob/cbc06e80d615d32afd79e82f2d63d37a8a5786ad/.mcp.json",
+      "findings": [
+        {
+          "package": "@upstash/context7-mcp",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "daijinma/geo_marketing",
+      "path": ".mcp.json",
+      "url": "https://github.com/daijinma/geo_marketing/blob/bdb4a74646798af7985dcc79a0ff7f5b9791cfe0/.mcp.json",
+      "findings": [
+        {
+          "package": "chrome-devtools-mcp",
+          "selector": "latest",
+          "level": "HIGH",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "damrongsak/star-lab",
+      "path": "examples/frontend/.mcp.json",
+      "url": "https://github.com/damrongsak/star-lab/blob/815207d1d900d7edb6665bda081e474f5712c540/examples/frontend/.mcp.json",
+      "findings": [
+        {
+          "package": "@jpisnice/shadcn-ui-mcp-server",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": false
+        }
+      ]
+    },
+    {
+      "repo": "dance-cmdr/claude_swarm_workflow",
+      "path": "workflow/.mcp.json",
+      "url": "https://github.com/dance-cmdr/claude_swarm_workflow/blob/bf3b56fa89cb619c893bb829b48c73ba3ccdbdc3/workflow/.mcp.json",
+      "findings": [
+        {
+          "package": "@playwright/mcp",
+          "selector": "latest",
+          "level": "HIGH",
+          "auto_yes": false
+        }
+      ]
+    },
+    {
+      "repo": "danielbchurchill/gutenburgerPesto",
+      "path": ".mcp.json",
+      "url": "https://github.com/danielbchurchill/gutenburgerPesto/blob/34b535478483078340414276a47bd5c55ecac467/.mcp.json",
+      "findings": [
+        {
+          "package": "@coding-solo/godot-mcp",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": false
+        }
+      ]
+    },
+    {
+      "repo": "decision-crafters/claude-plugin-adr-analysis",
+      "path": ".mcp.json",
+      "url": "https://github.com/decision-crafters/claude-plugin-adr-analysis/blob/3e416b9cd1793252f3116d19aee847baead010b2/.mcp.json",
+      "findings": [
+        {
+          "package": "mcp-adr-analysis-server",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "decodedcorp/decoded-app",
+      "path": ".mcp.json",
+      "url": "https://github.com/decodedcorp/decoded-app/blob/67128598b10094e1e6e0fe6b716759beef41ea5f/.mcp.json",
+      "findings": [
+        {
+          "package": "@context7/mcp-server",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        },
+        {
+          "package": "@executeautomation/playwright-mcp-server",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        },
+        {
+          "package": "task-master-ai",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "deepklarity/harness-kit",
+      "path": ".mcp.json",
+      "url": "https://github.com/deepklarity/harness-kit/blob/87305cd35cba8e75194a50d6dd301c6dd52a69c9/.mcp.json",
+      "findings": [
+        {
+          "package": "@mobilenext/mobile-mcp",
+          "selector": "latest",
+          "level": "HIGH",
+          "auto_yes": true
+        },
+        {
+          "package": "chrome-devtools-mcp",
+          "selector": "latest",
+          "level": "HIGH",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "derteaser/talk-am-pegel-site",
+      "path": ".mcp.json",
+      "url": "https://github.com/derteaser/talk-am-pegel-site/blob/1ee6c51cf42d3a1f305a3447889abde828959db7/.mcp.json",
+      "findings": [
+        {
+          "package": "@playwright/mcp",
+          "selector": "latest",
+          "level": "HIGH",
+          "auto_yes": false
+        }
+      ]
+    },
+    {
+      "repo": "dev-the-dev-while-deving/rolldeep-lab",
+      "path": ".mcp.json",
+      "url": "https://github.com/dev-the-dev-while-deving/rolldeep-lab/blob/df544a01e6abc5aaaea49806fd57d0d929ac09f0/.mcp.json",
+      "findings": [
+        {
+          "package": "tsx",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": false
+        }
+      ]
+    },
+    {
+      "repo": "DiefBell/boperators",
+      "path": ".mcp.json",
+      "url": "https://github.com/DiefBell/boperators/blob/8b5eaa6b09a25640a4f27c0c5ac23d7bd02c06f3/.mcp.json",
+      "findings": [
+        {
+          "package": "@peakmojo/mcp-openmemory",
+          "selector": "latest",
+          "level": "HIGH",
+          "auto_yes": false
+        }
+      ]
+    },
+    {
+      "repo": "difflabai/marketplace",
+      "path": "plugins/dreamsolve/.mcp.json",
+      "url": "https://github.com/difflabai/marketplace/blob/413eb5c507c6349fa5dd16d29c74c08008d3ea6d/plugins/dreamsolve/.mcp.json",
+      "findings": [
+        {
+          "package": "mcp-remote",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "Ditto190/mcapp-ai-starter",
+      "path": "examples/pdf-server/plugin/.mcp.json",
+      "url": "https://github.com/Ditto190/mcapp-ai-starter/blob/479fb962f8dd8b268360d40132ee3d9fbbdf2c92/examples/pdf-server/plugin/.mcp.json",
+      "findings": [
+        {
+          "package": "@modelcontextprotocol/server-pdf",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": false
+        }
+      ]
+    },
+    {
+      "repo": "dlstudiodev/bb-backend",
+      "path": ".mcp.json",
+      "url": "https://github.com/dlstudiodev/bb-backend/blob/69920db9a783cf0c3a9ee0ae3b3fb18ae34900cf/.mcp.json",
+      "findings": [
+        {
+          "package": "@supabase/mcp-server-supabase",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "dnotitia/akb",
+      "path": "plugins/codex/akb-wiki/.mcp.json",
+      "url": "https://github.com/dnotitia/akb/blob/2f996e30141482027f85b30558b247c5def9db45/plugins/codex/akb-wiki/.mcp.json",
+      "findings": [
+        {
+          "package": "akb-mcp",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": false
+        }
+      ]
+    },
+    {
+      "repo": "dqdq4197/tax-ai",
+      "path": ".mcp.json",
+      "url": "https://github.com/dqdq4197/tax-ai/blob/31686062e4a422f89b953a9d515dd9c934327272/.mcp.json",
+      "findings": [
+        {
+          "package": "shadcn",
+          "selector": "latest",
+          "level": "HIGH",
+          "auto_yes": false
+        }
+      ]
+    },
+    {
+      "repo": "dyzdyz010/ex_mmo_cluster",
+      "path": ".mcp.json",
+      "url": "https://github.com/dyzdyz010/ex_mmo_cluster/blob/d6695e86433b874bedaa0914d462c6d2725e9493/.mcp.json",
+      "findings": [
+        {
+          "package": "@modelcontextprotocol/server-filesystem",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        },
+        {
+          "package": "@playwright/mcp",
+          "selector": "latest",
+          "level": "HIGH",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "eladcandroid/yamcp-ui",
+      "path": ".mcp.json",
+      "url": "https://github.com/eladcandroid/yamcp-ui/blob/62bed2713a27439dfd262da2e9cb9581d6ccddea/.mcp.json",
+      "findings": [
+        {
+          "package": "yamcp",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "enigmatry/entry-angular-building-blocks",
+      "path": ".mcp.json",
+      "url": "https://github.com/enigmatry/entry-angular-building-blocks/blob/4fe5d8fa200afd9c392f7c6545454137480bb19c/.mcp.json",
+      "findings": [
+        {
+          "package": "@azure-devops/mcp",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        },
+        {
+          "package": "@modelcontextprotocol/server-memory",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        },
+        {
+          "package": "@modelcontextprotocol/server-sequential-thinking",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        },
+        {
+          "package": "mcp-remote",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "enigmatry/entry-blueprint",
+      "path": ".mcp.json",
+      "url": "https://github.com/enigmatry/entry-blueprint/blob/ed0f47da367d2d6eb6b20673086c944e29e40133/.mcp.json",
+      "findings": [
+        {
+          "package": "@azure-devops/mcp",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        },
+        {
+          "package": "mcp-remote",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "enigmatry/entry-building-blocks",
+      "path": ".mcp.json",
+      "url": "https://github.com/enigmatry/entry-building-blocks/blob/2c5b1aab63b137f9c8f6f8662a4806aef4a25d1b/.mcp.json",
+      "findings": [
+        {
+          "package": "@azure-devops/mcp",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        },
+        {
+          "package": "mcp-remote",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "Essential-Agentic-Automations-EA2/Claude-Plugins",
+      "path": "finop-advanced-plugin-tutorial/finops-advanced/.mcp.json",
+      "url": "https://github.com/Essential-Agentic-Automations-EA2/Claude-Plugins/blob/e355544d14aee1c72946defb52f7240e51fdd764/finop-advanced-plugin-tutorial/finops-advanced/.mcp.json",
+      "findings": [
+        {
+          "package": "@modelcontextprotocol/server-memory",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "evgenyvinnik/ouij-ai",
+      "path": ".mcp.json",
+      "url": "https://github.com/evgenyvinnik/ouij-ai/blob/37c36003e6550327b836e78c224d9d84bfa22cbc/.mcp.json",
+      "findings": [
+        {
+          "package": "@chromedevtools/mcp",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "faisalanjum/EventTrader",
+      "path": ".mcp.json",
+      "url": "https://github.com/faisalanjum/EventTrader/blob/9618c7836e474694ae54b4ac506cc67eb094bfab/.mcp.json",
+      "findings": [
+        {
+          "package": "@mauricio.wolff/mcp-obsidian",
+          "selector": "latest",
+          "level": "HIGH",
+          "auto_yes": false
+        }
+      ]
+    },
+    {
+      "repo": "famasya/betterhn",
+      "path": ".mcp.json",
+      "url": "https://github.com/famasya/betterhn/blob/a777db665c9e47ae18612364fbfb6a601a6a6cec/.mcp.json",
+      "findings": [
+        {
+          "package": "@browsermcp/mcp",
+          "selector": "latest",
+          "level": "HIGH",
+          "auto_yes": true
+        },
+        {
+          "package": "coderabbitai-mcp",
+          "selector": "latest",
+          "level": "HIGH",
+          "auto_yes": false
+        }
+      ]
+    },
+    {
+      "repo": "fariaotavio12/workestrator",
+      "path": "apps/web/.mcp.json",
+      "url": "https://github.com/fariaotavio12/workestrator/blob/41b0cc345b35e88aead9c52c98b29a28a4038a80/apps/web/.mcp.json",
+      "findings": [
+        {
+          "package": "tsx",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": false
+        }
+      ]
+    },
+    {
+      "repo": "fetinin/cubik",
+      "path": "front/.mcp.json",
+      "url": "https://github.com/fetinin/cubik/blob/8473e511e5e08141c6264d7e30967b929184d8ad/front/.mcp.json",
+      "findings": [
+        {
+          "package": "@sveltejs/mcp",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "floodsung/gongzhonghao_agent_team",
+      "path": "investment_insights/.mcp.json",
+      "url": "https://github.com/floodsung/gongzhonghao_agent_team/blob/a0abca0e076a9bf3fef98973e522ff84f7be980e/investment_insights/.mcp.json",
+      "findings": [
+        {
+          "package": "@playwright/mcp",
+          "selector": "latest",
+          "level": "HIGH",
+          "auto_yes": false
+        }
+      ]
+    },
+    {
+      "repo": "fnnzzz/proof-it-works-agent",
+      "path": ".mcp.json",
+      "url": "https://github.com/fnnzzz/proof-it-works-agent/blob/9fee10ce31018b6819dc62792528baca4ed53398/.mcp.json",
+      "findings": [
+        {
+          "package": "@azure-devops/mcp",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        },
+        {
+          "package": "@playwright/mcp",
+          "selector": "latest",
+          "level": "HIGH",
+          "auto_yes": false
+        }
+      ]
+    },
+    {
+      "repo": "FranGenoa/finops-fabric",
+      "path": "AzureGitHubCostApp/.mcp.json",
+      "url": "https://github.com/FranGenoa/finops-fabric/blob/2d0d42b55ccf62d159b19607d3c486d0990a973b/AzureGitHubCostApp/.mcp.json",
+      "findings": [
+        {
+          "package": "@microsoft/rayfin-mcp",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "FriendsOfShopware/shopmon",
+      "path": ".mcp.json",
+      "url": "https://github.com/FriendsOfShopware/shopmon/blob/0d59c60d84a03f56746c4e8016a0b169226f20a5/.mcp.json",
+      "findings": [
+        {
+          "package": "shadcn-vue",
+          "selector": "latest",
+          "level": "HIGH",
+          "auto_yes": false
+        }
+      ]
+    },
+    {
+      "repo": "ftzi/turbostack",
+      "path": "packages/ui/.mcp.json",
+      "url": "https://github.com/ftzi/turbostack/blob/50c64bb22e590e0bb0e32e3b5b041e56a9db55ea/packages/ui/.mcp.json",
+      "findings": [
+        {
+          "package": "shadcn",
+          "selector": "latest",
+          "level": "HIGH",
+          "auto_yes": false
+        }
+      ]
+    },
+    {
+      "repo": "fwornle/coding",
+      "path": "integrations/.mcp.json",
+      "url": "https://github.com/fwornle/coding/blob/f48c306f39d43ed2aef023f0f1dadab3b4e9ee5e/integrations/.mcp.json",
+      "findings": [
+        {
+          "package": "shadcn",
+          "selector": "latest",
+          "level": "HIGH",
+          "auto_yes": false
+        }
+      ]
+    },
+    {
+      "repo": "fxckcode/discord-rpc-tui",
+      "path": "web/.mcp.json",
+      "url": "https://github.com/fxckcode/discord-rpc-tui/blob/74059ea5d79e0d7e9fa00ad220990d46f24cfff9/web/.mcp.json",
+      "findings": [
+        {
+          "package": "@playwright/mcp",
+          "selector": "latest",
+          "level": "HIGH",
+          "auto_yes": false
+        },
+        {
+          "package": "chrome-devtools-mcp",
+          "selector": "latest",
+          "level": "HIGH",
+          "auto_yes": false
+        },
+        {
+          "package": "shadcn",
+          "selector": "latest",
+          "level": "HIGH",
+          "auto_yes": false
+        }
+      ]
+    },
+    {
+      "repo": "fyuuki0jp/next-hono-template",
+      "path": ".mcp.json",
+      "url": "https://github.com/fyuuki0jp/next-hono-template/blob/001021afcf14a73f218cc89a3849930ffb7df976/.mcp.json",
+      "findings": [
+        {
+          "package": "@upstash/context7-mcp",
+          "selector": "latest",
+          "level": "HIGH",
+          "auto_yes": true
+        },
+        {
+          "package": "next-devtools-mcp",
+          "selector": "latest",
+          "level": "HIGH",
+          "auto_yes": true
+        },
+        {
+          "package": "shadcn",
+          "selector": "latest",
+          "level": "HIGH",
+          "auto_yes": false
+        }
+      ]
+    },
+    {
+      "repo": "Gsouzabd/venturize-hotelaria",
+      "path": ".mcp.json",
+      "url": "https://github.com/Gsouzabd/venturize-hotelaria/blob/2948e909892ac9427b65271877bf07a6e4a582a1/.mcp.json",
+      "findings": [
+        {
+          "package": "@upstash/context7-mcp",
+          "selector": "latest",
+          "level": "HIGH",
+          "auto_yes": true
+        },
+        {
+          "package": "hostinger-api-mcp",
+          "selector": "latest",
+          "level": "HIGH",
+          "auto_yes": false
+        }
+      ]
+    },
+    {
+      "repo": "guimatheus92/mcp-video-analyzer",
+      "path": ".mcp.json",
+      "url": "https://github.com/guimatheus92/mcp-video-analyzer/blob/32973fa066b8071ea5fa708816d0b57ffdab0e66/.mcp.json",
+      "findings": [
+        {
+          "package": "mcp-video-analyzer",
+          "selector": "latest",
+          "level": "HIGH",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "hackersandwizards/agentic-engineering-training-nextjs",
+      "path": ".mcp.json",
+      "url": "https://github.com/hackersandwizards/agentic-engineering-training-nextjs/blob/8efa84f924212ff1f42c377922b677ad5b34729b/.mcp.json",
+      "findings": [
+        {
+          "package": "chrome-devtools-mcp",
+          "selector": "latest",
+          "level": "HIGH",
+          "auto_yes": false
+        }
+      ]
+    },
+    {
+      "repo": "HamzaAburaneh/inventory-final",
+      "path": ".mcp.json",
+      "url": "https://github.com/HamzaAburaneh/inventory-final/blob/3f2fc609c1e14733ee99d17213ae2dd755eaee06/.mcp.json",
+      "findings": [
+        {
+          "package": "@sveltejs/mcp",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "harshsondhi/code-along-claudetestexamples",
+      "path": ".mcp.json",
+      "url": "https://github.com/harshsondhi/code-along-claudetestexamples/blob/331d4ae14fbf857323994064eadf40833467355a/.mcp.json",
+      "findings": [
+        {
+          "package": "@modelcontextprotocol/server-filesystem",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "hasegawa-101/chihaya-ui",
+      "path": ".mcp.json",
+      "url": "https://github.com/hasegawa-101/chihaya-ui/blob/41c96734850ca637b24160958c065e0efba92ce9/.mcp.json",
+      "findings": [
+        {
+          "package": "@upstash/context7-mcp",
+          "selector": "latest",
+          "level": "HIGH",
+          "auto_yes": true
+        },
+        {
+          "package": "chrome-devtools-mcp",
+          "selector": "latest",
+          "level": "HIGH",
+          "auto_yes": false
+        },
+        {
+          "package": "next-devtools-mcp",
+          "selector": "latest",
+          "level": "HIGH",
+          "auto_yes": true
+        },
+        {
+          "package": "playwright-mcp",
+          "selector": "latest",
+          "level": "HIGH",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "Home-Inspectors-Network/INM",
+      "path": ".mcp.json",
+      "url": "https://github.com/Home-Inspectors-Network/INM/blob/f1c5a6ddf51c68ac2125bc7f0b092d3e129cb99e/.mcp.json",
+      "findings": [
+        {
+          "package": "@supabase/mcp-server-supabase",
+          "selector": "latest",
+          "level": "HIGH",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "huangjia2019/claude-code-engineering",
+      "path": "07-MCP/projects/01-basic-config/.mcp.json",
+      "url": "https://github.com/huangjia2019/claude-code-engineering/blob/89fea03bf9d577c608bce49c66d942996e801b19/07-MCP/projects/01-basic-config/.mcp.json",
+      "findings": [
+        {
+          "package": "@modelcontextprotocol/server-filesystem",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": false
+        },
+        {
+          "package": "@modelcontextprotocol/server-memory",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": false
+        },
+        {
+          "package": "@upstash/context7-mcp",
+          "selector": "latest",
+          "level": "HIGH",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "hzrd149/nostrudel",
+      "path": ".mcp.json",
+      "url": "https://github.com/hzrd149/nostrudel/blob/38f0eb9f6d9b4212910fecdff445f7a1a16e3349/.mcp.json",
+      "findings": [
+        {
+          "package": "@nostrbook/mcp",
+          "selector": "latest",
+          "level": "HIGH",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "iannn07/gunawan-agents",
+      "path": "webapp-gunawan/.gunawan/.mcp.json",
+      "url": "https://github.com/iannn07/gunawan-agents/blob/c28dff4889cdb927c5a86520c84e0fc3e7e586e5/webapp-gunawan/.gunawan/.mcp.json",
+      "findings": [
+        {
+          "package": "@playwright/mcp",
+          "selector": "latest",
+          "level": "HIGH",
+          "auto_yes": true
+        },
+        {
+          "package": "@sentry/mcp-server",
+          "selector": "latest",
+          "level": "HIGH",
+          "auto_yes": true
+        },
+        {
+          "package": "@supabase/mcp-server-supabase",
+          "selector": "latest",
+          "level": "HIGH",
+          "auto_yes": true
+        },
+        {
+          "package": "@upstash/context7-mcp",
+          "selector": "latest",
+          "level": "HIGH",
+          "auto_yes": true
+        },
+        {
+          "package": "figma-mcp",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "IgorGanapolsky/ThumbGate",
+      "path": "plugins/claude-codex-bridge/.mcp.json",
+      "url": "https://github.com/IgorGanapolsky/ThumbGate/blob/1e3849239836e11ad516b512b123b4c0011961ff/plugins/claude-codex-bridge/.mcp.json",
+      "findings": [
+        {
+          "package": "thumbgate",
+          "selector": "1.37.3",
+          "level": "SAFE",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "IgorGanapolsky/trading",
+      "path": ".mcp.json",
+      "url": "https://github.com/IgorGanapolsky/trading/blob/ab8d7d404e0b19e439754dceb1007b0616f5b8fc/.mcp.json",
+      "findings": [
+        {
+          "package": "thumbgate",
+          "selector": "1.5.0",
+          "level": "SAFE",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "imboy-pub/imboy",
+      "path": ".mcp.json",
+      "url": "https://github.com/imboy-pub/imboy/blob/deca5423ef245f50a06865618f26fb21d51595bf/.mcp.json",
+      "findings": [
+        {
+          "package": "@neverinfamous/postgres-mcp",
+          "selector": "3.1.0",
+          "level": "SAFE",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "Inf1n1tyDeS0ul/oneinfinity",
+      "path": ".mcp.json",
+      "url": "https://github.com/Inf1n1tyDeS0ul/oneinfinity/blob/bd9ed41bc56787d4b28c2ed3a3bfede8759d7466/.mcp.json",
+      "findings": [
+        {
+          "package": "@playwright/mcp",
+          "selector": "latest",
+          "level": "HIGH",
+          "auto_yes": false
+        }
+      ]
+    },
+    {
+      "repo": "initialencounter/2022-12-24",
+      "path": ".mcp.json",
+      "url": "https://github.com/initialencounter/2022-12-24/blob/afe16c812aa2337c600ea12b5ce907ab1a843b11/.mcp.json",
+      "findings": [
+        {
+          "package": "@github/mcp-server-mcp",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "initred/laravel-react-starter-kit",
+      "path": ".mcp.json",
+      "url": "https://github.com/initred/laravel-react-starter-kit/blob/542273ffa167277a0f55f1ed0603addee662173d/.mcp.json",
+      "findings": [
+        {
+          "package": "shadcn",
+          "selector": "latest",
+          "level": "HIGH",
+          "auto_yes": false
+        }
+      ]
+    },
+    {
+      "repo": "Insik-Han/han-monorepo-template",
+      "path": ".mcp.json",
+      "url": "https://github.com/Insik-Han/han-monorepo-template/blob/97dd13e0dedb880e093e370867ed705936613e63/.mcp.json",
+      "findings": [
+        {
+          "package": "@upstash/context7-mcp",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "jaem1n207/bendd",
+      "path": ".mcp.json",
+      "url": "https://github.com/jaem1n207/bendd/blob/373e10306e93c809e0bb504e998d0350cd399a39/.mcp.json",
+      "findings": [
+        {
+          "package": "@modelcontextprotocol/server-sequential-thinking",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        },
+        {
+          "package": "@upstash/context7-mcp",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        },
+        {
+          "package": "shadcn",
+          "selector": "latest",
+          "level": "HIGH",
+          "auto_yes": false
+        }
+      ]
+    },
+    {
+      "repo": "Jaemnani/lotto645",
+      "path": ".mcp.json",
+      "url": "https://github.com/Jaemnani/lotto645/blob/ecbfad81a398ad2cc077db275bec420382a3fda8/.mcp.json",
+      "findings": [
+        {
+          "package": "@supabase/mcp-server-supabase",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "jamyl/socle",
+      "path": "modules/stack-laravel/.mcp.json",
+      "url": "https://github.com/jamyl/socle/blob/611f1ab946a35701567ef0dc93ebbfdee074e14c/modules/stack-laravel/.mcp.json",
+      "findings": [
+        {
+          "package": "@upstash/context7-mcp",
+          "selector": "4.0.5",
+          "level": "SAFE",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "Javelin-Stripe-app/javelin-test",
+      "path": ".mcp.json",
+      "url": "https://github.com/Javelin-Stripe-app/javelin-test/blob/d4ce76531810633aba581c91d4a184cc2e57520c/.mcp.json",
+      "findings": [
+        {
+          "package": "@upstreamapi/context7-mcp",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "jerstadgeirivar-gmail/talk-to-me",
+      "path": ".mcp.json",
+      "url": "https://github.com/jerstadgeirivar-gmail/talk-to-me/blob/0d599efb41de8b0254ae3d2afec9cc71e47be464/.mcp.json",
+      "findings": [
+        {
+          "package": "@bradygaster/squad-cli",
+          "selector": "0.13.1",
+          "level": "SAFE",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "jiayaoqijia/altcode",
+      "path": ".mcp.json",
+      "url": "https://github.com/jiayaoqijia/altcode/blob/eade21260a6f6aa9dd47666b6b5b8ee5f9b401b0/.mcp.json",
+      "findings": [
+        {
+          "package": "@playwright/mcp",
+          "selector": "latest",
+          "level": "HIGH",
+          "auto_yes": false
+        },
+        {
+          "package": "chrome-devtools-mcp",
+          "selector": "latest",
+          "level": "HIGH",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "jlumbroso/frontier-model-observatory",
+      "path": ".mcp.json",
+      "url": "https://github.com/jlumbroso/frontier-model-observatory/blob/6145a45f88855fb8dc431cacde603ad17bc2846f/.mcp.json",
+      "findings": [
+        {
+          "package": "@playwright/mcp",
+          "selector": "latest",
+          "level": "HIGH",
+          "auto_yes": false
+        }
+      ]
+    },
+    {
+      "repo": "jlumbroso/moreover",
+      "path": ".mcp.json",
+      "url": "https://github.com/jlumbroso/moreover/blob/1df18ddcedd22bccf3d4ebf2953f0e1a685ea459/.mcp.json",
+      "findings": [
+        {
+          "package": "@playwright/mcp",
+          "selector": "latest",
+          "level": "HIGH",
+          "auto_yes": false
+        }
+      ]
+    },
+    {
+      "repo": "jmbish04/core-hassio",
+      "path": ".mcp.json",
+      "url": "https://github.com/jmbish04/core-hassio/blob/86185bfd30e73847e7f999ff88119eea9e3ee62c/.mcp.json",
+      "findings": [
+        {
+          "package": "mcp-remote",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "jmbish04/core-spam-filter",
+      "path": ".mcp.json",
+      "url": "https://github.com/jmbish04/core-spam-filter/blob/6a327f0cc0df782be6dbd61200a030de79fb92cb/.mcp.json",
+      "findings": [
+        {
+          "package": "mcp-remote",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "jmbish04/core-tail",
+      "path": ".mcp.json",
+      "url": "https://github.com/jmbish04/core-tail/blob/d6ca16c4a69d35d550ba1237be3dbce2c3da72fc/.mcp.json",
+      "findings": [
+        {
+          "package": "mcp-remote",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "jmbish04/core-workersai-proxy",
+      "path": ".mcp.json",
+      "url": "https://github.com/jmbish04/core-workersai-proxy/blob/0eaeb1c4e9ee55cabe345116548c84b10d324ba8/.mcp.json",
+      "findings": [
+        {
+          "package": "mcp-remote",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "jmbish04/press",
+      "path": ".mcp.json",
+      "url": "https://github.com/jmbish04/press/blob/3dce52e988586c7ec631bf116dccc88348c4146f/.mcp.json",
+      "findings": [
+        {
+          "package": "mcp-remote",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "jongalloway/GitHubDashboard",
+      "path": ".mcp.json",
+      "url": "https://github.com/jongalloway/GitHubDashboard/blob/b6a5672ed72ed730ea4e54fe26668377964f95c6/.mcp.json",
+      "findings": [
+        {
+          "package": "@bradygaster/squad-cli",
+          "selector": "0.10.0-insider.1",
+          "level": "SAFE",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "jpantsjoha/c4x-vscode-extension",
+      "path": ".mcp.json",
+      "url": "https://github.com/jpantsjoha/c4x-vscode-extension/blob/9093ef35f68104b364420b56fce7d59d2c4d562e/.mcp.json",
+      "findings": [
+        {
+          "package": "@upstash/context7-mcp",
+          "selector": "4.0.5",
+          "level": "SAFE",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "jtuttas/Softwareentwicklung_KI",
+      "path": ".mcp.json",
+      "url": "https://github.com/jtuttas/Softwareentwicklung_KI/blob/d9b766e9aa5228e0c8139d819458fe30c023f61a/.mcp.json",
+      "findings": [
+        {
+          "package": "@playwright/mcp",
+          "selector": "latest",
+          "level": "HIGH",
+          "auto_yes": false
+        }
+      ]
+    },
+    {
+      "repo": "kekekawaii2839/LeagueAkari-CCB",
+      "path": ".mcp.json",
+      "url": "https://github.com/kekekawaii2839/LeagueAkari-CCB/blob/ca68d23a66a5206da2c7797c4aa7d4cea1836a32/.mcp.json",
+      "findings": [
+        {
+          "package": "@playwright/mcp",
+          "selector": "latest",
+          "level": "HIGH",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "kinncj/OhCanada",
+      "path": ".mcp.json",
+      "url": "https://github.com/kinncj/OhCanada/blob/86f931429d04f1d78e7fb97469384f1e8de35b02/.mcp.json",
+      "findings": [
+        {
+          "package": "@playwright/mcp",
+          "selector": "0.0.80",
+          "level": "SAFE",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "KISA-webpage-development-team/KISA-website-client",
+      "path": ".mcp.json",
+      "url": "https://github.com/KISA-webpage-development-team/KISA-website-client/blob/af44cf0a2335706c6878663c2d7ae494d22fec06/.mcp.json",
+      "findings": [
+        {
+          "package": "chrome-devtools-mcp",
+          "selector": "latest",
+          "level": "HIGH",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "Kokbo/ha-mcp-addons",
+      "path": ".mcp.json",
+      "url": "https://github.com/Kokbo/ha-mcp-addons/blob/80924eb08117dadabf67800b9718ef1096c7b762/.mcp.json",
+      "findings": [
+        {
+          "package": "task-master-ai",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "kokiebisu/sumitsugi",
+      "path": ".mcp.json",
+      "url": "https://github.com/kokiebisu/sumitsugi/blob/a81eaae6817adaa49989f2bc629901942233dd6b/.mcp.json",
+      "findings": [
+        {
+          "package": "@modelcontextprotocol/server-filesystem",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        },
+        {
+          "package": "@modelcontextprotocol/server-github",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "Kolossi/ApiDemo",
+      "path": ".mcp.json",
+      "url": "https://github.com/Kolossi/ApiDemo/blob/63e52bfb08c1d112fdd23eaa64c0c0b58a9eab2a/.mcp.json",
+      "findings": [
+        {
+          "package": "task-master-ai",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "koumoul-dev/vuetify-jsonschema-form",
+      "path": ".mcp.json",
+      "url": "https://github.com/koumoul-dev/vuetify-jsonschema-form/blob/5e9667314ea2bf2ecf78048e6484800f0408c63d/.mcp.json",
+      "findings": [
+        {
+          "package": "chrome-devtools-mcp",
+          "selector": "latest",
+          "level": "HIGH",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "krzemienski/claude-code-builder",
+      "path": ".mcp.json",
+      "url": "https://github.com/krzemienski/claude-code-builder/blob/3804a9bdc40921e1dafbd017b3c4e8b54b6664e4/.mcp.json",
+      "findings": [
+        {
+          "package": "@context/mcp",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": false
+        },
+        {
+          "package": "@filesystem/mcp",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": false
+        },
+        {
+          "package": "@git/mcp",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": false
+        },
+        {
+          "package": "@memory/mcp",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": false
+        },
+        {
+          "package": "@sequential-thinking/mcp",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": false
+        }
+      ]
+    },
+    {
+      "repo": "kskwon02/duckdb-tileserver",
+      "path": ".mcp.json",
+      "url": "https://github.com/kskwon02/duckdb-tileserver/blob/dd2ef8916b4367401e5369de84997657fee12cb1/.mcp.json",
+      "findings": [
+        {
+          "package": "@playwright/mcp",
+          "selector": "latest",
+          "level": "HIGH",
+          "auto_yes": false
+        }
+      ]
+    },
+    {
+      "repo": "kupzed/catatz",
+      "path": ".mcp.json",
+      "url": "https://github.com/kupzed/catatz/blob/4e8cad0daab1d2044f738f0840021f6288d26582/.mcp.json",
+      "findings": [
+        {
+          "package": "chrome-devtools-mcp",
+          "selector": "1.2.0",
+          "level": "SAFE",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "kwon416/real-estimate-AI",
+      "path": ".mcp.json",
+      "url": "https://github.com/kwon416/real-estimate-AI/blob/1808770f5a9a4ae900c57fb4ed6798a290686162/.mcp.json",
+      "findings": [
+        {
+          "package": "@executeautomation/playwright-mcp-server",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        },
+        {
+          "package": "@modelcontextprotocol/server-memory",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        },
+        {
+          "package": "@modelcontextprotocol/server-sequential-thinking",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        },
+        {
+          "package": "@upstash/context7-mcp",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "ladaniprem/AetherLive",
+      "path": "apps/web/.mcp.json",
+      "url": "https://github.com/ladaniprem/AetherLive/blob/2a5cec2d93db4257871f95106af59adf5a0d549c/apps/web/.mcp.json",
+      "findings": [
+        {
+          "package": "next-devtools-mcp",
+          "selector": "latest",
+          "level": "HIGH",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "Lavegaa/Dr.Turtle",
+      "path": ".mcp.json",
+      "url": "https://github.com/Lavegaa/Dr.Turtle/blob/8a87e62a65b22cd570c242332b7d6d7db5820e6f/.mcp.json",
+      "findings": [
+        {
+          "package": "@upstash/context7-mcp",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "LeagueAkari/LeagueAkari",
+      "path": ".mcp.json",
+      "url": "https://github.com/LeagueAkari/LeagueAkari/blob/5109b2f7fcce6e02312e534cd1729ed0f2142b51/.mcp.json",
+      "findings": [
+        {
+          "package": "@playwright/mcp",
+          "selector": "latest",
+          "level": "HIGH",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "LETRI113/Crawl_plvn",
+      "path": ".mcp.json",
+      "url": "https://github.com/LETRI113/Crawl_plvn/blob/b4a154f8d994964ca30f5dfb9ff8c9e3f128d6d4/.mcp.json",
+      "findings": [
+        {
+          "package": "@ladybugdb/core",
+          "selector": "0.15.2",
+          "level": "SAFE",
+          "auto_yes": true
+        },
+        {
+          "package": "@modelcontextprotocol/server-filesystem",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        },
+        {
+          "package": "@modelcontextprotocol/server-sequential-thinking",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        },
+        {
+          "package": "@playwright/mcp",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        },
+        {
+          "package": "@upstash/context7-mcp",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        },
+        {
+          "package": "tavily-mcp",
+          "selector": "latest",
+          "level": "HIGH",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "letthink/booster_rl_tasks",
+      "path": ".mcp.json",
+      "url": "https://github.com/letthink/booster_rl_tasks/blob/ce86fa77b0e8dfa4a77301a05f832d1862e12581/.mcp.json",
+      "findings": [
+        {
+          "package": "@playwright/mcp",
+          "selector": "latest",
+          "level": "HIGH",
+          "auto_yes": false
+        }
+      ]
+    },
+    {
+      "repo": "llamadrive/bengo-toolkit",
+      "path": ".mcp.json",
+      "url": "https://github.com/llamadrive/bengo-toolkit/blob/e86b0f1860252653a13a6758a1e471e82bc3b276/.mcp.json",
+      "findings": [
+        {
+          "package": "@agent-format/mcp",
+          "selector": "0.1.9",
+          "level": "SAFE",
+          "auto_yes": true
+        },
+        {
+          "package": "@knorq/docx-mcp-server",
+          "selector": "2.0.0",
+          "level": "SAFE",
+          "auto_yes": true
+        },
+        {
+          "package": "@knorq/xlsx-mcp-server",
+          "selector": "2.0.0",
+          "level": "SAFE",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "loomi-labs/arco",
+      "path": ".mcp.json",
+      "url": "https://github.com/loomi-labs/arco/blob/9f6d18a9d8af1002fd53e1382cd4536b0998f7ad/.mcp.json",
+      "findings": [
+        {
+          "package": "mcp-remote",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "lucaslorentz/durabletask-extensions",
+      "path": ".mcp.json",
+      "url": "https://github.com/lucaslorentz/durabletask-extensions/blob/8f4ee5a6267936ce562f934f591f6d8d5a806553/.mcp.json",
+      "findings": [
+        {
+          "package": "@anthropic-ai/mcp-server-playwright",
+          "selector": "latest",
+          "level": "HIGH",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "madoe21/enigma2-fritzmon",
+      "path": ".mcp.json",
+      "url": "https://github.com/madoe21/enigma2-fritzmon/blob/2a2f0de3a7626d40be53c2bbf369b1fca1af62b0/.mcp.json",
+      "findings": [
+        {
+          "package": "@modelcontextprotocol/server-filesystem",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        },
+        {
+          "package": "@upstash/context7-mcp",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        },
+        {
+          "package": "task-master-ai",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "madoe21/windows-provisioning",
+      "path": ".mcp.json",
+      "url": "https://github.com/madoe21/windows-provisioning/blob/0195ef83abead4c71f63ac99447305650528cb4f/.mcp.json",
+      "findings": [
+        {
+          "package": "@modelcontextprotocol/server-filesystem",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        },
+        {
+          "package": "@upstash/context7-mcp",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        },
+        {
+          "package": "task-master-ai",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "makeitfine-org/renovation",
+      "path": ".mcp.json",
+      "url": "https://github.com/makeitfine-org/renovation/blob/f622510d0478c775403b9195777994a7192ca141/.mcp.json",
+      "findings": [
+        {
+          "package": "@modelcontextprotocol/server-postgres",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        },
+        {
+          "package": "mongodb-mcp-server",
+          "selector": "latest",
+          "level": "HIGH",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "malikoliver25/voidprotocol-labs",
+      "path": ".mcp.json",
+      "url": "https://github.com/malikoliver25/voidprotocol-labs/blob/094fead0b9c97b9d73f08e0da1c62d6c81945b1d/.mcp.json",
+      "findings": [
+        {
+          "package": "@playwright/mcp",
+          "selector": "latest",
+          "level": "HIGH",
+          "auto_yes": false
+        }
+      ]
+    },
+    {
+      "repo": "martinvibes/skin-in-the-game",
+      "path": ".mcp.json",
+      "url": "https://github.com/martinvibes/skin-in-the-game/blob/7188a10d242fe323a17678630a86073fa4690dc8/.mcp.json",
+      "findings": [
+        {
+          "package": "tsx",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": false
+        }
+      ]
+    },
+    {
+      "repo": "mashiike/prepalert-agent",
+      "path": "_examples/.mcp.json",
+      "url": "https://github.com/mashiike/prepalert-agent/blob/c81b65e6c68f0a0f63936af1e95bab7f9e5788fd/_examples/.mcp.json",
+      "findings": [
+        {
+          "package": "@mackerel/mcp-server",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "MDGrey33/claude_mind",
+      "path": ".mcp.json",
+      "url": "https://github.com/MDGrey33/claude_mind/blob/303e9b0d30de1ce60fe3f7a6d9d96535d374ef48/.mcp.json",
+      "findings": [
+        {
+          "package": "@playwright/mcp",
+          "selector": "latest",
+          "level": "HIGH",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "Mearman/mcp-wayback-machine",
+      "path": ".mcp.json",
+      "url": "https://github.com/Mearman/mcp-wayback-machine/blob/7432aebb0d5683196f824410a852b103affa4a0c/.mcp.json",
+      "findings": [
+        {
+          "package": "mcp-wayback-machine",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "MeliousAI/cli",
+      "path": "plan/.mcp.json",
+      "url": "https://github.com/MeliousAI/cli/blob/4eb3925bb50cb612d620ed935e15bd162f5fbafa/plan/.mcp.json",
+      "findings": [
+        {
+          "package": "@upstash/context7-mcp",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "mhennemeyer/speccify",
+      "path": ".mcp.json",
+      "url": "https://github.com/mhennemeyer/speccify/blob/5e942587f9494f594e168a08e8eef85433f3c59c/.mcp.json",
+      "findings": [
+        {
+          "package": "@playwright/mcp",
+          "selector": "latest",
+          "level": "HIGH",
+          "auto_yes": false
+        }
+      ]
+    },
+    {
+      "repo": "mhennemeyer/speccify-qa",
+      "path": ".mcp.json",
+      "url": "https://github.com/mhennemeyer/speccify-qa/blob/94e0fe07741e60b2695516725d0b25044f30e864/.mcp.json",
+      "findings": [
+        {
+          "package": "@playwright/mcp",
+          "selector": "latest",
+          "level": "HIGH",
+          "auto_yes": false
+        }
+      ]
+    },
+    {
+      "repo": "miantiao-me/bm.md",
+      "path": ".mcp.json",
+      "url": "https://github.com/miantiao-me/bm.md/blob/2153b5511ca30fd49a3429f07d87cb9fcf6a9ed9/.mcp.json",
+      "findings": [
+        {
+          "package": "lucide-icons-mcp",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        },
+        {
+          "package": "shadcn",
+          "selector": "latest",
+          "level": "HIGH",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "michaelahern/airthings-consumer-mcp",
+      "path": ".mcp.json",
+      "url": "https://github.com/michaelahern/airthings-consumer-mcp/blob/ef5d0649c7b8af6457853598661c8d8a5cb58951/.mcp.json",
+      "findings": [
+        {
+          "package": "airthings-consumer-mcp",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": false
+        }
+      ]
+    },
+    {
+      "repo": "mitchdenny/aspire-templates",
+      "path": "aspire-python/.mcp.json",
+      "url": "https://github.com/mitchdenny/aspire-templates/blob/48d38f8ee236136d3fcca4a7a7d425cc5722cf95/aspire-python/.mcp.json",
+      "findings": [
+        {
+          "package": "@playwright/mcp",
+          "selector": "latest",
+          "level": "HIGH",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "mmvinfo28/cursor-overlay",
+      "path": ".mcp.json",
+      "url": "https://github.com/mmvinfo28/cursor-overlay/blob/b0aac7e9c4722c2a4fe3355c100f37798fc676d7/.mcp.json",
+      "findings": [
+        {
+          "package": "@auth0/auth0-mcp-server",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "Moh-Tayyab/Personal_AI_Employee",
+      "path": ".mcp.json",
+      "url": "https://github.com/Moh-Tayyab/Personal_AI_Employee/blob/6b01d1482e82e42065b7eb1b1f84d5d110f65c9c/.mcp.json",
+      "findings": [
+        {
+          "package": "@anthropic/browser-mcp",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": false
+        }
+      ]
+    },
+    {
+      "repo": "moix197/web_template",
+      "path": ".mcp.json",
+      "url": "https://github.com/moix197/web_template/blob/fd9b8db54bca01f2191b5a8fa5e1e817db13720f/.mcp.json",
+      "findings": [
+        {
+          "package": "shadcn",
+          "selector": "latest",
+          "level": "HIGH",
+          "auto_yes": false
+        },
+        {
+          "package": "tsx",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": false
+        }
+      ]
+    },
+    {
+      "repo": "morinoparty/Chlorophyll",
+      "path": ".mcp.json",
+      "url": "https://github.com/morinoparty/Chlorophyll/blob/0b68cca2462625e10d280b0f1474bb2111bc4cee/.mcp.json",
+      "findings": [
+        {
+          "package": "panda",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": false
+        }
+      ]
+    },
+    {
+      "repo": "muyen/vibe-to-prod",
+      "path": ".mcp.json",
+      "url": "https://github.com/muyen/vibe-to-prod/blob/e375ce92f8308892b8dc7a0a84d0e4c91dc99a65/.mcp.json",
+      "findings": [
+        {
+          "package": "@modelcontextprotocol/server-github",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        },
+        {
+          "package": "@modelcontextprotocol/server-memory",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        },
+        {
+          "package": "@notionhq/notion-mcp-server",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        },
+        {
+          "package": "@pulumi/mcp-server",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        },
+        {
+          "package": "@upstash/context7-mcp",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "n00ki/sveltekit-omakase",
+      "path": ".mcp.json",
+      "url": "https://github.com/n00ki/sveltekit-omakase/blob/5500c035ea27ca6d4e4d851639e3de8c1e32c8af/.mcp.json",
+      "findings": [
+        {
+          "package": "@sveltejs/mcp",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        },
+        {
+          "package": "@upstash/context7-mcp",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "nandoega/nexus",
+      "path": ".mcp.json",
+      "url": "https://github.com/nandoega/nexus/blob/bf027030422d80c4f958fed72901f3604f05084d/.mcp.json",
+      "findings": [
+        {
+          "package": "@modelcontextprotocol/server-filesystem",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        },
+        {
+          "package": "@modelcontextprotocol/server-github",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        },
+        {
+          "package": "@notionhq/notion-mcp-server",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        },
+        {
+          "package": "@supabase/mcp-server-supabase",
+          "selector": "latest",
+          "level": "HIGH",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "neonwatty/tfq",
+      "path": ".mcp.json",
+      "url": "https://github.com/neonwatty/tfq/blob/b47610296630b1b80eb634ebb7641e9f9471cb26/.mcp.json",
+      "findings": [
+        {
+          "package": "@upstash/context7-mcp",
+          "selector": "latest",
+          "level": "HIGH",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "Nethereum/Nethereum",
+      "path": "aspire/appchain/.mcp.json",
+      "url": "https://github.com/Nethereum/Nethereum/blob/d0b2e2234d8a483c9258fd8f9829fda86e5cc45a/aspire/appchain/.mcp.json",
+      "findings": [
+        {
+          "package": "@playwright/mcp",
+          "selector": "latest",
+          "level": "HIGH",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "nexus-xyz/nexus-exchange-skills",
+      "path": ".mcp.json",
+      "url": "https://github.com/nexus-xyz/nexus-exchange-skills/blob/d6399bdfd47e84b59220d8e148387be5348cfcf4/.mcp.json",
+      "findings": [
+        {
+          "package": "@nexus-xyz/exchange-mcp",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "Nickalus12/Loom",
+      "path": "claude/.mcp.json",
+      "url": "https://github.com/Nickalus12/Loom/blob/f5ecd4aeb52d41975696fe2c934a104da657a0d7/claude/.mcp.json",
+      "findings": [
+        {
+          "package": "@upstash/context7-mcp",
+          "selector": "latest",
+          "level": "HIGH",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "nikbrunner/nbr.haus",
+      "path": ".mcp.json",
+      "url": "https://github.com/nikbrunner/nbr.haus/blob/ac289f42c8e6b05b2aca2c4d4c40474e8b7108b8/.mcp.json",
+      "findings": [
+        {
+          "package": "@eslint/mcp",
+          "selector": "latest",
+          "level": "HIGH",
+          "auto_yes": true
+        },
+        {
+          "package": "chrome-devtools-mcp",
+          "selector": "latest",
+          "level": "HIGH",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "nomhiro/MicrosoftFoundry-HostedAgent",
+      "path": ".mcp.json",
+      "url": "https://github.com/nomhiro/MicrosoftFoundry-HostedAgent/blob/8f360647106c690ee0e4850766b165a325a3a2de/.mcp.json",
+      "findings": [
+        {
+          "package": "@playwright/mcp",
+          "selector": "latest",
+          "level": "HIGH",
+          "auto_yes": false
+        },
+        {
+          "package": "chrome-devtools-mcp",
+          "selector": "latest",
+          "level": "HIGH",
+          "auto_yes": true
+        },
+        {
+          "package": "mcp-deepwiki",
+          "selector": "latest",
+          "level": "HIGH",
+          "auto_yes": true
+        },
+        {
+          "package": "mcp-remote",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "nomoory/avatarot",
+      "path": ".mcp.json",
+      "url": "https://github.com/nomoory/avatarot/blob/5854afa0512a52e3c901a363242c97c956c5ab0f/.mcp.json",
+      "findings": [
+        {
+          "package": "@tosspayments/integration-guide-mcp",
+          "selector": "latest",
+          "level": "HIGH",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "Octo-o-o-o/Contexpect",
+      "path": "acceptance/corpus/development/static/inputs/dev__static__codex__0.147.0__cli__macos-27-arm64__mcp-declarations__positive/.mcp.json",
+      "url": "https://github.com/Octo-o-o-o/Contexpect/blob/2ae179f551b43ac3c05234e5294b9b4af9059fed/acceptance/corpus/development/static/inputs/dev__static__codex__0.147.0__cli__macos-27-arm64__mcp-declarations__positive/.mcp.json",
+      "findings": [
+        {
+          "package": "fixture-mcp",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "ODU33104/rive-mcp",
+      "path": "plugin/.mcp.json",
+      "url": "https://github.com/ODU33104/rive-mcp/blob/d44adbbe224e38aacf2caad43c32dc482fc23bf8/plugin/.mcp.json",
+      "findings": [
+        {
+          "package": "rive-mcp-server",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "oneprojectorg/common",
+      "path": ".mcp.json",
+      "url": "https://github.com/oneprojectorg/common/blob/e10a1062708d5d2f9380de758eb3cac6f587daca/.mcp.json",
+      "findings": [
+        {
+          "package": "@playwright/mcp",
+          "selector": "latest",
+          "level": "HIGH",
+          "auto_yes": false
+        }
+      ]
+    },
+    {
+      "repo": "open-agent-security/openaca",
+      "path": "tests/fixtures/repos/sample-plugin-string-mcp/.mcp.json",
+      "url": "https://github.com/open-agent-security/openaca/blob/bea08dbf1e2a68c0d11de76288592262082e0988/tests/fixtures/repos/sample-plugin-string-mcp/.mcp.json",
+      "findings": [
+        {
+          "package": "@example/test-mcp",
+          "selector": "1.0.0",
+          "level": "SAFE",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "opendatahub-io/opendatahub-operator",
+      "path": ".mcp.json",
+      "url": "https://github.com/opendatahub-io/opendatahub-operator/blob/f5c13c6d530fc9908cfdeb37b7e55f447520ff3f/.mcp.json",
+      "findings": [
+        {
+          "package": "kubernetes-mcp-server",
+          "selector": "0.0.63",
+          "level": "SAFE",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "OpenWaggle/OpenWaggle",
+      "path": ".mcp.json",
+      "url": "https://github.com/OpenWaggle/OpenWaggle/blob/d36049777c68720a9237c6a84b115fccd0f4e74a/.mcp.json",
+      "findings": [
+        {
+          "package": "chrome-devtools-mcp",
+          "selector": "latest",
+          "level": "HIGH",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "Orazen/Muster",
+      "path": ".mcp.json",
+      "url": "https://github.com/Orazen/Muster/blob/a615d01481d069d34db9ed58815c088c5d6f2f2d/.mcp.json",
+      "findings": [
+        {
+          "package": "@testsprite/testsprite-mcp",
+          "selector": "latest",
+          "level": "HIGH",
+          "auto_yes": false
+        }
+      ]
+    },
+    {
+      "repo": "oscarnovasf/claude-drupal-plugin",
+      "path": "drupal-global/.mcp.json",
+      "url": "https://github.com/oscarnovasf/claude-drupal-plugin/blob/e0002a0ac34c78ed70cb47464e7ca208cda5c4e0/drupal-global/.mcp.json",
+      "findings": [
+        {
+          "package": "@mauricio.wolff/mcp-obsidian",
+          "selector": "latest",
+          "level": "HIGH",
+          "auto_yes": false
+        },
+        {
+          "package": "@playwright/mcp",
+          "selector": "latest",
+          "level": "HIGH",
+          "auto_yes": true
+        },
+        {
+          "package": "@upstash/context7-mcp",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "oshanz/oshanz.github.io",
+      "path": ".mcp.json",
+      "url": "https://github.com/oshanz/oshanz.github.io/blob/a6f300efa8041b3a5a5efab50358e935afcade67/.mcp.json",
+      "findings": [
+        {
+          "package": "chrome-devtools-mcp",
+          "selector": "1.6.0",
+          "level": "SAFE",
+          "auto_yes": false
+        }
+      ]
+    },
+    {
+      "repo": "otolab/ai-agent-prompts",
+      "path": "coeiro-operator/.mcp.json",
+      "url": "https://github.com/otolab/ai-agent-prompts/blob/ea9ee920b5d829f7a9c7bcea46aa56a3075ca438/coeiro-operator/.mcp.json",
+      "findings": [
+        {
+          "package": "@coeiro-operator/mcp",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "pan-Z2l0aHVi/mono",
+      "path": ".mcp.json",
+      "url": "https://github.com/pan-Z2l0aHVi/mono/blob/b62512c1bc9213e68809280963f8faa345dbe422/.mcp.json",
+      "findings": [
+        {
+          "package": "chrome-devtools-mcp",
+          "selector": "latest",
+          "level": "HIGH",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "peterradzisz/OpenOhMyCodePortable",
+      "path": "skills/microsoft-skills/.github/plugins/azure-skills/.mcp.json",
+      "url": "https://github.com/peterradzisz/OpenOhMyCodePortable/blob/ca96cfd01cff372afa7e335bf730b0efaa7e9f8f/skills/microsoft-skills/.github/plugins/azure-skills/.mcp.json",
+      "findings": [
+        {
+          "package": "@azure/mcp",
+          "selector": "latest",
+          "level": "HIGH",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "PitherGabriel/PuntodeVentaTB",
+      "path": ".mcp.json",
+      "url": "https://github.com/PitherGabriel/PuntodeVentaTB/blob/6a88e0efe8e323944d64fe580566ccc71b375ace/.mcp.json",
+      "findings": [
+        {
+          "package": "@playwright/mcp",
+          "selector": "latest",
+          "level": "HIGH",
+          "auto_yes": false
+        }
+      ]
+    },
+    {
+      "repo": "PlatPlusHub/CRM",
+      "path": ".mcp.json",
+      "url": "https://github.com/PlatPlusHub/CRM/blob/2d428f02f8e0b70910e7fcef44c18ed7ec0998bf/.mcp.json",
+      "findings": [
+        {
+          "package": "@modelcontextprotocol/server-postgres",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        },
+        {
+          "package": "@upstash/context7-mcp",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "pooriaarab/vibedating",
+      "path": ".mcp.json",
+      "url": "https://github.com/pooriaarab/vibedating/blob/f8ebc035bb600c276838aeca8f9b1573195bd7be/.mcp.json",
+      "findings": [
+        {
+          "package": "vibedate",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "raffertyuy/github-copilot-prompts",
+      "path": ".mcp.json",
+      "url": "https://github.com/raffertyuy/github-copilot-prompts/blob/3c991e1e8d9d2a9cd78b60019ba0a6f5983ea885/.mcp.json",
+      "findings": [
+        {
+          "package": "@playwright/mcp",
+          "selector": "latest",
+          "level": "HIGH",
+          "auto_yes": false
+        },
+        {
+          "package": "@upstash/context7-mcp",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "Raheem840/shule",
+      "path": ".mcp.json",
+      "url": "https://github.com/Raheem840/shule/blob/581af42ca255b3ae2a138cfecdab115852e6c417/.mcp.json",
+      "findings": [
+        {
+          "package": "@supabase/mcp-server-supabase",
+          "selector": "latest",
+          "level": "HIGH",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "RayTracingON/CashbackCounter",
+      "path": ".mcp.json",
+      "url": "https://github.com/RayTracingON/CashbackCounter/blob/24af66b42a648048ff88b77e862b2f845edc1c63/.mcp.json",
+      "findings": [
+        {
+          "package": "xcodebuildmcp",
+          "selector": "latest",
+          "level": "HIGH",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "RickMorrison99/AI-Journey",
+      "path": "plugin/oa-ai-journey/.mcp.json",
+      "url": "https://github.com/RickMorrison99/AI-Journey/blob/d6d1373669126fb25c3f5db727f3202c3fd95da6/plugin/oa-ai-journey/.mcp.json",
+      "findings": [
+        {
+          "package": "@modelcontextprotocol/server-fetch",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        },
+        {
+          "package": "@modelcontextprotocol/server-filesystem",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "rishiashar/Personapilot",
+      "path": ".mcp.json",
+      "url": "https://github.com/rishiashar/Personapilot/blob/3e93b511a45676576e8ac2d1fb8211e44bf73099/.mcp.json",
+      "findings": [
+        {
+          "package": "boardui",
+          "selector": "latest",
+          "level": "HIGH",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "rivit-studio/GIR",
+      "path": "plugins/gir-core/.mcp.json",
+      "url": "https://github.com/rivit-studio/GIR/blob/49a2c2edcd247d170004410b856f1dc4451ab2c7/plugins/gir-core/.mcp.json",
+      "findings": [
+        {
+          "package": "@modelcontextprotocol/server-sequential-thinking",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "rudraptpsingh/oversight",
+      "path": ".mcp.json",
+      "url": "https://github.com/rudraptpsingh/oversight/blob/dc2575b0289cf2b1fd4f4cdd114d499cf618b428/.mcp.json",
+      "findings": [
+        {
+          "package": "oversight-mcp",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "salahAit/sujetstore",
+      "path": ".mcp.json",
+      "url": "https://github.com/salahAit/sujetstore/blob/41da8ec3469c1b321302a1c2b9a5ae9e8ce0c950/.mcp.json",
+      "findings": [
+        {
+          "package": "@sveltejs/mcp",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "Sam-SEO-maker/Blog-Refresh-Writer",
+      "path": ".mcp.json",
+      "url": "https://github.com/Sam-SEO-maker/Blog-Refresh-Writer/blob/b9542597214643d2d9dee7925368b8ca65599c79/.mcp.json",
+      "findings": [
+        {
+          "package": "supergateway",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        },
+        {
+          "package": "supergateway",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "sayoun555/anchoriq",
+      "path": ".mcp.json",
+      "url": "https://github.com/sayoun555/anchoriq/blob/1e0f3c827c466381ba9500962cda8f41566501cb/.mcp.json",
+      "findings": [
+        {
+          "package": "@playwright/mcp",
+          "selector": "latest",
+          "level": "HIGH",
+          "auto_yes": false
+        },
+        {
+          "package": "chrome-devtools-mcp",
+          "selector": "latest",
+          "level": "HIGH",
+          "auto_yes": false
+        }
+      ]
+    },
+    {
+      "repo": "sentioxyz/sentio-rust-sdk",
+      "path": ".mcp.json",
+      "url": "https://github.com/sentioxyz/sentio-rust-sdk/blob/96b0665f6db6b198a69dfae581e17e84e85848aa/.mcp.json",
+      "findings": [
+        {
+          "package": "@upstash/context7-mcp",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "SethGammon/Citadel",
+      "path": ".planning/_templates/.mcp.json",
+      "url": "https://github.com/SethGammon/Citadel/blob/83b70fccf37f863d8973602c66c14f056e84dfef/.planning/_templates/.mcp.json",
+      "findings": [
+        {
+          "package": "@modelcontextprotocol/server-filesystem",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        },
+        {
+          "package": "@modelcontextprotocol/server-github",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "seungwonme/prompt-new-mcp",
+      "path": ".mcp.json",
+      "url": "https://github.com/seungwonme/prompt-new-mcp/blob/df33098dfa09ecc1a1d5d8d386022d5d38847705/.mcp.json",
+      "findings": [
+        {
+          "package": "prompt-new-mcp",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": false
+        }
+      ]
+    },
+    {
+      "repo": "sevos/omablog",
+      "path": ".mcp.json",
+      "url": "https://github.com/sevos/omablog/blob/06620b2d816edcb3fe0827fc4491baa123ab5dac/.mcp.json",
+      "findings": [
+        {
+          "package": "chrome-devtools-mcp",
+          "selector": "latest",
+          "level": "HIGH",
+          "auto_yes": false
+        }
+      ]
+    },
+    {
+      "repo": "sh-fk2/whatsnew-lens",
+      "path": ".mcp.json",
+      "url": "https://github.com/sh-fk2/whatsnew-lens/blob/7918fac06b5d1422f577492bb0b1dfe7602a2f2e/.mcp.json",
+      "findings": [
+        {
+          "package": "@aws/nx-plugin-mcp",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "ShSato4JPN/sub-mane",
+      "path": ".mcp.json",
+      "url": "https://github.com/ShSato4JPN/sub-mane/blob/453db45deed5d5d029092f669df26c17b04b8fa7/.mcp.json",
+      "findings": [
+        {
+          "package": "@supabase/mcp-server-supabase",
+          "selector": "latest",
+          "level": "HIGH",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "Shuhaib-Ahamed/agentic-shopping-plugin",
+      "path": ".mcp.json",
+      "url": "https://github.com/Shuhaib-Ahamed/agentic-shopping-plugin/blob/449b52ac8745a640c68ffac85ea52f682af5abc9/.mcp.json",
+      "findings": [
+        {
+          "package": "shadcn",
+          "selector": "latest",
+          "level": "HIGH",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "shwilliamson/stegosource",
+      "path": ".mcp.json",
+      "url": "https://github.com/shwilliamson/stegosource/blob/5872567aa5a22f3829125c5cad878a6117c6c681/.mcp.json",
+      "findings": [
+        {
+          "package": "@playwright/mcp",
+          "selector": "latest",
+          "level": "HIGH",
+          "auto_yes": false
+        }
+      ]
+    },
+    {
+      "repo": "simonbrunou/garde-manger",
+      "path": ".mcp.json",
+      "url": "https://github.com/simonbrunou/garde-manger/blob/103b24e60c3bf63637398f60696eeb5e4ea30669/.mcp.json",
+      "findings": [
+        {
+          "package": "mcp-server-sqlite-npx",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "SiThuTun-mdy/Dr-Note",
+      "path": ".mcp.json",
+      "url": "https://github.com/SiThuTun-mdy/Dr-Note/blob/4a5e772d7f3b95fdddce24d74d00fcca1d95c993/.mcp.json",
+      "findings": [
+        {
+          "package": "@supabase/mcp-server-supabase",
+          "selector": "latest",
+          "level": "HIGH",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "SiThuTun-mdy/fast-order",
+      "path": ".mcp.json",
+      "url": "https://github.com/SiThuTun-mdy/fast-order/blob/8472717b41c2e855b347ebdc34a11e34b0525da7/.mcp.json",
+      "findings": [
+        {
+          "package": "@playwright/mcp",
+          "selector": "latest",
+          "level": "HIGH",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "skolldev/outpost",
+      "path": "ui/.mcp.json",
+      "url": "https://github.com/skolldev/outpost/blob/cf15449a9991b1e0b1779c12a339adbc1a9f813f/ui/.mcp.json",
+      "findings": [
+        {
+          "package": "node ~/.wallaby/mcp",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "slysik/tac-7",
+      "path": ".mcp.json",
+      "url": "https://github.com/slysik/tac-7/blob/74323de33be140ebd22f8ab9ec77da3ee823a6d7/.mcp.json",
+      "findings": [
+        {
+          "package": "@playwright/mcp",
+          "selector": "latest",
+          "level": "HIGH",
+          "auto_yes": false
+        }
+      ]
+    },
+    {
+      "repo": "smorsic/pacwich",
+      "path": ".mcp.json",
+      "url": "https://github.com/smorsic/pacwich/blob/65cb5001d8c909a50efc6fc5c3da43fb4d722d3d/.mcp.json",
+      "findings": [
+        {
+          "package": "pacwich",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": false
+        }
+      ]
+    },
+    {
+      "repo": "solal3105/grandsprojets",
+      "path": ".mcp.json",
+      "url": "https://github.com/solal3105/grandsprojets/blob/e2fcda911de511385819e1152c6afd6a46ac8908/.mcp.json",
+      "findings": [
+        {
+          "package": "suganthan-gsc-mcp",
+          "selector": "2.2.2",
+          "level": "SAFE",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "sonpiaz/evox",
+      "path": ".mcp.json",
+      "url": "https://github.com/sonpiaz/evox/blob/60835be552d417d1ba50976e7c4febee9dc6b385/.mcp.json",
+      "findings": [
+        {
+          "package": "@anthropic/mcp-filesystem",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        },
+        {
+          "package": "@anthropic/mcp-github",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        },
+        {
+          "package": "@anthropic/mcp-memory",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        },
+        {
+          "package": "mcp-remote",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "srac-technologies/rss-aggregator",
+      "path": ".mcp.json",
+      "url": "https://github.com/srac-technologies/rss-aggregator/blob/2c25d71b681cfd32f986b7bb847e825175baeb8e/.mcp.json",
+      "findings": [
+        {
+          "package": "@supabase/mcp-server-supabase",
+          "selector": "latest",
+          "level": "HIGH",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "sshanzel/plex",
+      "path": "plugin/.mcp.json",
+      "url": "https://github.com/sshanzel/plex/blob/a6c9e95a6dc5d30eba9f74aaf1f50285b5f8001d/plugin/.mcp.json",
+      "findings": [
+        {
+          "package": "@sshanzel/plex",
+          "selector": "0.10.0",
+          "level": "SAFE",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "Sultonov-557/dotfiles",
+      "path": ".mcp.json",
+      "url": "https://github.com/Sultonov-557/dotfiles/blob/2d18bd4ecb3e54833b62d3addb9bfd0b40d9f5c3/.mcp.json",
+      "findings": [
+        {
+          "package": "chrome-devtools-mcp",
+          "selector": "1.6.0",
+          "level": "SAFE",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "supercleanse/glass",
+      "path": ".mcp.json",
+      "url": "https://github.com/supercleanse/glass/blob/103a7d0efcc71445d18e126212ef77043de282e0/.mcp.json",
+      "findings": [
+        {
+          "package": "task-master-ai",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "supercleanse/journalizer",
+      "path": ".mcp.json",
+      "url": "https://github.com/supercleanse/journalizer/blob/7fd17731d8d0d3f1872ffe3733ed39fc60d22d4d/.mcp.json",
+      "findings": [
+        {
+          "package": "task-master-ai",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "swigerb/MediaMatch",
+      "path": ".mcp.json",
+      "url": "https://github.com/swigerb/MediaMatch/blob/0e24b0a5d6091df4e3d0eca74fa27b8292a72c32/.mcp.json",
+      "findings": [
+        {
+          "package": "@bradygaster/squad-cli",
+          "selector": "0.13.1",
+          "level": "SAFE",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "swigerb/squad-commerce",
+      "path": ".mcp.json",
+      "url": "https://github.com/swigerb/squad-commerce/blob/845252616a8ade7f3fa2d7161e0024355339581f/.mcp.json",
+      "findings": [
+        {
+          "package": "@bradygaster/squad-cli",
+          "selector": "0.13.1",
+          "level": "SAFE",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "syed-reza98/YessBangla",
+      "path": "yessbgd/.mcp.json",
+      "url": "https://github.com/syed-reza98/YessBangla/blob/891f14b6e8e6a01d405bd51020753bfc47973c20/yessbgd/.mcp.json",
+      "findings": [
+        {
+          "package": "next-devtools-mcp",
+          "selector": "latest",
+          "level": "HIGH",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "syscoin/sys-claude",
+      "path": ".mcp.json",
+      "url": "https://github.com/syscoin/sys-claude/blob/ca28303062014be600230eb3fdb7e1c2c07dec6d/.mcp.json",
+      "findings": [
+        {
+          "package": "@playwright/mcp",
+          "selector": "latest",
+          "level": "HIGH",
+          "auto_yes": true
+        },
+        {
+          "package": "@upstash/context7-mcp",
+          "selector": "latest",
+          "level": "HIGH",
+          "auto_yes": true
+        },
+        {
+          "package": "context-mode",
+          "selector": "latest",
+          "level": "HIGH",
+          "auto_yes": true
+        },
+        {
+          "package": "memsearch-mcp",
+          "selector": "latest",
+          "level": "HIGH",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "tale-project/tale",
+      "path": ".mcp.json",
+      "url": "https://github.com/tale-project/tale/blob/e136cdd3fd0797f639dcca9ba74af9b05dfac784/.mcp.json",
+      "findings": [
+        {
+          "package": "@playwright/mcp",
+          "selector": "latest",
+          "level": "HIGH",
+          "auto_yes": false
+        }
+      ]
+    },
+    {
+      "repo": "tamirdresher/MCS-Squad",
+      "path": ".mcp.json",
+      "url": "https://github.com/tamirdresher/MCS-Squad/blob/c73893f9c0e9b74fd36c9ae32ad73b29d5041d79/.mcp.json",
+      "findings": [
+        {
+          "package": "@bradygaster/squad-cli",
+          "selector": "0.10.0-insider.1",
+          "level": "SAFE",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "Team23-ISIS3510/backend",
+      "path": ".mcp.json",
+      "url": "https://github.com/Team23-ISIS3510/backend/blob/53f7540d8a5798edbbac3fd83a2991dde68cc645/.mcp.json",
+      "findings": [
+        {
+          "package": "shadcn",
+          "selector": "latest",
+          "level": "HIGH",
+          "auto_yes": false
+        }
+      ]
+    },
+    {
+      "repo": "terryso/AutoQA-Agent",
+      "path": ".mcp.json",
+      "url": "https://github.com/terryso/AutoQA-Agent/blob/65086cc2a26ae565ca7dbe7ff4a7e59f4d8024a9/.mcp.json",
+      "findings": [
+        {
+          "package": "@playwright/mcp",
+          "selector": "latest",
+          "level": "HIGH",
+          "auto_yes": false
+        }
+      ]
+    },
+    {
+      "repo": "TetronIO/JIM",
+      "path": ".mcp.json",
+      "url": "https://github.com/TetronIO/JIM/blob/3878bbe5a613c763708c06ee217a418033e441ff/.mcp.json",
+      "findings": [
+        {
+          "package": "@playwright/mcp",
+          "selector": "0.0.82",
+          "level": "SAFE",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "The-Raedical-Co/coding-essentials",
+      "path": "integrations/.mcp.json",
+      "url": "https://github.com/The-Raedical-Co/coding-essentials/blob/77a12ca4ba3d049d8c7cfabe2d861aebaf783109/integrations/.mcp.json",
+      "findings": [
+        {
+          "package": "shadcn",
+          "selector": "latest",
+          "level": "HIGH",
+          "auto_yes": false
+        }
+      ]
+    },
+    {
+      "repo": "therealityreport/toolihan",
+      "path": "plugins/decodo/.mcp.json",
+      "url": "https://github.com/therealityreport/toolihan/blob/0d4efe4c53dc955e75231901336bedf99361ef7c/plugins/decodo/.mcp.json",
+      "findings": [
+        {
+          "package": "@decodo/mcp-server",
+          "selector": "1.2.3",
+          "level": "SAFE",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "tigerowo/infinite-canvas",
+      "path": "canvas-agent/.mcp.json",
+      "url": "https://github.com/tigerowo/infinite-canvas/blob/edd4452cb9b0d93dbb9c1ea5acdea1ee14015800/canvas-agent/.mcp.json",
+      "findings": [
+        {
+          "package": "@tigerowo/canvas-agent",
+          "selector": "latest",
+          "level": "HIGH",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "TimurGajiyev/GreenHouseV2",
+      "path": ".mcp.json",
+      "url": "https://github.com/TimurGajiyev/GreenHouseV2/blob/1e356e72c318a6af48a1e481b7a93a5611cf81e8/.mcp.json",
+      "findings": [
+        {
+          "package": "@playwright/mcp",
+          "selector": "latest",
+          "level": "HIGH",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "tobilg/caddy-duckdb-module",
+      "path": ".mcp.json",
+      "url": "https://github.com/tobilg/caddy-duckdb-module/blob/eec01b22da3d8c09301acbba3437fe855db39e3c/.mcp.json",
+      "findings": [
+        {
+          "package": "@playwright/mcp",
+          "selector": "latest",
+          "level": "HIGH",
+          "auto_yes": false
+        }
+      ]
+    },
+    {
+      "repo": "tobilg/duckdb-tileserver",
+      "path": ".mcp.json",
+      "url": "https://github.com/tobilg/duckdb-tileserver/blob/dd2ef8916b4367401e5369de84997657fee12cb1/.mcp.json",
+      "findings": [
+        {
+          "package": "@playwright/mcp",
+          "selector": "latest",
+          "level": "HIGH",
+          "auto_yes": false
+        }
+      ]
+    },
+    {
+      "repo": "tomishere0712/rcfield-platform",
+      "path": "backend/.mcp.json",
+      "url": "https://github.com/tomishere0712/rcfield-platform/blob/42564319513008a8d96dbaad78bc14173ca95031/backend/.mcp.json",
+      "findings": [
+        {
+          "package": "@colbymchenry/codegraph",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": false
+        }
+      ]
+    },
+    {
+      "repo": "torrfura/svelte-crumbs",
+      "path": ".mcp.json",
+      "url": "https://github.com/torrfura/svelte-crumbs/blob/63bfb53ff256458dbc430e18c9845562724c4c0f/.mcp.json",
+      "findings": [
+        {
+          "package": "sv-mcp",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "totetero/ai_webrtc",
+      "path": ".mcp.json",
+      "url": "https://github.com/totetero/ai_webrtc/blob/859a54ccf3fcefd0fc8473062a394b6a152a5c49/.mcp.json",
+      "findings": [
+        {
+          "package": "@playwright/mcp",
+          "selector": "latest",
+          "level": "HIGH",
+          "auto_yes": false
+        }
+      ]
+    },
+    {
+      "repo": "trelea/palazzo",
+      "path": ".mcp.json",
+      "url": "https://github.com/trelea/palazzo/blob/8cda0ced6d9c1fb6ccbac81c4a7e523b9d63bd4f/.mcp.json",
+      "findings": [
+        {
+          "package": "shadcn",
+          "selector": "latest",
+          "level": "HIGH",
+          "auto_yes": false
+        }
+      ]
+    },
+    {
+      "repo": "trynna-be-nerdy/Auto-Commiter-No-Cost",
+      "path": ".mcp.json",
+      "url": "https://github.com/trynna-be-nerdy/Auto-Commiter-No-Cost/blob/b42dff4f03fbcb7eeb1749ff344da970ecb0d6af/.mcp.json",
+      "findings": [
+        {
+          "package": "task-master-ai",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "trynna-be-nerdy/vtb",
+      "path": ".mcp.json",
+      "url": "https://github.com/trynna-be-nerdy/vtb/blob/ba8cdaa5a8385becbfef752e9edbffe669fff1f6/.mcp.json",
+      "findings": [
+        {
+          "package": "task-master-ai",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "Turlututu-Games/AudioEngineGML",
+      "path": ".mcp.json",
+      "url": "https://github.com/Turlututu-Games/AudioEngineGML/blob/9ff8bd6a2202aca6e98ad6ed2013b9e241a0b226/.mcp.json",
+      "findings": [
+        {
+          "package": "@gamemaker/gm-cli",
+          "selector": "latest",
+          "level": "HIGH",
+          "auto_yes": false
+        }
+      ]
+    },
+    {
+      "repo": "uerax/Animaku",
+      "path": ".mcp.json",
+      "url": "https://github.com/uerax/Animaku/blob/75d5963cb0a5c695211f568d741eea1e9043e339/.mcp.json",
+      "findings": [
+        {
+          "package": "chrome-devtools-mcp",
+          "selector": "latest",
+          "level": "HIGH",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "usrivastava92/gtv-desktop-remote",
+      "path": ".mcp.json",
+      "url": "https://github.com/usrivastava92/gtv-desktop-remote/blob/c86ce41e8970b22a64a99a8fd6bc05a997c26349/.mcp.json",
+      "findings": [
+        {
+          "package": "@robertn702/playwright-mcp-electron",
+          "selector": "latest",
+          "level": "HIGH",
+          "auto_yes": false
+        }
+      ]
+    },
+    {
+      "repo": "VakoWIneClub/vakoClubWebsite",
+      "path": ".mcp.json",
+      "url": "https://github.com/VakoWIneClub/vakoClubWebsite/blob/d00ef2124acdb79750a2a2816a0120494a27fbb7/.mcp.json",
+      "findings": [
+        {
+          "package": "@playwright/mcp",
+          "selector": "latest",
+          "level": "HIGH",
+          "auto_yes": true
+        },
+        {
+          "package": "@supabase/mcp-server-supabase",
+          "selector": "latest",
+          "level": "HIGH",
+          "auto_yes": true
+        },
+        {
+          "package": "hostinger-dns-mcp",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": false
+        },
+        {
+          "package": "hostinger-reach-mcp",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": false
+        }
+      ]
+    },
+    {
+      "repo": "victorlps/fabrica-ia",
+      "path": ".mcp.json",
+      "url": "https://github.com/victorlps/fabrica-ia/blob/8b7397fdea779a25369d11192b35690711639348/.mcp.json",
+      "findings": [
+        {
+          "package": "@modelcontextprotocol/server-filesystem",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        },
+        {
+          "package": "@modelcontextprotocol/server-postgres",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        },
+        {
+          "package": "mcp-server-commands",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": false
+        }
+      ]
+    },
+    {
+      "repo": "Vishwajeetsrk/JARVIS-AI-OS",
+      "path": "packages/agent-memory/plugin/.mcp.json",
+      "url": "https://github.com/Vishwajeetsrk/JARVIS-AI-OS/blob/87476a719bbe41680362bb9bfacf884c53784783/packages/agent-memory/plugin/.mcp.json",
+      "findings": [
+        {
+          "package": "@agentmemory/mcp",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "willianpinho/large-file-mcp",
+      "path": ".mcp.json",
+      "url": "https://github.com/willianpinho/large-file-mcp/blob/0017e758ef7d694988db367ba6d4864e75a72c1f/.mcp.json",
+      "findings": [
+        {
+          "package": "@modelcontextprotocol/server-docker",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        },
+        {
+          "package": "@modelcontextprotocol/server-pytest",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        },
+        {
+          "package": "@modelcontextprotocol/server-redis",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        },
+        {
+          "package": "@sentry/mcp-server",
+          "selector": "latest",
+          "level": "HIGH",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "Willjeanne/faststore-soliverdemo",
+      "path": ".mcp.json",
+      "url": "https://github.com/Willjeanne/faststore-soliverdemo/blob/7b13fb9f1ba5404d72d78557210bbb55cd1b4720/.mcp.json",
+      "findings": [
+        {
+          "package": "@vtex/developer-mcp",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "windyakin/soeji",
+      "path": ".mcp.json",
+      "url": "https://github.com/windyakin/soeji/blob/28934e1d00026968768e622b5904eaf986ce779c/.mcp.json",
+      "findings": [
+        {
+          "package": "@primevue/mcp",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "woocommerce/woocommerce-android",
+      "path": ".mcp.json",
+      "url": "https://github.com/woocommerce/woocommerce-android/blob/c554edb3b4092aa417dcf27f8b7a2ea14b3a45de/.mcp.json",
+      "findings": [
+        {
+          "package": "@automattic/mcp-context-a8c",
+          "selector": "latest",
+          "level": "HIGH",
+          "auto_yes": true
+        },
+        {
+          "package": "@mobilenext/mobile-mcp",
+          "selector": "latest",
+          "level": "HIGH",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "xiscosc/balerial-monorepo",
+      "path": ".mcp.json",
+      "url": "https://github.com/xiscosc/balerial-monorepo/blob/0edd5b06d3d1014b645cdc758a5eefa11dc6cf8c/.mcp.json",
+      "findings": [
+        {
+          "package": "@sveltejs/mcp",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "Xoulart/zettle2",
+      "path": "clip-pos-integration/.mcp.json",
+      "url": "https://github.com/Xoulart/zettle2/blob/b53e396700c6b2568a98bd3b8598b1a82324a069/clip-pos-integration/.mcp.json",
+      "findings": [
+        {
+          "package": "@shopify/dev-mcp",
+          "selector": "latest",
+          "level": "HIGH",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "y-u-t-a/aws-emulator-console",
+      "path": ".mcp.json",
+      "url": "https://github.com/y-u-t-a/aws-emulator-console/blob/c03f22d11401acff1174f02aca5311e65d427145/.mcp.json",
+      "findings": [
+        {
+          "package": "chrome-devtools-mcp",
+          "selector": "latest",
+          "level": "HIGH",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "yangsi7/the-fountain-studio",
+      "path": ".mcp.json",
+      "url": "https://github.com/yangsi7/the-fountain-studio/blob/ae085a0fd570089cc644139adbaf7a651f85d7f8/.mcp.json",
+      "findings": [
+        {
+          "package": "@21st-dev/magic",
+          "selector": "latest",
+          "level": "HIGH",
+          "auto_yes": true
+        },
+        {
+          "package": "@executeautomation/playwright-mcp-server",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        },
+        {
+          "package": "@smithery/cli",
+          "selector": "latest",
+          "level": "HIGH",
+          "auto_yes": true
+        },
+        {
+          "package": "firecrawl-mcp",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        },
+        {
+          "package": "shadcn",
+          "selector": "latest",
+          "level": "HIGH",
+          "auto_yes": false
+        }
+      ]
+    },
+    {
+      "repo": "yoshiori/listen2post",
+      "path": ".mcp.json",
+      "url": "https://github.com/yoshiori/listen2post/blob/d6af47980da22f51cc9422dd04dbaaa05699d08c/.mcp.json",
+      "findings": [
+        {
+          "package": "@ondinc/listen-mcp-server",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "yshrsmz/changelog-compose",
+      "path": ".mcp.json",
+      "url": "https://github.com/yshrsmz/changelog-compose/blob/56a34c204160a68a0192f759ef2551a9d856ad24/.mcp.json",
+      "findings": [
+        {
+          "package": "@modelcontextprotocol/server-sequential-thinking",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "yshrsmz/historian",
+      "path": ".mcp.json",
+      "url": "https://github.com/yshrsmz/historian/blob/746553a420758f563773e7655326d153d1722df7/.mcp.json",
+      "findings": [
+        {
+          "package": "@modelcontextprotocol/server-sequential-thinking",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "yuvrajnaidoo/ai_dc_energy_foundry",
+      "path": ".mcp.json",
+      "url": "https://github.com/yuvrajnaidoo/ai_dc_energy_foundry/blob/e9995c33d4ffd386b03d9f39d8d8406ba1904ed8/.mcp.json",
+      "findings": [
+        {
+          "package": "palantir-mcp",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        }
+      ]
+    },
+    {
+      "repo": "zeelrupapara/epoch-financial-site",
+      "path": ".mcp.json",
+      "url": "https://github.com/zeelrupapara/epoch-financial-site/blob/df66fb59bbb93f730f91ba639c984a9a991560e8/.mcp.json",
+      "findings": [
+        {
+          "package": "@playwright/mcp",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": false
+        }
+      ]
+    },
+    {
+      "repo": "zkoss/zk",
+      "path": ".mcp.json",
+      "url": "https://github.com/zkoss/zk/blob/9ecf689dab0d3b7281b5c47fb0923b4d16cfadba/.mcp.json",
+      "findings": [
+        {
+          "package": "mcp-remote",
+          "selector": "latest",
+          "level": "HIGH",
+          "auto_yes": false
+        }
+      ]
+    },
+    {
+      "repo": "zuhayr635/kadromanus",
+      "path": ".mcp.json",
+      "url": "https://github.com/zuhayr635/kadromanus/blob/05905db90486e36a644b56aed9d5d6f57dbbb985/.mcp.json",
+      "findings": [
+        {
+          "package": "@jpisnice/shadcn-ui-mcp-server",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        },
+        {
+          "package": "@masonator/coolify-mcp",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        },
+        {
+          "package": "@masonator/coolify-mcp",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        },
+        {
+          "package": "@modelcontextprotocol/server-github",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        },
+        {
+          "package": "@modelcontextprotocol/server-sequential-thinking",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        },
+        {
+          "package": "@upstash/context7-mcp",
+          "selector": "latest",
+          "level": "HIGH",
+          "auto_yes": true
+        },
+        {
+          "package": "chrome-devtools-mcp",
+          "selector": "latest",
+          "level": "HIGH",
+          "auto_yes": true
+        },
+        {
+          "package": "repomix",
+          "selector": null,
+          "level": "HIGH",
+          "auto_yes": true
+        }
+      ]
+    }
+  ]
+}
