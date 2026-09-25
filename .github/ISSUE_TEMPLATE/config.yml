@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Private production MCP / AI-agent security triage
+    url: https://site-creator-vinext-starter.surfaceproof.workers.dev/security-triage?utm_source=github&utm_medium=issue_chooser&utm_campaign=mcp_drift_check
+    about: Use this for sensitive production context. Do not paste secrets or private configuration into a public issue.
+  - name: Privately report a vulnerability in MCP Drift Check
+    url: https://github.com/tomelias10/mcp-drift-check/security/advisories/new
+    about: Use GitHub private vulnerability reporting for security issues in this tool.

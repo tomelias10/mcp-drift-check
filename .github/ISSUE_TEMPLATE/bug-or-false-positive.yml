@@ -1,0 +1,43 @@
+name: Bug or false positive
+description: Report incorrect parsing, classification, discovery, or output using public/sanitized data only.
+title: "[bug] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping improve MCP Drift Check. **Do not post credentials, tokens, private configs, customer data, internal URLs, or exploit details here.** Use the private links in the issue chooser for sensitive reports.
+  - type: dropdown
+    id: kind
+    attributes:
+      label: What happened?
+      options:
+        - False positive / classification looks wrong
+        - A known MCP config was not discovered
+        - Parser or CLI error
+        - GitHub Action / SARIF / annotation issue
+        - Other non-sensitive bug
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Version or ref
+      placeholder: "v0.2.4, @v0, or commit SHA"
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Minimal public or sanitized reproduction
+      description: Remove secrets, private paths/URLs, credentials, and customer data. Prefer a tiny synthetic .mcp.json.
+      render: json
+    validations:
+      required: true
+  - type: textarea
+    id: observed
+    attributes:
+      label: Observed vs expected
+      placeholder: "Observed: ...\nExpected: ..."
+    validations:
+      required: true

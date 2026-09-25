@@ -1,0 +1,42 @@
+name: New MCP client or package runner
+description: Help us cover a real public MCP config path or JavaScript package runner we currently miss.
+title: "[coverage] "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Coverage requests are strongest when they point to **public documentation or a public repository**. Do not include private configs, credentials, internal URLs, or customer data.
+  - type: dropdown
+    id: coverage_type
+    attributes:
+      label: Coverage type
+      options:
+        - MCP client / config location
+        - JavaScript package runner / invocation form
+        - Both
+    validations:
+      required: true
+  - type: input
+    id: client_runner
+    attributes:
+      label: Client or runner name
+      placeholder: "Example: Cursor, bunx, pnpm dlx"
+    validations:
+      required: true
+  - type: input
+    id: public_evidence
+    attributes:
+      label: Public documentation or repository URL
+      description: A public source we can independently inspect. Do not link private repositories.
+      placeholder: "https://..."
+    validations:
+      required: true
+  - type: textarea
+    id: example
+    attributes:
+      label: Minimal sanitized example
+      description: Show only the invocation/config shape needed to reproduce the gap.
+      render: json
+    validations:
+      required: false
