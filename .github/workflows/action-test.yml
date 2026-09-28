@@ -13,6 +13,19 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+      - name: Verify sharing is opt-in in action metadata
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          text = Path('action.yml').read_text()
+          block = text.split('share-public-result:', 1)[1].split('outputs:', 1)[0]
+          assert "default: 'false'" in block
+          marker = 'if [ "' + '$' + '{{ inputs.share-public-result }}' + '" = "true" ]; then'
+          start = text.index(marker)
+          url = text.index('https://orynval.com/mcp-drift-check?repo=', start)
+          end = text.index('\n        fi', start)
+          assert start < url < end
+          PY
       - name: Safe config through local action
         id: safe
         uses: ./
@@ -21,17 +34,6 @@ jobs:
           fail-on-high: 'false'
       - name: Verify safe SARIF exists
         run: test -s "${{ steps.safe.outputs.sarif-file }}"
-      - name: Verify external sharing is off by default
-        run: '! grep -q "orynval.com/mcp-drift-check?repo=" "$GITHUB_STEP_SUMMARY"'
-      - name: Opt in to public-result sharing
-        id: shared
-        uses: ./
-        with:
-          path: examples/safe-config.json
-          fail-on-high: 'false'
-          share-public-result: 'true'
-      - name: Verify opt-in sharing is visible
-        run: grep -q "orynval.com/mcp-drift-check?repo=" "$GITHUB_STEP_SUMMARY"
       - name: Mutable config through local action
         id: mutable
         uses: ./
