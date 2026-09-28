@@ -21,6 +21,17 @@ jobs:
           fail-on-high: 'false'
       - name: Verify safe SARIF exists
         run: test -s "${{ steps.safe.outputs.sarif-file }}"
+      - name: Verify external sharing is off by default
+        run: '! grep -q "orynval.com/mcp-drift-check?repo=" "$GITHUB_STEP_SUMMARY"'
+      - name: Opt in to public-result sharing
+        id: shared
+        uses: ./
+        with:
+          path: examples/safe-config.json
+          fail-on-high: 'false'
+          share-public-result: 'true'
+      - name: Verify opt-in sharing is visible
+        run: grep -q "orynval.com/mcp-drift-check?repo=" "$GITHUB_STEP_SUMMARY"
       - name: Mutable config through local action
         id: mutable
         uses: ./
@@ -29,6 +40,15 @@ jobs:
           fail-on-high: 'false'
       - name: Verify HIGH exit signal
         run: test "${{ steps.mutable.outputs.exit-code }}" = "1"
+      - name: Invalid path fails closed
+        id: invalid
+        continue-on-error: true
+        uses: ./
+        with:
+          path: examples/does-not-exist.json
+          fail-on-high: 'false'
+      - name: Verify invalid scan is not reported as success
+        run: test "${{ steps.invalid.outcome }}" = "failure"
       - name: Prepare workspace auto-discovery fixture
         run: cp examples/mutable-config.json .mcp.json
       - name: Auto-discovery uses workspace only
