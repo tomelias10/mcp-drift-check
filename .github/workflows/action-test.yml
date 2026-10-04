@@ -13,6 +13,21 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+      - name: Verify action privacy and fail-closed guards
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          text = Path('action.yml').read_text()
+          block = text.split('share-public-result:', 1)[1].split('outputs:', 1)[0]
+          assert "default: 'false'" in block
+          share_marker = 'if [ "' + '$' + '{{ inputs.share-public-result }}' + '" = "true" ]; then'
+          share_start = text.index(share_marker)
+          share_url = text.index('https://orynval.com/mcp-drift-check?repo=', share_start)
+          share_end = text.index('\n        fi', share_start)
+          assert share_start < share_url < share_end
+          exit_marker = 'if: steps.scan.outputs.exit-code != ' + "'0'" + ' && steps.scan.outputs.exit-code != ' + "'1'"
+          assert exit_marker in text
+          PY
       - name: Safe config through local action
         id: safe
         uses: ./

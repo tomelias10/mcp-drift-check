@@ -32,7 +32,7 @@ jobs:
           orynval-security-check . --output /tmp/orynval-local.md
           code=$?
           set -e
-          test "$code" -le 1
+          test "$code" -eq 0
           grep -q "# Orynval Security Check" /tmp/orynval-local.md
           grep -q "orynval.com/security-triage" /tmp/orynval-local.md
       - name: Orynval public GitHub E2E scan
@@ -42,6 +42,6 @@ jobs:
           orynval-security-check tomelias10/mcp-drift-check --clone-timeout 60 --output /tmp/orynval-public.md
           code=$?
           set -e
-          test "$code" -le 1
+          test "$code" -eq 0
           grep -q 'Target: `tomelias10/mcp-drift-check`' /tmp/orynval-public.md
           grep -q "orynval.com/security-triage" /tmp/orynval-public.md

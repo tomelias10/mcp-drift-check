@@ -13,6 +13,10 @@ inputs:
     description: Fail the job when HIGH findings are present.
     required: false
     default: 'true'
+  share-public-result:
+    description: Add Orynval public-repo links/badge to the job summary. Opt in only when repository-name disclosure is acceptable.
+    required: false
+    default: 'false'
 outputs:
   sarif-file:
     description: Path to generated SARIF 2.1.0 report.
@@ -41,26 +45,39 @@ runs:
           mcp-drift-check scan-workspace --sarif "$sarif" --github-annotations "$annotations" --markdown > "$markdown"
           code=$?
         fi
-        cat "$markdown" >> "$GITHUB_STEP_SUMMARY"
-        {
-          echo ""
-          echo "### Share / inspect in browser"
-          echo "[Open the zero-execution public preflight for this repository](https://orynval.com/mcp-drift-check?repo=${GITHUB_REPOSITORY})"
-          echo ""
-          echo "[![MCP Drift Check](https://orynval.com/api/mcp-badge?repo=${GITHUB_REPOSITORY})](https://orynval.com/mcp-drift-check?repo=${GITHUB_REPOSITORY})"
-          echo ""
-          echo "Copy this scoped drift badge into your README:"
-          echo '```markdown'
-          echo "[![MCP Drift Check](https://orynval.com/api/mcp-badge?repo=${GITHUB_REPOSITORY})](https://orynval.com/mcp-drift-check?repo=${GITHUB_REPOSITORY})"
-          echo '```'
-        } >> "$GITHUB_STEP_SUMMARY"
-        cat "$markdown"
+        if [ -s "$markdown" ]; then
+          cat "$markdown" >> "$GITHUB_STEP_SUMMARY"
+        fi
+        if [ "${{ inputs.share-public-result }}" = "true" ]; then
+          {
+            echo ""
+            echo "### Share / inspect in browser"
+            echo "Repository-name disclosure is enabled for this run."
+            echo "[Open the zero-execution public preflight for this repository](https://orynval.com/mcp-drift-check?repo=${GITHUB_REPOSITORY})"
+            echo ""
+            echo "[![MCP Drift Check](https://orynval.com/api/mcp-badge?repo=${GITHUB_REPOSITORY})](https://orynval.com/mcp-drift-check?repo=${GITHUB_REPOSITORY})"
+            echo ""
+            echo "Copy this scoped drift badge into your README:"
+            echo '```markdown'
+            echo "[![MCP Drift Check](https://orynval.com/api/mcp-badge?repo=${GITHUB_REPOSITORY})](https://orynval.com/mcp-drift-check?repo=${GITHUB_REPOSITORY})"
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+        fi
+        if [ -s "$markdown" ]; then
+          cat "$markdown"
+        fi
         if [ -s "$annotations" ]; then
           cat "$annotations"
         fi
         echo "sarif-file=$sarif" >> "$GITHUB_OUTPUT"
         echo "exit-code=$code" >> "$GITHUB_OUTPUT"
         exit 0
+    - name: Fail on incomplete or invalid scan
+      if: steps.scan.outputs.exit-code != '0' && steps.scan.outputs.exit-code != '1'
+      shell: bash
+      run: |
+        echo "MCP Drift Check did not complete successfully (exit code ${{ steps.scan.outputs.exit-code }})." >&2
+        exit 1
     - name: Enforce HIGH finding policy
       if: inputs.fail-on-high == 'true' && steps.scan.outputs.exit-code == '1'
       shell: bash
