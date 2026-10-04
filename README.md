@@ -2,6 +2,8 @@
 
 [![CI](https://github.com/tomelias10/mcp-drift-check/actions/workflows/ci.yml/badge.svg)](https://github.com/tomelias10/mcp-drift-check/actions/workflows/ci.yml) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE) [![Python 3.9+](https://img.shields.io/badge/python-3.9%2B-blue.svg)](pyproject.toml) [![M8ven Score](https://m8ven.ai/badge/mcp/tomelias10/mcp-drift-check)](https://m8ven.ai/mcp/tomelias10/mcp-drift-check)
 
+**Looking for configuration baseline drift and broader AI-agent checks?** Start with [Orynval Labs / mcp-drift](https://github.com/tomelias10/orynval-labs). This repository remains the focused Python package-reference checker and GitHub Action. [Verified contribution history](https://github.com/tomelias10/orynval-labs/blob/main/docs/verified-contributions.md).
+
 ### Your MCP config did not change. The code it resolves to might have.
 
 **MCP Drift Check is a zero-execution security preflight for MCP package references.** It finds `@latest`, bare package references, and version ranges in common JavaScript package runners that can silently resolve to different code later.
@@ -27,13 +29,13 @@ The badge updates from bounded public MCP config paths and links back to a share
 With `uv` installed, run directly from GitHub without installing the package globally:
 
 ```bash
-uvx --from git+https://github.com/tomelias10/mcp-drift-check mcp-drift-check scan-workspace
+uvx --from git+https://github.com/tomelias10/mcp-drift-check@v0.3.2 mcp-drift-check scan-workspace
 ```
 
 Or install with pip:
 
 ```bash
-python3 -m pip install git+https://github.com/tomelias10/mcp-drift-check.git
+python3 -m pip install git+https://github.com/tomelias10/mcp-drift-check.git@v0.3.2
 mcp-drift-check scan-workspace
 ```
 
@@ -62,7 +64,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
-      - uses: tomelias10/mcp-drift-check@40e9f6760c56a0621f8aa8d91579ada77bd7414f # v0.3.1 tested
+      - uses: tomelias10/mcp-drift-check@fe9a52b3235260f2791821bf246ea7b9e1027680 # reviewed commit (privacy guards + config discovery)
 ```
 
 That scans **workspace MCP config locations only** by default, produces a Markdown report in the GitHub Actions job summary, adds visible GitHub PR annotations for non-safe findings, and fails the check when a `HIGH` mutable package reference is found.
@@ -77,7 +79,7 @@ permissions:
 steps:
   - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
   - id: mcp
-    uses: tomelias10/mcp-drift-check@40e9f6760c56a0621f8aa8d91579ada77bd7414f # v0.3.1 tested
+    uses: tomelias10/mcp-drift-check@fe9a52b3235260f2791821bf246ea7b9e1027680 # reviewed commit (privacy guards + config discovery)
     with:
       fail-on-high: 'false'
   - uses: github/codeql-action/upload-sarif@1190a975f95ce23525efb6a3fc21ea29567c1b52 # v3
