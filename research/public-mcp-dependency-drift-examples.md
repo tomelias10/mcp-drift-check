@@ -13,11 +13,15 @@ The scanner reads configuration text only. It did **not** start an MCP server, e
 | --- | --- | --- | --- |
 | dotCMS/core | [`.mcp.json`](https://github.com/dotCMS/core/blob/f5a4d4a92f5af10bdbd4146d2f744e2803faba60/.mcp.json) | `chrome-devtools-mcp@latest`, bare `@primeng/mcp`, bare `@angular/cli` | [Issue #37738](https://github.com/dotCMS/core/issues/37738) |
 | WooCommerce Android | [`.mcp.json`](https://github.com/woocommerce/woocommerce-android/blob/c554edb3b4092aa417dcf27f8b7a2ea14b3a45de/.mcp.json) | `@mobilenext/mobile-mcp@latest`, `@automattic/mcp-context-a8c@latest` | [Issue #16616](https://github.com/woocommerce/woocommerce-android/issues/16616) |
-| Datadog Android SDK | [`.mcp.json`](https://github.com/DataDog/dd-sdk-android/blob/f33341758a219fae3e15ebec71899330a2d47eb0/.mcp.json) | `@mobilenext/mobile-mcp@latest` | [Issue #3904](https://github.com/DataDog/dd-sdk-android/issues/3904) |
+| Datadog Android SDK | [`.mcp.json`](https://github.com/DataDog/dd-sdk-android/blob/f33341758a219fae3e15ebec71899330a2d47eb0/.mcp.json) | `@mobilenext/mobile-mcp@latest` | [Issue #3904](https://github.com/DataDog/dd-sdk-android/issues/3904); [removal PR #3928](https://github.com/DataDog/dd-sdk-android/pull/3928) merged 2026-09-30 |
 | commercetools UI Kit | [`.mcp.json`](https://github.com/commercetools/ui-kit/blob/62ca335b629de087f574af71869d68cbd3bd004c/.mcp.json) | `@upstash/context7-mcp@latest`, `@playwright/mcp@latest`, bare `@modelcontextprotocol/server-sequential-thinking` | [Issue #3307](https://github.com/commercetools/ui-kit/issues/3307) |
 | IBM MCP catalog | [`mcp.json`](https://github.com/IBM/mcp/blob/c78e894c0848b9f1b1be6c2b5811121bbc9d2180/mcp.json) | bare `di-mcp-server`, bare `@datastax/astra-db-mcp`, `@ibm/ibmi-mcp-server@latest` | [Issue #66](https://github.com/IBM/mcp/issues/66) |
 | CZI Single Cell Data Portal | [`.mcp.json`](https://github.com/chanzuckerberg/single-cell-data-portal/blob/f41b2a4b1a0916a12767b52f567532b30a808418/.mcp.json) | six mutable refs including bare `@modelcontextprotocol/*`, bare `@playwright/mcp`, bare `@czi-sds/mcp`, `@zeroheight/mcp-server@latest` | [Issue #7801](https://github.com/chanzuckerberg/single-cell-data-portal/issues/7801) |
 | ZK | [`.mcp.json`](https://github.com/zkoss/zk/blob/9ecf689dab0d3b7281b5c47fb0923b4d16cfadba/.mcp.json) | `mcp-remote@latest` | [Issue #3628](https://github.com/zkoss/zk/issues/3628) |
+
+## Observed follow-up
+
+On 2026-09-29, a Datadog Android SDK maintainer [agreed with the report](https://github.com/DataDog/dd-sdk-android/issues/3904#issuecomment-5886859424) and said the team had decided to remove the Mobile MCP entry. [PR #3928](https://github.com/DataDog/dd-sdk-android/pull/3928) merged on 2026-09-30, removing the root `.mcp.json` entry and a related stale usage note. This is evidence of a maintainer decision and a merged configuration change, not evidence of exploitation, runtime exposure, or a commercial relationship.
 
 ## Why the pattern matters
 
