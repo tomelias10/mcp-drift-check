@@ -21,8 +21,9 @@ class OrynvalSecurityCheckTests(unittest.TestCase):
                 encoding="utf-8",
             )
             (root / "Dockerfile").write_text("FROM python:latest\n", encoding="utf-8")
+            private_key_marker = "-----BEGIN " + "PRIVATE KEY-----"
             (root / "example.env").write_text(
-                "KEY=-----BEGIN PRIVATE KEY-----\n",
+                f"KEY={private_key_marker}\n",
                 encoding="utf-8",
             )
             (root / ".mcp.json").write_text(

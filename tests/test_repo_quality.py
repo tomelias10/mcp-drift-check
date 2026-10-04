@@ -8,6 +8,8 @@ README = ROOT / "README.md"
 TEXT_SUFFIXES = {".md", ".yml", ".yaml", ".py", ".toml", ".txt"}
 ACTION_REF = re.compile(r"\buses:\s*([^\s#]+)@([^\s#]+)")
 IMMUTABLE_SHA = re.compile(r"^[0-9a-fA-F]{40}$")
+LEGACY_MCP_ROUTE = "orynval.com/" + "mcp-scan"
+CURRENT_MCP_ROUTE = "orynval.com/mcp-drift-check"
 
 
 class RepositoryQualityTests(unittest.TestCase):
@@ -22,13 +24,13 @@ class RepositoryQualityTests(unittest.TestCase):
                 text = path.read_text(encoding="utf-8")
             except UnicodeDecodeError:
                 continue
-            if "orynval.com/mcp-scan" in text:
+            if LEGACY_MCP_ROUTE in text:
                 offenders.append(str(path.relative_to(ROOT)))
         self.assertEqual(offenders, [], f"Legacy Orynval MCP route remains in: {offenders}")
 
     def test_readme_uses_current_browser_route(self):
         text = README.read_text(encoding="utf-8")
-        self.assertIn("orynval.com/mcp-drift-check", text)
+        self.assertIn(CURRENT_MCP_ROUTE, text)
 
     def test_readme_relative_links_exist(self):
         text = README.read_text(encoding="utf-8")

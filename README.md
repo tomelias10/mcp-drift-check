@@ -1,6 +1,6 @@
 # MCP Drift Check
 
-[![CI](https://github.com/tomelias10/mcp-drift-check/actions/workflows/ci.yml/badge.svg)](https://github.com/tomelias10/mcp-drift-check/actions/workflows/ci.yml) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE) [![Python 3.9+](https://img.shields.io/badge/python-3.9%2B-blue.svg)](pyproject.toml)
+[![CI](https://github.com/tomelias10/mcp-drift-check/actions/workflows/ci.yml/badge.svg)](https://github.com/tomelias10/mcp-drift-check/actions/workflows/ci.yml) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE) [![Python 3.9+](https://img.shields.io/badge/python-3.9%2B-blue.svg)](pyproject.toml) [![M8ven Score](https://m8ven.ai/badge/mcp/tomelias10/mcp-drift-check)](https://m8ven.ai/mcp/tomelias10/mcp-drift-check)
 
 ### Your MCP config did not change. The code it resolves to might have.
 
@@ -61,8 +61,8 @@ jobs:
   mcp-drift:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
-      - uses: tomelias10/mcp-drift-check@d08219c48e7b3c608f5429797dc21e40b2a46293 # v0.3.1
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+      - uses: tomelias10/mcp-drift-check@40e9f6760c56a0621f8aa8d91579ada77bd7414f # v0.3.1 tested
 ```
 
 That scans **workspace MCP config locations only** by default, produces a Markdown report in the GitHub Actions job summary, adds visible GitHub PR annotations for non-safe findings, and fails the check when a `HIGH` mutable package reference is found.
@@ -75,9 +75,9 @@ permissions:
   security-events: write
 
 steps:
-  - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+  - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
   - id: mcp
-    uses: tomelias10/mcp-drift-check@d08219c48e7b3c608f5429797dc21e40b2a46293 # v0.3.1
+    uses: tomelias10/mcp-drift-check@40e9f6760c56a0621f8aa8d91579ada77bd7414f # v0.3.1 tested
     with:
       fail-on-high: 'false'
   - uses: github/codeql-action/upload-sarif@1190a975f95ce23525efb6a3fc21ea29567c1b52 # v3
@@ -120,12 +120,13 @@ That issue is an example of the configuration-review problem this tool detects. 
 
 ## What it checks
 
-Current package-runner coverage includes `npx`, `npm exec` / `npm x`, `bunx` / `bun x`, `pnpm dlx`, and `yarn dlx`:
+Current package-runner coverage includes `npx`, `npm exec` / `npm x`, `bunx` / `bun x`, `pnpm dlx`, `yarn dlx`, and `uvx`:
 
 - exact versions such as `package@1.2.3` → `SAFE`
 - bare packages such as `package` → `HIGH`
 - explicit `package@latest` → `HIGH`
 - version ranges such as `package@^1.2.0` → `MEDIUM`
+- `uvx` references use PEP 508 selectors: `pkg==1.2.3` → `SAFE`, `pkg>=1.0` → `MEDIUM`, bare `pkg` → `HIGH`; URLs, local paths and wheels → `REVIEW`
 - local or unknown executables → `REVIEW`
 - `-y` / `--yes` is reported as context; it is not treated as a vulnerability by itself
 
@@ -161,6 +162,20 @@ It identifies a **change and review risk** that a security team may want to inve
 ## Public examples
 
 We documented seven concrete public repositories where MCP configs contained mutable npm/npx package references. This is a **targeted examples set, not a prevalence study**. See the [public research page](https://orynval.com/research/mcp-dependency-drift) or [`research/public-mcp-dependency-drift-examples.md`](research/public-mcp-dependency-drift-examples.md).
+
+One public follow-up produced a concrete configuration change: after a [Datadog Android SDK maintainer agreed with the report](https://github.com/DataDog/dd-sdk-android/issues/3904#issuecomment-5886859424), [PR #3928](https://github.com/DataDog/dd-sdk-android/pull/3928) removed the Mobile MCP entry and was merged on 2026-09-30. This documents a maintainer response, not exploitation or a customer engagement.
+
+## External adoption and maintainer outcomes
+
+Public follow-up has now produced several concrete third-party outcomes:
+
+- **BuilderIO / agent-native** merged [PR #5896](https://github.com/BuilderIO/agent-native/pull/5896), pinning a mutable MCP package reference to an exact version.
+- **Datadog Android SDK** merged [PR #3928](https://github.com/DataDog/dd-sdk-android/pull/3928), removing the Mobile MCP configuration after a maintainer agreed with the dependency-drift report.
+- **Awesome-MCP** merged [PR #236](https://github.com/AlexMili/Awesome-MCP/pull/236), listing `mcp-drift` as a security tool.
+- **agentic-awesome-skills** merged [PR #1607](https://github.com/sickn33/agentic-awesome-skills/pull/1607), adding the MCP dependency-drift audit skill.
+- **awesome-mcp** merged [PR #128](https://github.com/abordage/awesome-mcp/pull/128), adding MCP Drift Check to its MCP security section.
+
+These are public adoption/remediation signals, **not customer engagements, exploit evidence, or endorsements**.
 
 ## Public GitHub code-search sample
 
