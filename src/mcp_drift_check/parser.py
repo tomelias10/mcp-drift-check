@@ -140,6 +140,7 @@ _UVX_VALUE_FLAGS = {
     "--from", "--with", "--python", "-p",
     "--index-url", "--extra-index-url", "--find-links",
     "--default-index", "--index", "--cache-dir", "--project",
+    "--exclude-newer",
 }
 # A bare version number is far more likely to be a flag value (e.g. `-p 3.12`)
 # than a package name; skip it instead of misclassifying it as a package.
