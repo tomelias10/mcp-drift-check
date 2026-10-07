@@ -29,13 +29,13 @@ The badge updates from bounded public MCP config paths and links back to a share
 With `uv` installed, run directly from GitHub without installing the package globally:
 
 ```bash
-uvx --from git+https://github.com/tomelias10/mcp-drift-check@v0.3.2 mcp-drift-check scan-workspace
+uvx --from git+https://github.com/tomelias10/mcp-drift-check@v0.3.3 mcp-drift-check scan-workspace
 ```
 
 Or install with pip:
 
 ```bash
-python3 -m pip install git+https://github.com/tomelias10/mcp-drift-check.git@v0.3.2
+python3 -m pip install git+https://github.com/tomelias10/mcp-drift-check.git@v0.3.3
 mcp-drift-check scan-workspace
 ```
 
