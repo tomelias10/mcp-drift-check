@@ -163,4 +163,18 @@ class ParserTests(unittest.TestCase):
             p.write_text('{"mcpServers":{"x":{"command":"uvx","args":[]}}}')
             self.assertEqual(parse_config(p)[0].classification, "REVIEW")
 
+
+class UvxCutoffTests(unittest.TestCase):
+    def test_cutoff_does_not_hide_package(self):
+        for args, expected in [
+            (["--exclude-newer", "2026-10-02T00:00:00Z", "workspace-mcp==2.0.1"], ("workspace-mcp", "==2.0.1", "SAFE")),
+            (["--exclude-newer=2026-10-02T00:00:00Z", "workspace-mcp==2.0.1"], ("workspace-mcp", "==2.0.1", "SAFE")),
+            (["--exclude-newer", "2026-10-02", "workspace-mcp"], ("workspace-mcp", None, "HIGH")),
+        ]:
+            with self.subTest(args=args), TemporaryDirectory() as d:
+                p = Path(d) / "mcp.json"
+                p.write_text(json.dumps({"mcpServers": {"demo": {"command": "uvx", "args": args}}}))
+                f = parse_config(p)[0]
+                self.assertEqual((f.package, f.declared_version, f.classification), expected)
+
 if __name__ == "__main__": unittest.main()
