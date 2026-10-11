@@ -20,13 +20,22 @@ jobs:
           text = Path('action.yml').read_text()
           block = text.split('share-public-result:', 1)[1].split('outputs:', 1)[0]
           assert "default: 'false'" in block
-          share_marker = 'if [ "' + '$' + '{{ inputs.share-public-result }}' + '" = "true" ]; then'
+          share_marker = 'if [ "$SHARE_PUBLIC_RESULT" = "true" ]; then'
           share_start = text.index(share_marker)
           share_url = text.index('https://orynval.com/mcp-drift-check?repo=', share_start)
           share_end = text.index('\n        fi', share_start)
           assert share_start < share_url < share_end
           exit_marker = 'if: steps.scan.outputs.exit-code != ' + "'0'" + ' && steps.scan.outputs.exit-code != ' + "'1'"
           assert exit_marker in text
+          # Regression guard: no expressions may be interpolated into run: script text.
+          import re
+          expr = '$' + '{{'
+          for m in re.finditer(r'run: \|\n((?:        .*\n)+)', text):
+              assert expr not in m.group(1), m.group(1)
+          for line in text.splitlines():
+              s = line.strip()
+              if s.startswith('run: ') and not s.startswith('run: |'):
+                  assert expr not in s, s
           PY
       - name: Safe config through local action
         id: safe
@@ -44,6 +53,20 @@ jobs:
           fail-on-high: 'false'
       - name: Verify HIGH exit signal
         run: test "${{ steps.mutable.outputs.exit-code }}" = "1"
+      - name: Missing config path through local action
+        id: missing
+        continue-on-error: true
+        uses: ./
+        with:
+          path: examples/does-not-exist.json
+          fail-on-high: 'false'
+      - name: Verify missing path fails closed
+        env:
+          MISSING_EXIT_CODE: ${{ steps.missing.outputs.exit-code }}
+          MISSING_OUTCOME: ${{ steps.missing.outcome }}
+        run: |
+          test "$MISSING_EXIT_CODE" = "2"
+          test "$MISSING_OUTCOME" = "failure"
       - name: Prepare workspace auto-discovery fixture
         run: cp examples/mutable-config.json .mcp.json
       - name: Auto-discovery uses workspace only
