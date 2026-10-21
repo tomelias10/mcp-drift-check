@@ -20,7 +20,11 @@ jobs:
           text = Path('action.yml').read_text()
           block = text.split('share-public-result:', 1)[1].split('outputs:', 1)[0]
           assert "default: 'false'" in block
-          share_marker = 'if [ "' + '$' + '{{ inputs.share-public-result }}' + '" = "true" ]; then'
+          share_marker = 'if [ "$MCP_SHARE_PUBLIC_RESULT" = "true" ]; then'
+          assert 'MCP_SHARE_PUBLIC_RESULT: ' + '$' + '{{ inputs.share-public-result }}' in text
+          assert 'MCP_CONFIG_PATH: ' + '$' + '{{ inputs.path }}' in text
+          assert 'mcp-drift-check scan "$MCP_CONFIG_PATH"' in text
+          assert 'mcp-drift-check scan "' + '$' + '{{ inputs.path }}' + '"' not in text
           share_start = text.index(share_marker)
           share_url = text.index('https://orynval.com/mcp-drift-check?repo=', share_start)
           share_end = text.index('\n        fi', share_start)
@@ -34,6 +38,19 @@ jobs:
         with:
           path: examples/safe-config.json
           fail-on-high: 'false'
+      - name: Prepare adversarial filename fixture
+        run: cp examples/safe-config.json '$(touch MCP_DRIFT_INJECTION_PROOF)'
+      - name: Verify path is passed as data, not evaluated as shell code
+        id: adversarial
+        uses: ./
+        with:
+          path: '$(touch MCP_DRIFT_INJECTION_PROOF)'
+          fail-on-high: 'false'
+      - name: Verify no shell injection occurred
+        run: |
+          test ! -e MCP_DRIFT_INJECTION_PROOF
+          test "${{ steps.adversarial.outputs.exit-code }}" = '0'
+          rm '$(touch MCP_DRIFT_INJECTION_PROOF)'
       - name: Verify safe SARIF exists
         run: test -s "${{ steps.safe.outputs.sarif-file }}"
       - name: Mutable config through local action

@@ -60,6 +60,14 @@ class RepositoryQualityTests(unittest.TestCase):
                     offenders.append(f"{path.relative_to(ROOT)}: {action}@{ref}")
         self.assertEqual(offenders, [], f"Mutable GitHub Action refs remain: {offenders}")
 
+    def test_action_inputs_are_data_not_inline_shell_expressions(self):
+        text = (ROOT / 'action.yml').read_text(encoding='utf-8')
+        self.assertIn('MCP_CONFIG_PATH: ' + '$' + '{{ inputs.path }}', text)
+        self.assertIn('MCP_SHARE_PUBLIC_RESULT: ' + '$' + '{{ inputs.share-public-result }}', text)
+        self.assertIn('mcp-drift-check scan "$MCP_CONFIG_PATH"', text)
+        self.assertNotIn('mcp-drift-check scan "' + '$' + '{{ inputs.path }}', text)
+        self.assertNotIn('if [ -n "' + '$' + '{{ inputs.path }}', text)
+
     def test_security_hygiene_files_exist(self):
         required = [ROOT / "SECURITY.md", ROOT / ".github" / "dependabot.yml"]
         missing = [str(path.relative_to(ROOT)) for path in required if not path.exists()]
