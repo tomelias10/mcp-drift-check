@@ -33,13 +33,16 @@ runs:
     - name: Scan MCP configuration
       id: scan
       shell: bash
+      env:
+        MCP_CONFIG_PATH: ${{ inputs.path }}
+        MCP_SHARE_PUBLIC_RESULT: ${{ inputs.share-public-result }}
       run: |
         set +e
         sarif="$RUNNER_TEMP/mcp-drift-check.sarif"
         markdown="$RUNNER_TEMP/mcp-drift-check.md"
         annotations="$RUNNER_TEMP/mcp-drift-check-annotations.txt"
-        if [ -n "${{ inputs.path }}" ]; then
-          mcp-drift-check scan "${{ inputs.path }}" --sarif "$sarif" --github-annotations "$annotations" --markdown > "$markdown"
+        if [ -n "$MCP_CONFIG_PATH" ]; then
+          mcp-drift-check scan "$MCP_CONFIG_PATH" --sarif "$sarif" --github-annotations "$annotations" --markdown > "$markdown"
           code=$?
         else
           mcp-drift-check scan-workspace --sarif "$sarif" --github-annotations "$annotations" --markdown > "$markdown"
@@ -48,7 +51,7 @@ runs:
         if [ -s "$markdown" ]; then
           cat "$markdown" >> "$GITHUB_STEP_SUMMARY"
         fi
-        if [ "${{ inputs.share-public-result }}" = "true" ]; then
+        if [ "$MCP_SHARE_PUBLIC_RESULT" = "true" ]; then
           {
             echo ""
             echo "### Share / inspect in browser"
