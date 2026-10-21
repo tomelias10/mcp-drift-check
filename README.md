@@ -27,7 +27,7 @@ jobs:
   mcp-preflight:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273ba90b1 # v5
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
       - uses: tomelias10/mcp-drift-check@14309f05fa957542cb189490cbcf80f21094d4bc # reviewed fixed-input Action commit
         with:
           fail-on-high: 'false' # report-only trial; use 'true' after reviewing findings
