@@ -16,6 +16,25 @@
 
 **No install:** [scan a public GitHub repository in the browser](https://orynval.com/mcp-drift-check). The browser preflight checks only public MCP config paths and never executes repository code or MCP servers.
 
+**Prefer CI? Try it without blocking a build first.** Add this file as `.github/workflows/mcp-drift.yml` in a repository you control:
+
+```yaml
+name: Review MCP dependency pins
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  mcp-preflight:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273ba90b1 # v5
+      - uses: tomelias10/mcp-drift-check@14309f05fa957542cb189490cbcf80f21094d4bc # reviewed fixed-input Action commit
+        with:
+          fail-on-high: 'false' # report-only trial; use 'true' after reviewing findings
+```
+
+The Action writes a report to the GitHub job summary, without running configured MCP servers or failing the job for a HIGH finding during this trial. Inspect its result before switching to enforcement. **This is package-reference review, not a comprehensive MCP security audit.**
+
 **Tried it on a real workflow?** [Share a two-minute, sanitized trial result](https://github.com/tomelias10/mcp-drift-check/issues/new?template=real-workflow-trial.yml), including if it found nothing useful or produced a false positive. No credentials or private configuration.
 
 ### Share a live repo result
@@ -66,7 +85,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
-      - uses: tomelias10/mcp-drift-check@fe9a52b3235260f2791821bf246ea7b9e1027680 # reviewed commit (privacy guards + config discovery)
+      - uses: tomelias10/mcp-drift-check@14309f05fa957542cb189490cbcf80f21094d4bc # reviewed Action commit (including safe input handling)
 ```
 
 That scans **workspace MCP config locations only** by default, produces a Markdown report in the GitHub Actions job summary, adds visible GitHub PR annotations for non-safe findings, and fails the check when a `HIGH` mutable package reference is found.
@@ -81,7 +100,7 @@ permissions:
 steps:
   - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
   - id: mcp
-    uses: tomelias10/mcp-drift-check@fe9a52b3235260f2791821bf246ea7b9e1027680 # reviewed commit (privacy guards + config discovery)
+    uses: tomelias10/mcp-drift-check@14309f05fa957542cb189490cbcf80f21094d4bc # reviewed Action commit (including safe input handling)
     with:
       fail-on-high: 'false'
   - uses: github/codeql-action/upload-sarif@1190a975f95ce23525efb6a3fc21ea29567c1b52 # v3
