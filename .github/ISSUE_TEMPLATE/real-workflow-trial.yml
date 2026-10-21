@@ -1,0 +1,69 @@
+name: Real workflow trial (2 minutes)
+description: Tell us whether MCP Drift Check helped with an actual, authorized workflow. No secrets or private configuration.
+title: "[trial] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for testing. We are validating whether the tool makes real security reviews better, not collecting vanity metrics.
+        **Never paste tokens, credentials, proprietary configuration, internal URLs, customer information, or private code.** A high-level description or synthetic example is enough.
+  - type: dropdown
+    id: surface
+    attributes:
+      label: How did you try it?
+      options:
+        - GitHub Action / CI
+        - Local CLI
+        - Agent skill
+        - Browser public-repo scan
+        - Other
+    validations:
+      required: true
+  - type: dropdown
+    id: outcome
+    attributes:
+      label: What was the result?
+      options:
+        - Found an actionable dependency pinning problem
+        - Confirmed no unpinned references in the checked scope
+        - Found a false positive or missed a known case
+        - Blocked by setup, permissions, or documentation
+        - Ran successfully but did not help my workflow
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: What were you trying to review, and did the result change a decision?
+      description: Describe the workflow without confidential repository names, paths, or configs. A short answer is enough.
+      placeholder: "We review MCP configs before merging PRs. The scanner found an unpinned package, so we ..."
+    validations:
+      required: true
+  - type: dropdown
+    id: repeat
+    attributes:
+      label: Would you use it again in this workflow?
+      options:
+        - Yes
+        - No
+        - Not sure yet
+    validations:
+      required: true
+  - type: input
+    id: time
+    attributes:
+      label: Time saved (optional; estimate only if measured)
+      placeholder: "Not measured / about 5 minutes"
+    validations:
+      required: false
+  - type: input
+    id: version
+    attributes:
+      label: Version or GitHub Action ref (optional)
+      placeholder: "v0.3.3"
+    validations:
+      required: false
+  - type: markdown
+    attributes:
+      value: |
+        If your report contains sensitive context, please use the [private production triage form](https://orynval.com/security-triage) instead of posting it here.

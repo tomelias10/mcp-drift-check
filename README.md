@@ -16,6 +16,8 @@
 
 **No install:** [scan a public GitHub repository in the browser](https://orynval.com/mcp-drift-check). The browser preflight checks only public MCP config paths and never executes repository code or MCP servers.
 
+**Tried it on a real workflow?** [Share a two-minute, sanitized trial result](https://github.com/tomelias10/mcp-drift-check/issues/new?template=real-workflow-trial.yml), including if it found nothing useful or produced a false positive. No credentials or private configuration.
+
 ### Share a live repo result
 
 After scanning a public repository, copy the generated README badge from the result page. The badge reports only MCP dependency-drift findings — it is **not** a general security score.
