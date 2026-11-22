@@ -255,6 +255,10 @@ python3 -m unittest discover -s tests -v
 
 See [SECURITY.md](SECURITY.md).
 
+## Support ongoing development
+
+This project is open source and free to use. If it helps your team, you can [sponsor its ongoing maintenance on GitHub](https://github.com/sponsors/tomelias10). Sponsorship is optional; it does not affect access to the tooling or security reporting.
+
 ## License
 
 MIT
